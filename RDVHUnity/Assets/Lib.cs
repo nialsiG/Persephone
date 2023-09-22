@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Lib : MonoBehaviour
@@ -16,5 +15,15 @@ public class Lib : MonoBehaviour
             Destroy(gameObject);
         else
             instance = this;
+    }
+
+    public void SetReputation(int n)
+    {
+        reputationCounter += n;
+    }
+
+    public void SetMoney(int n)
+    {
+        moneyCounter += n;
     }
 }
