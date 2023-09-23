@@ -17,6 +17,8 @@ public class ManageEvent : MonoBehaviour
     [SerializeField] TextMeshProUGUI _choice1;
     [SerializeField] TextMeshProUGUI _choice2;
 
+    [SerializeField] GameObject _gameManager;
+
     private int changeToMoney1;
     private int changeToReputation1;    
     private int changeToMoney2;
@@ -57,7 +59,12 @@ public class ManageEvent : MonoBehaviour
     {
         Debug.Log("Money + " + changeToMoney1);
         Debug.Log("Reputation + " + changeToReputation1);
-        
+        Lib.instance.SetMoney(changeToMoney1);
+        Lib.instance.SetReputation(changeToReputation1);
+
+        //Update the counters
+        _gameManager.GetComponent<ManageCounters>().UpdateCounters();
+
         gameObject.SetActive(false);
     }
 
@@ -65,6 +72,11 @@ public class ManageEvent : MonoBehaviour
     {
         Debug.Log("Money + " + changeToMoney2);
         Debug.Log("Reputation + " + changeToReputation2);
+        Lib.instance.SetMoney(changeToMoney2);
+        Lib.instance.SetReputation(changeToReputation2);
+
+        //Update the counters
+        _gameManager.GetComponent<ManageCounters>().UpdateCounters();
 
         gameObject.SetActive(false);
     }
