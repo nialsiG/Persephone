@@ -10,8 +10,8 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
     [Header("Variables :")]
     [SerializeField] int contenanceMax;
-    [SerializeField] int price;
-    [SerializeField] Vector2 rdmCounter, rdmAjouterMort, rdmGainReputaion;
+    [SerializeField] int price, inhumationPrice, inhumationReputation;
+    [SerializeField] Vector2 rdmCounter, rdmAjouterMort;
     [SerializeField] int maxCurrentStock;
 
     private int contenance;
@@ -30,8 +30,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
         maxContenanceTxt.gameObject.SetActive(false);
         contenanceGauge.gameObject.SetActive(false);
 
-        //Enleve le cout de la tombe au compteur d'argent
-        Lib.instance.SetMoney(-price);
+        
     }
 
 
@@ -43,17 +42,22 @@ public class TombeUnit : MonoBehaviour, IConstruire
             {
                 if (counter < 0)
                 {
-                    contenance += (int)Random.Range(rdmAjouterMort.x, rdmAjouterMort.y);
-                    counter = Random.Range(rdmCounter.x, rdmCounter.y);
+                    int rdmDead = (int)Random.Range(rdmAjouterMort.x, rdmAjouterMort.y);
+                    contenance += rdmDead;
 
-                    Lib.instance.SetReputation((int)Random.Range(rdmGainReputaion.x, rdmGainReputaion.y));
+                    //rentrées d'argent par inhumation
+                    Lib.instance.SetMoney(rdmDead * inhumationPrice);
+                    //Gain de réputation par inhumation
+                    Lib.instance.SetReputation(rdmDead * inhumationReputation);
+
+                    counter = Random.Range(rdmCounter.x, rdmCounter.y);
 
                     if (contenance > maxCurrentStock || contenance > contenanceMax)
                     {
                         stopArrival = true;
                         maxCurrentStock += contenance;
                     }
-                        
+
                 }
                 else
                     counter -= Time.deltaTime;
@@ -66,12 +70,15 @@ public class TombeUnit : MonoBehaviour, IConstruire
         {
             stopArrival = false;
         }
-            
+
     }
 
 
     public void Construire()
     {
+        //Enleve le cout de la tombe au compteur d'argent
+        Lib.instance.SetMoney(-price);
+
         Color col = GetComponent<SpriteRenderer>().color;
         col.a = 1;
         GetComponent<SpriteRenderer>().color = col;

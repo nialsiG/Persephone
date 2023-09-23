@@ -5,6 +5,7 @@ public class TuileUnit : MonoBehaviour
     [SerializeField] Camera cam = null;
 
     [SerializeField] float magnetismDistance;
+    [SerializeField] int acceptableLayer;
 
     private bool alreadyBuilt, inBox;
     private void Update()
@@ -48,7 +49,7 @@ public class TuileUnit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 7 && !alreadyBuilt && !inBox)
+        if (collision.gameObject.layer == acceptableLayer && !alreadyBuilt && !inBox)
         {
             inBox = true;
         }
@@ -57,7 +58,7 @@ public class TuileUnit : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 7 && inBox)
+        if (collision.gameObject.layer == acceptableLayer && inBox)
             inBox = false;
     }
 }
