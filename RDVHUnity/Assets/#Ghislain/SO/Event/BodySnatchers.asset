@@ -17,3 +17,10 @@ MonoBehaviour:
     puzzle, de votre cimeti\xE8re, monsieur ! Vous devriez renforcer votre surveillance,
     de nos jours un cadavre vaut son poids en haricots. \xBB "
   _image: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  _sound: {fileID: 0}
+  _texteChoix1: 'Choix 1 : Recruter un garde pour faire des rondes (15 livres)'
+  _changeToMoney1: -15
+  _changeToReputation1: 0
+  _texteChoix2: "Choix 2 : Ne rien faire (-4 r\xE9putation) "
+  _changeToMoney2: 0
+  _changeToReputation2: -4
