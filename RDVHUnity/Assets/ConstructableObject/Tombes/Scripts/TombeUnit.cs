@@ -13,7 +13,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
     [Header("Variables :")]
     [SerializeField] string tombName;
     [SerializeField] int contenanceMax;
-    [SerializeField] int buildPrice, inhumationPrice, inhumationReputation;
+    [SerializeField] int buildPrice, inhumationPrice;
     [SerializeField] Vector2 rdmCounter, rdmAjouterMort;
     [SerializeField] int maxCurrentStock;
 
@@ -21,7 +21,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
     private float counter = -1;
     private int currentPrice;
 
-    private bool stopArrival, construite;
+    private bool stopArrival, construite, beginTurn;
 
     private void Start()
     {
@@ -57,8 +57,15 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
                     //rentrées d'argent par inhumation
                     Lib.instance.SetMoney(rdmDead * currentPrice);
-                    //Gain de réputation par inhumation
-                    Lib.instance.SetReputation(rdmDead * inhumationReputation);
+
+                    if (contenance > contenanceMax / 2 && !beginTurn)
+                    {
+                        Lib.instance.SetReputation(1);
+                        beginTurn = true;
+                        repTxt.text = "+1";
+                        repTxtAnim.SetTrigger("Add");
+                    }
+                        
 
                     counter = Random.Range(rdmCounter.x, rdmCounter.y);
 
@@ -66,12 +73,6 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
                     gainTxt.text = "+" + (rdmDead * currentPrice).ToString();
                     textAnim.SetTrigger("Add");
-
-                    if (inhumationReputation != 0)
-                    {
-                        repTxt.text = "+" + (rdmDead * inhumationReputation).ToString();
-                        repTxtAnim.SetTrigger("Add");
-                    }
                    
 
 
@@ -101,6 +102,8 @@ public class TombeUnit : MonoBehaviour, IConstruire
         }
         else
         {
+            beginTurn = false;
+
             //Actualise le prix d'inhumation
             if (Lib.instance.p == Lib.phase.BUILD)
             {

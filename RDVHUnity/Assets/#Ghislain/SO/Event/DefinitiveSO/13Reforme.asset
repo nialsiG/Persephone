@@ -18,7 +18,7 @@ MonoBehaviour:
     l\xE0, c\u2019est la loi de 1852, ils ont chang\xE9 deux pages, une annexe, et
     trois notes rectificatives sur le format des factures ! \xBB"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
-  _sound: {fileID: 11400000, guid: 310c36bcd568b584ba00787c100a0ab1, type: 2}
+  _sound: {fileID: 11400000, guid: 7d11974a70b1cce4cab56ee507fad18c, type: 2}
   _texteChoix1: "\xAB Je ne vais quand m\xEAme pas acheter un nouveau livre de comptes
     juste pour satisfaire un bureaucrate \xE0 Londres ! \xBB (-5 r\xE9putation)"
   _changeToMoney1: 0
