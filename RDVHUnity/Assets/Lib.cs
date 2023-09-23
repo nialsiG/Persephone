@@ -13,7 +13,7 @@ public class Lib : MonoBehaviour
     public float moneyCounter, reputationCounter;
     public GameObject CurrentObject = null;
 
-    public int priceCommune, priceFamiliale, priceCaveau, dept;
+    public int priceCommune, priceFamiliale, priceCaveau, dept, semesterCounter;
 
     private void Awake()
     {

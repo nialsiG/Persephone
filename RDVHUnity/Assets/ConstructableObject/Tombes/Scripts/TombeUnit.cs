@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,9 +6,10 @@ using UnityEngine.UI;
 public class TombeUnit : MonoBehaviour, IConstruire
 {
     [SerializeField] Camera cam = null;
+    [SerializeField] SpriteRenderer r;
     [SerializeField] TextMeshProUGUI contenanceTxt, gainTxt;
     [SerializeField] Slider contenanceGauge;
-    [SerializeField] Animator textAnim;
+    [SerializeField] Animator textAnim, tombAnim;
 
     [Header("Variables :")]
     [SerializeField] string tombName;
@@ -47,7 +49,6 @@ public class TombeUnit : MonoBehaviour, IConstruire
                 if (counter < 0)
                 {
                     int rdmDead = (int)Random.Range(rdmAjouterMort.x, rdmAjouterMort.y);
-                    contenance += rdmDead;
 
                     //rentrées d'argent par inhumation
                     Lib.instance.SetMoney(rdmDead * currentPrice);
@@ -56,18 +57,32 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
                     counter = Random.Range(rdmCounter.x, rdmCounter.y);
 
-                    if (contenance > maxCurrentStock || contenance > contenanceMax)
+                    tombAnim.SetTrigger("Add");
+
+
+
+                    
+                    gainTxt.text = "+" + (rdmDead * currentPrice).ToString();
+                    textAnim.SetTrigger("Add");
+
+                    
+
+
+                    if (contenance + rdmDead > maxCurrentStock || contenance + rdmDead > contenanceMax)
                     {
+                        contenance = maxCurrentStock;
                         stopArrival = true;
                         maxCurrentStock += contenance;
 
                         if (contenance > contenanceMax)
                             contenance = contenanceMax;
 
-                        contenanceTxt.text = contenance.ToString() + "/" + contenanceMax.ToString();
-                        gainTxt.text = "+" + (rdmDead * currentPrice).ToString();
-                        textAnim.SetTrigger("Add");
+
                     }
+                    else
+                        contenance += rdmDead;
+
+                    contenanceTxt.text = contenance.ToString() + "/" + contenanceMax.ToString();
 
                 }
                 else
@@ -82,9 +97,32 @@ public class TombeUnit : MonoBehaviour, IConstruire
             //Actualise le prix d'inhumation
             if (Lib.instance.p == Lib.phase.BUILD)
                 currentPrice = Lib.instance.GetTombPrice(tombName);
+
+            maxCurrentStock = SetCurrentStock(tombName);
+
             stopArrival = false;
         }
 
+    }
+
+    int SetCurrentStock(string name)
+    {
+        int n = 0;
+
+        switch (name)
+        {
+            case "Commune":
+                n = 10 + ((currentPrice * (currentPrice + 1)) / 2) - 5 * currentPrice + Random.Range(-1, 2);
+                break;
+            case "Familiale":
+
+                break;
+            case "Caveau":
+
+                break;
+        }
+
+        return n;
     }
 
 
@@ -93,9 +131,9 @@ public class TombeUnit : MonoBehaviour, IConstruire
         //Enleve le cout de la tombe au compteur d'argent
         Lib.instance.SetMoney(-buildPrice);
 
-        Color col = GetComponent<SpriteRenderer>().color;
+        Color col = r.GetComponent<SpriteRenderer>().color;
         col.a = 1;
-        GetComponent<SpriteRenderer>().color = col;
+        r.GetComponent<SpriteRenderer>().color = col;
 
         contenanceTxt.gameObject.SetActive(true);
         contenanceGauge.gameObject.SetActive(true);
