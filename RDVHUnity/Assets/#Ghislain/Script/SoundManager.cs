@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+
+
     //SoundQueue
     [SerializeField] int _soundQueueLength;
     List<AudioSource> soundQueue;
@@ -17,6 +19,17 @@ public class SoundManager : MonoBehaviour
     [SerializeField] SOSoundPool _clickSound;
     [SerializeField] SOSoundPool _hoverSound;
     
+    //Singleton
+    public static SoundManager Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -13,7 +13,7 @@ public class ManageCounters : MonoBehaviour
     {
         _reputationCounter.text = "Réputation:\n" + Lib.instance.reputationCounter.ToString();
         _moneyCounter.text = "Argent:\n" + Lib.instance.moneyCounter.ToString();
-        _debtCounter.text = "Dette:\n" + Lib.instance.moneyCounter.ToString();
+        _debtCounter.text = "Dette:\n" + Lib.instance.dept.ToString();
     }
 
     public void ResetCounter()
