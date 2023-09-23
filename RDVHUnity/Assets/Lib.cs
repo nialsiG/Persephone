@@ -8,6 +8,7 @@ public class Lib : MonoBehaviour
     public phase p;
 
     public float moneyCounter, reputationCounter;
+    public GameObject CurrentObject = null;
 
     private void Awake()
     {
@@ -25,5 +26,10 @@ public class Lib : MonoBehaviour
     public void SetMoney(int n)
     {
         moneyCounter += n;
+    }
+
+    public void SetCurrentObject(GameObject GO)
+    {
+        CurrentObject = GO;
     }
 }
