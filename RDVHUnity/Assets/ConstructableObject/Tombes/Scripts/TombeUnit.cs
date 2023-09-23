@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class TombeUnit : MonoBehaviour, IConstruire
 {
-    [SerializeField] Camera cam = null;
     [SerializeField] SpriteRenderer r;
     [SerializeField] TextMeshProUGUI contenanceTxt, gainTxt, repTxt;
     [SerializeField] Slider contenanceGauge;
