@@ -37,7 +37,8 @@ public class TuileUnit : MonoBehaviour
                 }
                 else
                 {
-                    Lib.instance.s = Lib.state.TRACK;
+                    if (inBox)
+                         Lib.instance.s = Lib.state.TRACK;
                     
                 }
             }
@@ -57,6 +58,7 @@ public class TuileUnit : MonoBehaviour
         if (collision.gameObject.layer == acceptableLayer && !alreadyBuilt && !inBox)
         {
             inBox = true;
+            print("aa");
         }
             
     }
