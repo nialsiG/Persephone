@@ -7,7 +7,6 @@ public class TuileUnit : MonoBehaviour
     [SerializeField] float magnetismDistance;
 
     private bool alreadyBuilt, inBox;
-    public bool magnetism;
     private void Update()
     {
         if (Lib.instance.p == Lib.phase.BUILD)
@@ -20,7 +19,7 @@ public class TuileUnit : MonoBehaviour
                 {
                     if (inBox)
                     {
-                        magnetism = true;
+                        Lib.instance.s = Lib.state.CLIP;
                         Lib.instance.CurrentObject.transform.position = transform.position;
 
                         if (Input.GetButtonDown("Select"))
@@ -36,7 +35,7 @@ public class TuileUnit : MonoBehaviour
                 }
                 else
                 {
-                    magnetism = false;
+                    Lib.instance.s = Lib.state.TRACK;
                     Lib.instance.CurrentObject.transform.position = new Vector3(pos.x, pos.y, 0);
                 }
             }
@@ -52,7 +51,6 @@ public class TuileUnit : MonoBehaviour
         if (collision.gameObject.layer == 7 && !alreadyBuilt && !inBox)
         {
             inBox = true;
-            print("aa");
         }
             
     }

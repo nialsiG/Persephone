@@ -7,6 +7,9 @@ public class Lib : MonoBehaviour
     public enum phase { BUILD, ARRIVAL, EVENT };
     public phase p;
 
+    public enum state { TRACK, CLIP, EMPTY };
+    public state s;
+
     public float moneyCounter, reputationCounter;
     public GameObject CurrentObject = null;
 
