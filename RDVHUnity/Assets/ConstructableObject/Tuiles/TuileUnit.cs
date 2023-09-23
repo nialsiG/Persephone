@@ -42,11 +42,6 @@ public class TuileUnit : MonoBehaviour
                     
                 }
             }
-            if (Lib.instance.s == Lib.state.TRACK)
-            {
-                Vector3 pos = cam.ScreenToWorldPoint(Input.mousePosition);
-                Lib.instance.CurrentObject.transform.position = new Vector3(pos.x, pos.y, 0);
-            }
                 
 
             GetComponent<Collider2D>().enabled = !alreadyBuilt;

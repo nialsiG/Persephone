@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class TombeUnit : MonoBehaviour, IConstruire
 {
+    private Camera cam = null;
     [SerializeField] SpriteRenderer r;
     [SerializeField] TextMeshProUGUI contenanceTxt, gainTxt, repTxt;
     [SerializeField] Slider contenanceGauge;
@@ -12,7 +13,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
     [Header("Variables :")]
     [SerializeField] string tombName;
     [SerializeField] int contenanceMax;
-    [SerializeField] int buildPrice, inhumationPrice, inhumationReputation;
+    [SerializeField] int buildPrice, inhumationPrice;
     [SerializeField] Vector2 rdmCounter, rdmAjouterMort;
     [SerializeField] int maxCurrentStock;
 
@@ -20,10 +21,13 @@ public class TombeUnit : MonoBehaviour, IConstruire
     private float counter = -1;
     private int currentPrice;
 
-    private bool stopArrival;
+    private bool stopArrival, construite, beginTurn;
 
     private void Start()
     {
+        if (cam == null)
+            cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+
         //Initialise les valeurs de l'UI
         contenanceTxt.text = 0 + "/" + contenanceMax.ToString();
         contenanceGauge.maxValue = contenanceMax;
@@ -41,6 +45,8 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
     private void Update()
     {
+        
+
         if (Lib.instance.p == Lib.phase.ARRIVAL)
         {
             if (!stopArrival)
@@ -51,8 +57,15 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
                     //rentrées d'argent par inhumation
                     Lib.instance.SetMoney(rdmDead * currentPrice);
-                    //Gain de réputation par inhumation
-                    Lib.instance.SetReputation(rdmDead * inhumationReputation);
+
+                    if (contenance > contenanceMax / 2 && !beginTurn)
+                    {
+                        Lib.instance.SetReputation(1);
+                        beginTurn = true;
+                        repTxt.text = "+1";
+                        repTxtAnim.SetTrigger("Add");
+                    }
+                        
 
                     counter = Random.Range(rdmCounter.x, rdmCounter.y);
 
@@ -60,9 +73,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
                     gainTxt.text = "+" + (rdmDead * currentPrice).ToString();
                     textAnim.SetTrigger("Add");
-
-                    repTxt.text = "+" + (rdmDead * inhumationPrice).ToString();
-                    repTxtAnim.SetTrigger("Add");
+                   
 
 
                     if (contenance + rdmDead >= maxCurrentStock || contenance + rdmDead >= contenanceMax)
@@ -91,9 +102,19 @@ public class TombeUnit : MonoBehaviour, IConstruire
         }
         else
         {
+            beginTurn = false;
+
             //Actualise le prix d'inhumation
             if (Lib.instance.p == Lib.phase.BUILD)
+            {
+                if (Lib.instance.s == Lib.state.TRACK && !construite)
+                {
+                    transform.position = new Vector3(cam.ScreenToWorldPoint(Input.mousePosition).x, cam.ScreenToWorldPoint(Input.mousePosition).y, 0);
+                }
+
                 currentPrice = Lib.instance.GetTombPrice(tombName);
+            }
+                
 
             maxCurrentStock = SetCurrentStock(tombName);
 
@@ -115,7 +136,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
                 n = (int)(14 - (currentPrice + Lib.instance.reputationCounter));
                 break;
             case "Caveau":
-
+                n = (int)(6 - currentPrice + Lib.instance.reputationCounter);
                 break;
         }
 
@@ -135,5 +156,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
         contenanceTxt.gameObject.SetActive(true);
         contenanceGauge.gameObject.SetActive(true);
+        construite = true;
+        Lib.instance.s = Lib.state.TRACK;
     }
 }

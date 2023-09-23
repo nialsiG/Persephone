@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: 5Dig
+  m_EditorClassIdentifier: 
+  _titre: ' Bodysnatchers !'
+  _texte: "\xAB Dans un baril ! Trois morts en pi\xE8ces d\xE9tach\xE9es fa\xE7on
+    puzzle, de votre cimeti\xE8re, monsieur ! Vous devriez renforcer votre surveillance,
+    de nos jours un cadavre vaut son poids en haricots. \xBB"
+  _image: {fileID: 21300000, guid: 1c124781bd59acb4599919cbf7b73e5b, type: 3}
+  _sound: {fileID: 11400000, guid: e0248297f6178454ca3bb4e55638a031, type: 2}
+  _texteChoix1: "\u201CIntol\xE9rable! Puis-je vous convaincre de nous pr\xEAter
+    un de vos policiers?\u201D (-15 livres)"
+  _changeToMoney1: -15
+  _changeToReputation1: 0
+  _texteChoix2: "\u201CJe suis s\xFBr que c\u2019est exag\xE9r\xE9\u2026\u201D (-4
+    r\xE9putation)"
+  _changeToMoney2: 0
+  _changeToReputation2: -4

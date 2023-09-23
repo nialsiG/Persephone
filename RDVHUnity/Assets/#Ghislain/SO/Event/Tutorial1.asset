@@ -16,9 +16,9 @@ MonoBehaviour:
   _texte: Ceci est un tutoriel
   _image: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   _sound: {fileID: 0}
-  _texteChoix1: 
+  _texteChoix1: Choix1
   _changeToMoney1: 0
   _changeToReputation1: 0
-  _texteChoix2: 
+  _texteChoix2: Choix2
   _changeToMoney2: 0
   _changeToReputation2: 0

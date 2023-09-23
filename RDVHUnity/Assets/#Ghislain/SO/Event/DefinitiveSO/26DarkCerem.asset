@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: 26DarkCerem
+  m_EditorClassIdentifier: 
+  _titre: " Fun\xE9railles controvers\xE9es"
+  _texte: "\xAB Il est hors de question que cet\u2026 individu soit enterr\xE9 avec
+    les fid\xE8les ! Une cr\xE9ature immorale, d\xE9nu\xE9e de bons sentiments religieux,
+    et qui n\u2019a m\xEAme pas voulu se confesser ! Je vous en prie, \xE9coutez
+    votre conscience et refusez-lui l\u2019inhumation. \xBB"
+  _image: {fileID: 21300000, guid: 99af85743e527584fbadb070a3f1f907, type: 3}
+  _sound: {fileID: 11400000, guid: b5a224f4260d32241a4b8424f4af8936, type: 2}
+  _texteChoix1: "\xAB Mon cimeti\xE8re restera un bastion des bonnes m\u0153urs !
+    Que ce corps soit enterr\xE9 ailleurs \xBB (-10 livres)"
+  _changeToMoney1: -10
+  _changeToReputation1: 0
+  _texteChoix2: "\xAB Allez au diable, pr\xEAtre ! Sa famille paie les frais, je
+    n\u2019ai pas besoin d\u2019une le\xE7on de morale \xBB (-2 r\xE9putation)"
+  _changeToMoney2: 0
+  _changeToReputation2: -2

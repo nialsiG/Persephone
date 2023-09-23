@@ -24,9 +24,14 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
             Lib.instance.SetReputation(reputationGain);
             Lib.instance.SetMoney(-price);
 
-            repTxt.text = "+" + reputationGain.ToString();
+            if (reputationGain != 0)
+            {
+                repTxt.text = "+" + reputationGain.ToString();
+                textAnim.SetTrigger("Add");
+            }
+            
             moneyTxt.text = "-" + price.ToString();
-            textAnim.SetTrigger("Add");
+            
             spriteAnim.SetTrigger("Add");
             moneyAnim.SetTrigger("Add");
         }
@@ -43,9 +48,13 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
                     Lib.instance.SetReputation(reputationGain * nbPersonnel);
                     Lib.instance.SetMoney(-price * nbPersonnel);
 
-                    repTxt.text = "+" + reputationGain.ToString();
+                    if (reputationGain != 0)
+                    {
+                        repTxt.text = "+" + reputationGain.ToString();
+                        textAnim.SetTrigger("Add");
+                    }
+
                     moneyTxt.text = "-" + price.ToString();
-                    textAnim.SetTrigger("Add");
                     spriteAnim.SetTrigger("Add");
                     moneyAnim.SetTrigger("Add");
                 }
