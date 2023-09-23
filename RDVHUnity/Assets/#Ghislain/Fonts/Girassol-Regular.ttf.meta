@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 913b7780c90883f4aa2d7a8baf8cafb9
+guid: 84b0bea7671e80e45b912d7c8361e8bb
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Corben
+  - Girassol
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
