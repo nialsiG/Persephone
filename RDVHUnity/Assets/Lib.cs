@@ -13,6 +13,8 @@ public class Lib : MonoBehaviour
     public float moneyCounter, reputationCounter;
     public GameObject CurrentObject = null;
 
+    public int priceCommune, priceFamiliale, priceCaveau, dept;
+
     private void Awake()
     {
         if (instance != null)
@@ -34,5 +36,41 @@ public class Lib : MonoBehaviour
     public void SetCurrentObject(GameObject GO)
     {
         CurrentObject = GO;
+    }
+
+    public void SetTombPrice(string name, int n)
+    {
+        switch (name)
+        {
+            case "Commune":
+                priceCommune = n;
+                break;
+            case "Familiale":
+                priceFamiliale = n;
+                break;
+            case "Caveau":
+                priceCaveau = n;
+                break;
+        }
+    }
+
+    public int GetTombPrice(string name)
+    {
+        int i = 0;
+
+        switch (name)
+        {
+            case "Commune":
+                i = priceCommune;
+                break;
+            case "Familiale":
+                i = priceFamiliale;
+                break;
+            case "Caveau":
+                i = priceCaveau;
+                break;
+        }
+
+        return i;
     }
 }
