@@ -483,8 +483,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ac4327996a841e14fa7e9f66a33025de, type: 2}
-  m_sharedMaterial: {fileID: -131288942743102503, guid: ac4327996a841e14fa7e9f66a33025de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1173,8 +1173,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: /6000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ac4327996a841e14fa7e9f66a33025de, type: 2}
-  m_sharedMaterial: {fileID: -131288942743102503, guid: ac4327996a841e14fa7e9f66a33025de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2058,6 +2058,7 @@ GameObject:
   - component: {fileID: 1653792760}
   - component: {fileID: 1653792762}
   - component: {fileID: 1653792761}
+  - component: {fileID: 1653792763}
   m_Layer: 5
   m_Name: CounterTab
   m_TagString: Untagged
@@ -2125,6 +2126,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653792759}
   m_CullTransparentMesh: 1
+--- !u!114 &1653792763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653792759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be253d4bbcf68cf48bcc53ac8f340bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repSlider: {fileID: 1284036040}
+  moneyCounter: {fileID: 121013611}
 --- !u!4 &1670967443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2243733050013649303, guid: ecd096cb4ec16d24c96acd641ad62e30, type: 3}
@@ -2706,6 +2721,10 @@ PrefabInstance:
     - target: {fileID: 5254498828107703398, guid: ffedb31895e21504caed41384d45309d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601676929292455696, guid: ffedb31895e21504caed41384d45309d, type: 3}
+      propertyPath: tombName
+      value: Commune
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
