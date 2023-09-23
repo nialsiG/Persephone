@@ -31,7 +31,6 @@ public class SoundManager : MonoBehaviour
 
         //Create music audiosource
         musicAudioSource = gameObject.AddComponent<AudioSource>();
-        Debug.Log("is music playing ? " + musicAudioSource.isPlaying);
 
         //Play music
         PlayMusic(_mainMusic);

@@ -17,3 +17,10 @@ MonoBehaviour:
     les tombes. Mais ce sont juste des garnements de l\u2019\xE9cole paroissiale,
     ils m\u2019ont ruin\xE9 ma belle rang\xE9e de chrysanth\xE8mes ! \xBB "
   _image: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  _sound: {fileID: 0}
+  _texteChoix1: 'Choix 1 : Remplacer les fleurs (5 livres)'
+  _changeToMoney1: -5
+  _changeToReputation1: 0
+  _texteChoix2: "Choix 2 : ne pas remplacer les fleurs (-1 r\xE9putation)"
+  _changeToMoney2: 0
+  _changeToReputation2: -1
