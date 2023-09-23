@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,9 +6,9 @@ public class TombeUnit : MonoBehaviour, IConstruire
 {
     [SerializeField] Camera cam = null;
     [SerializeField] SpriteRenderer r;
-    [SerializeField] TextMeshProUGUI contenanceTxt, gainTxt;
+    [SerializeField] TextMeshProUGUI contenanceTxt, gainTxt, repTxt;
     [SerializeField] Slider contenanceGauge;
-    [SerializeField] Animator textAnim, tombAnim;
+    [SerializeField] Animator textAnim, tombAnim, repTxtAnim;
 
     [Header("Variables :")]
     [SerializeField] string tombName;
@@ -35,6 +34,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
         contenanceTxt.gameObject.SetActive(false);
         contenanceGauge.gameObject.SetActive(false);
 
+        counter = Random.Range(rdmCounter.x, rdmCounter.y);
 
         currentPrice = inhumationPrice;
     }
@@ -59,16 +59,14 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
                     tombAnim.SetTrigger("Add");
 
-
-
-                    
                     gainTxt.text = "+" + (rdmDead * currentPrice).ToString();
                     textAnim.SetTrigger("Add");
 
-                    
+                    repTxt.text = "+" + (rdmDead * inhumationPrice).ToString();
+                    repTxtAnim.SetTrigger("Add");
 
 
-                    if (contenance + rdmDead > maxCurrentStock || contenance + rdmDead > contenanceMax)
+                    if (contenance + rdmDead >= maxCurrentStock || contenance + rdmDead >= contenanceMax)
                     {
                         contenance = maxCurrentStock;
                         stopArrival = true;
@@ -115,7 +113,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
                 n = 10 + ((currentPrice * (currentPrice + 1)) / 2) - 5 * currentPrice + Random.Range(-1, 2);
                 break;
             case "Familiale":
-
+                n = (int)(14 - (currentPrice + Lib.instance.reputationCounter));
                 break;
             case "Caveau":
 
@@ -134,6 +132,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
         Color col = r.GetComponent<SpriteRenderer>().color;
         col.a = 1;
         r.GetComponent<SpriteRenderer>().color = col;
+        tombAnim.SetTrigger("Add");
 
         contenanceTxt.gameObject.SetActive(true);
         contenanceGauge.gameObject.SetActive(true);

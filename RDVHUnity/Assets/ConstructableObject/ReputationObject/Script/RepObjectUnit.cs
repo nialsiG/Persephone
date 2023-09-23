@@ -1,7 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class RepObjectUnit : MonoBehaviour, IConstruire
 {
+    [SerializeField] SpriteRenderer r;
+    [SerializeField] Animator textAnim, spriteAnim, moneyAnim;
+    [SerializeField] TextMeshProUGUI repTxt, moneyTxt;
+
     [SerializeField] int reputationGain, price, nbPersonnel;
     [SerializeField] bool gainRepContinu;
 
@@ -12,12 +17,18 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         //Pour les cabanes uniquements qui sont directement instanciées
         if (gainRepContinu)
         {
-            Color col = GetComponent<SpriteRenderer>().color;
+            Color col = r.GetComponent<SpriteRenderer>().color;
             col.a = 1;
-            GetComponent<SpriteRenderer>().color = col;
+            r.GetComponent<SpriteRenderer>().color = col;
 
             Lib.instance.SetReputation(reputationGain);
             Lib.instance.SetMoney(-price);
+
+            repTxt.text = "+" + reputationGain.ToString();
+            moneyTxt.text = "-" + price.ToString();
+            textAnim.SetTrigger("Add");
+            spriteAnim.SetTrigger("Add");
+            moneyAnim.SetTrigger("Add");
         }
     }
 
@@ -31,6 +42,12 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
                 {
                     Lib.instance.SetReputation(reputationGain * nbPersonnel);
                     Lib.instance.SetMoney(-price * nbPersonnel);
+
+                    repTxt.text = "+" + reputationGain.ToString();
+                    moneyTxt.text = "-" + price.ToString();
+                    textAnim.SetTrigger("Add");
+                    spriteAnim.SetTrigger("Add");
+                    moneyAnim.SetTrigger("Add");
                 }
 
                 endTour = true;
@@ -48,10 +65,12 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         if (!gainRepContinu)
             this.enabled = false;
 
-        Color col = GetComponent<SpriteRenderer>().color;
+        Color col = r.GetComponent<SpriteRenderer>().color;
         col.a = 1;
-        GetComponent<SpriteRenderer>().color = col;
+        r.GetComponent<SpriteRenderer>().color = col;
 
-
+        textAnim.SetTrigger("Add");
+        spriteAnim.SetTrigger("Add");
+        repTxt.text = "+" + reputationGain.ToString();
     }
 }

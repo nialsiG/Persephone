@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class TuileUnit : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class TuileUnit : MonoBehaviour
             if (Lib.instance.CurrentObject != null)
             {
                 Vector3 pos = cam.ScreenToWorldPoint(Input.mousePosition);
-                
+
                 if (Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(pos.x, pos.y)) < magnetismDistance)
                 {
                     if (inBox)
@@ -37,10 +38,14 @@ public class TuileUnit : MonoBehaviour
                 else
                 {
                     Lib.instance.s = Lib.state.TRACK;
-                    Lib.instance.CurrentObject.transform.position = new Vector3(pos.x, pos.y, 0);
+                    
                 }
             }
-
+            if (Lib.instance.s == Lib.state.TRACK)
+            {
+                Vector3 pos = cam.ScreenToWorldPoint(Input.mousePosition);
+                Lib.instance.CurrentObject.transform.position = new Vector3(pos.x, pos.y, 0);
+            }
                 
 
             GetComponent<Collider2D>().enabled = !alreadyBuilt;
