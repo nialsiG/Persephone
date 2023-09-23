@@ -17,6 +17,10 @@ public class TombeUnit : MonoBehaviour, IConstruire
     [SerializeField] Vector2 rdmCounter, rdmAjouterMort;
     [SerializeField] int maxCurrentStock;
 
+    [SerializeField] int timeToEmpty;
+    [SerializeField] float pourcentagePerte;
+    private int indexTurn;
+
     private int contenance;
     private float counter = -1;
     private int currentPrice;
@@ -58,13 +62,34 @@ public class TombeUnit : MonoBehaviour, IConstruire
                     //rentrées d'argent par inhumation
                     Lib.instance.SetMoney(rdmDead * currentPrice);
 
-                    if (contenance > contenanceMax / 2 && !beginTurn)
+                    if (!beginTurn)
                     {
-                        Lib.instance.SetReputation(1);
                         beginTurn = true;
-                        repTxt.text = "+1";
-                        repTxtAnim.SetTrigger("Add");
+
+                        
+                        indexTurn++;  
+
+                        if (pourcentagePerte != 0)
+                        {
+                            if (indexTurn >= timeToEmpty)
+                            {
+                                contenance -= (int)(contenance / pourcentagePerte);
+                                indexTurn = 0;
+                            }
+                                
+                        }
+                        
+                        
+
+                        if (contenance > contenanceMax / 2)
+                        {
+                            Lib.instance.SetReputation(1);
+                            
+                            repTxt.text = "+1";
+                            repTxtAnim.SetTrigger("Add");
+                        }
                     }
+                    
                         
 
                     counter = Random.Range(rdmCounter.x, rdmCounter.y);
