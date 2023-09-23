@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: 11Progress
+  m_EditorClassIdentifier: 
+  _titre: "Le co\xFBt du progr\xE8s"
+  _texte: "\xAB Pour comm\xE9morer le r\xE9cent accident de train, la paroisse de
+    St Rupert souhaite \xE9riger un monument pr\xE8s de la chapelle. Ils\u2026 font
+    appel \xE0 notre g\xE9n\xE9rosit\xE9. \xBB"
+  _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
+  _sound: {fileID: 11400000, guid: a390926729ca7b44ea2dc02f2debe83f, type: 2}
+  _texteChoix1: "\xAB C\u2019est un service civique important ! Ils ne paieront pas
+    un sou. \xBB (+2 r\xE9putation)"
+  _changeToMoney1: 0
+  _changeToReputation1: 2
+  _texteChoix2: "\xAB Tout le monde paie ! C\u2019est la r\xE8gle ! \xBB (15 livres)"
+  _changeToMoney2: 0
+  _changeToReputation2: 15

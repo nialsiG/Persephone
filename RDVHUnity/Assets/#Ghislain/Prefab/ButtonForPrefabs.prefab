@@ -171,7 +171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00045776367}
+  m_AnchoredPosition: {x: 0, y: -0.00048828125}
   m_SizeDelta: {x: 0, y: -0.00088501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8499047975672560309
@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 3667076039050661429}
   - component: {fileID: 3874570842649425763}
   - component: {fileID: 1365272267757716429}
+  - component: {fileID: 5510753926514173505}
   m_Layer: 5
   m_Name: ButtonForPrefabs
   m_TagString: Untagged
@@ -511,7 +512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00051116943}
+  m_AnchoredPosition: {x: 0, y: -0.00048828125}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7475651691006129430
@@ -608,6 +609,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5510753926514173505}
+        m_TargetAssemblyTypeName: InstantiatePref, Assembly-CSharp
+        m_MethodName: InstantiateOnMouse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3874570842649425763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,3 +664,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clickSound: {fileID: 11400000, guid: 4b7495dbfce06bb4eb17e5b57343649d, type: 2}
   _hoverSound: {fileID: 11400000, guid: e697cde9289dff140b15212f6f12e9c9, type: 2}
+--- !u!114 &5510753926514173505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213676998386045975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef09a1c5f4fba340b82771d9c5f4c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GO: {fileID: 0}
+  chapelleTransform: {fileID: 0}
+  cabaneTransform: {fileID: 0}

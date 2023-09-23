@@ -8,17 +8,21 @@ using TMPro;
 public class SOevent : ScriptableObject
 {
     [Header("Description")]
+    [TextArea(1,1)]
     [SerializeField] string _titre;
+    [TextArea(5, 1)]
     [SerializeField] string _texte;
     [SerializeField] Sprite _image;
     [SerializeField] SOSoundPool _sound;
 
     [Header("Choix 1")]
+    [TextArea(3,1)]
     [SerializeField] string _texteChoix1;
     [SerializeField] int _changeToMoney1;
     [SerializeField] int _changeToReputation1;
 
     [Header("Choix 2")]
+    [TextArea(3, 1)]
     [SerializeField] string _texteChoix2;
     [SerializeField] int _changeToMoney2;
     [SerializeField] int _changeToReputation2;

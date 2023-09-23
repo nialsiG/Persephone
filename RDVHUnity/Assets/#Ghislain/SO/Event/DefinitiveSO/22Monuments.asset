@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: 22Monuments
+  m_EditorClassIdentifier: 
+  _titre: "M\xEAme les monuments meurent"
+  _texte: "\xAB Un des monuments dans la section des caveaux s\u2019est renvers\xE9
+    avec ce satan\xE9 vent ! Il va falloir le bouger, la pierre bris\xE9e est du
+    plus mauvais effet. \xBB"
+  _image: {fileID: 21300000, guid: 0e2c53760adc1684690cd51b73dbe8fc, type: 3}
+  _sound: {fileID: 11400000, guid: 28d1287896e15464caa1e1d36d684d5c, type: 2}
+  _texteChoix1: "\xAB Enlevez \xE7a discr\xE8tement, \xE7a d\xE9courage nos clients
+    \xBB (-10 livres)"
+  _changeToMoney1: -10
+  _changeToReputation1: 0
+  _texteChoix2: "\xAB Vous avez d\xE9j\xE0 \xE9lagu\xE9 les buissons et poli le portail
+    ? Il y a des priorit\xE9s plus importantes ! \xBB (-2 r\xE9putation)"
+  _changeToMoney2: 0
+  _changeToReputation2: -2
