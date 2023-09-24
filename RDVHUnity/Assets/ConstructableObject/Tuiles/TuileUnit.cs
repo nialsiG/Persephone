@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class TuileUnit : MonoBehaviour
 {
@@ -53,7 +52,6 @@ public class TuileUnit : MonoBehaviour
         if (collision.gameObject.layer == acceptableLayer && !alreadyBuilt && !inBox)
         {
             inBox = true;
-            print("aa");
         }
             
     }

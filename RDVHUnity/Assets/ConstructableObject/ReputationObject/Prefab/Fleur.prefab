@@ -182,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 6551521510287137719}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.192, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -229,12 +229,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d5e08338d0e5b32409313ea348bd071b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9055250e49a6c8e4c8e4f057505fe6ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5411765}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.69, y: 0.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -608,8 +608,14 @@ MonoBehaviour:
   moneyTxt: {fileID: 1350156037698070261}
   reputationGain: 1
   price: 25
+  salaire: 0
   nbPersonnel: 0
-  gainRepContinu: 1
+  gainRepContinu: 0
+  rdmSprite: 1
+  tabSprite:
+  - {fileID: 21300000, guid: 9055250e49a6c8e4c8e4f057505fe6ee, type: 3}
+  - {fileID: 21300000, guid: 507ad33a341a4094e883146bbc5a1d72, type: 3}
+  - {fileID: 21300000, guid: 93a9f1a02e5e9ec4e9d30e56041ea39f, type: 3}
 --- !u!61 &5560386461142616415
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -19,8 +19,7 @@ public class RdmMvt : MonoBehaviour
                 dir.Normalize();
                 changeDir = true;
 
-                StartCoroutine(Stop());
-                
+                StartCoroutine(Stop());                
             }
             else
             {

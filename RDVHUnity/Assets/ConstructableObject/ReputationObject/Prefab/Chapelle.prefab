@@ -608,8 +608,9 @@ MonoBehaviour:
   moneyTxt: {fileID: 1350156037698070261}
   reputationGain: 5
   price: 2000
+  salaire: 0
   nbPersonnel: 0
-  gainRepContinu: 0
+  gainRepContinu: 1
 --- !u!61 &5560386461142616415
 BoxCollider2D:
   m_ObjectHideFlags: 0
