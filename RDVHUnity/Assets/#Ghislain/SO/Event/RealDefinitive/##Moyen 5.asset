@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: '##Moyen 5'
+  m_EditorClassIdentifier: 
+  _titre: ' Querelle de voisinage'
+  _texte: "\xAB Notre client a toujours d\xE9test\xE9 son beau-p\xE8re ! Sa famille
+    a pay\xE9 rubis sur l\u2019ongle pour qu\u2019il se retrouve dans un caveau \xE0
+    l\u2019autre bout du cimeti\xE8re. \xBB"
+  _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
+  _sound: {fileID: 11400000, guid: 310c36bcd568b584ba00787c100a0ab1, type: 2}
+  _texteChoix1: Gagnez 15 livres.
+  _changeToMoney1: 15
+  _changeToReputation1: 0
+  _texteChoix2: 
+  _changeToMoney2: 0
+  _changeToReputation2: 0

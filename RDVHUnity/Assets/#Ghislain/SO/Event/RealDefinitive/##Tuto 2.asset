@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: '##Tuto 2'
+  m_EditorClassIdentifier: 
+  _titre: Tutoriel
+  _texte: "[Secr\xE9taire] \xAB Commencez par d\xE9penser une partie de vos fonds
+    pour construire les chapelles, o\xF9 se tiendront les rites fun\xE9raires. Ensuite,
+    am\xE9nager une parcelle de caveaux, des tombes luxueuses et prestigieuses ;
+    une parcelle de tombes familiales, pour les classes moyennes ; enfin, une parcelle
+    de tombes communes, les plus modestes, fr\xE9quemment r\xE9utilis\xE9es. \xBB\r\n"
+  _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
+  _sound: {fileID: 11400000, guid: 4d846f1dbea0d3240a9ecdad55625c15, type: 2}
+  _texteChoix1: 
+  _changeToMoney1: 0
+  _changeToReputation1: 0
+  _texteChoix2: 
+  _changeToMoney2: 0
+  _changeToReputation2: 0
