@@ -145,8 +145,6 @@ public class ManageEvent : MonoBehaviour
     {
         //Update the counters
         _gameManager.GetComponent<ManageCounters>().UpdateCounters();
-        //Update semester count
-        Lib.instance.semesterCounter += 1;
         //disable panel
         gameObject.SetActive(false);
     }
