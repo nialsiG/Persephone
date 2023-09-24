@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: '##Moyen 4'
+  m_EditorClassIdentifier: 
+  _titre: "L\xE9gende urbaine"
+  _texte: "\xAB Une beaut\xE9, v\xEAtue de son seul linceul ! Une princesse russe,
+    morte exsangue, et enterr\xE9e dans un cercueil de verre. On dit qu\u2019elle
+    tra\xEEne la nuit entre les tombes. On me le murmure. \xBB"
+  _image: {fileID: 21300000, guid: da71c06e2871ba44380145ec91f6f8e8, type: 3}
+  _sound: {fileID: 11400000, guid: c8d9d3f5a2c5c9040a31da5a5abd0624, type: 2}
+  _texteChoix1: "\u201CUn tissu de fariboles! Barrez la porte de son caveau avec
+    des planches, et ces rumeurs ridicules cesseront!\u201D (-15 livres)"
+  _changeToMoney1: -15
+  _changeToReputation1: 0
+  _texteChoix2: "\u201CVous avez encore trop bu, Mason.\u201D (-6 r\xE9putation)"
+  _changeToMoney2: 0
+  _changeToReputation2: -6

@@ -46,9 +46,21 @@ public class ManageEvent : MonoBehaviour
                 minRange = 2;
                 maxRange = 2;
                 break;
-            case > 3:
-                minRange = 0;
-                maxRange = 0;
+            case 3:
+                minRange = 3;
+                maxRange = 3;
+                break;
+            case  > 15:
+                minRange = 4;
+                maxRange = 27;
+                break;
+            case  > 10:
+                minRange = 4;
+                maxRange = 24;
+                break;
+            case  > 3:
+                minRange = 4;
+                maxRange = 16;
                 break;
             default:
                 break;

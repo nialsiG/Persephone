@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: '##Difficile 2'
+  m_EditorClassIdentifier: 
+  _titre: Inspection des tombes
+  _texte: "\xAB J\u2019ai le rapport de l\u2019inspection du cimeti\xE8re ! Voyons\u2026
+    sol trop argileux\u2026 drainage \xE0 refaire\u2026 tombes trop peu profondes
+    ? Damnit, \xE7a va nous co\xFBter une fortune\u2026 \xBB"
+  _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
+  _sound: {fileID: 11400000, guid: 4e80cb73d4d16414c95c9c55c5db1c25, type: 2}
+  _texteChoix1: "refaire le drainage et appliquer des r\xE8gles plus strictes (-40
+    livres, +2 r\xE9putation)"
+  _changeToMoney1: -40
+  _changeToReputation1: 2
+  _texteChoix2: "ne rien faire (-10 r\xE9putation)"
+  _changeToMoney2: 0
+  _changeToReputation2: -10
