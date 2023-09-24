@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: '##Moyen 2'
+  m_EditorClassIdentifier: 
+  _titre: "La peste et le chol\xE9ra"
+  _texte: "\xAB Vous le sentez ? La Pestilence, et dans son sillage, la Mort ! Je
+    n\u2019ai pas autant travaill\xE9 depuis les \xE9meutes de 1780, les bras m\u2019en
+    tombent. \xBB"
+  _image: {fileID: 21300000, guid: da71c06e2871ba44380145ec91f6f8e8, type: 3}
+  _sound: {fileID: 11400000, guid: d23dd8e29f9a9fc419c0d240c46ce44d, type: 2}
+  _texteChoix1: "\u201CMr. Chadwick recommande de cr\xE9er des zones de quarantaine.
+    C\u2019est cher, mais \xE7a sauvera des vies!\u201D (-15 livres)"
+  _changeToMoney1: -15
+  _changeToReputation1: 0
+  _texteChoix2: "\u201CUn mort, c\u2019est un mort, je ne vois pas l\u2019int\xE9r\xEAt
+    de s\xE9parer les corps contamin\xE9s des autres\u201D (-5 r\xE9putation)"
+  _changeToMoney2: 0
+  _changeToReputation2: -5
