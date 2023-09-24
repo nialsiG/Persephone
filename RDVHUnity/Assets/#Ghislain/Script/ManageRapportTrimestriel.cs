@@ -38,6 +38,7 @@ public class ManageRapportTrimestriel : MonoBehaviour
 
         //Decide the range of the next events
 
+        Lib.instance.p = Lib.phase.EVENT;
 
         //Disable trimester panel
         gameObject.SetActive(false);

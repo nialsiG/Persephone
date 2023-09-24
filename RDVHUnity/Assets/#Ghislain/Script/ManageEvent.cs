@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -19,7 +17,7 @@ public class ManageEvent : MonoBehaviour
 
     [SerializeField] GameObject _button1;
     [SerializeField] GameObject _button2;
-    [SerializeField] GameObject _gameManager;
+    //[SerializeField] GameObject _gameManager;
 
     private int changeToMoney1;
     private int changeToReputation1;    
@@ -128,7 +126,9 @@ public class ManageEvent : MonoBehaviour
         Lib.instance.SetMoney(changeToMoney1);
         Lib.instance.SetReputation(changeToReputation1);
 
-        OnChoosingAnswer();
+        Lib.instance.p = Lib.phase.BUILD;
+
+        gameObject.SetActive(false);
     }
 
     public void ChooseNumberTwo()
@@ -138,15 +138,17 @@ public class ManageEvent : MonoBehaviour
         Lib.instance.SetMoney(changeToMoney2);
         Lib.instance.SetReputation(changeToReputation2);
 
-        OnChoosingAnswer();
+        Lib.instance.p = Lib.phase.BUILD;
+
+        gameObject.SetActive(false);
     }
 
-    private void OnChoosingAnswer()
+    /*private void OnChoosingAnswer()
     {
         //Update the counters
         _gameManager.GetComponent<ManageCounters>().UpdateCounters();
         //disable panel
-        gameObject.SetActive(false);
-    }
+        
+    }*/
 
 }

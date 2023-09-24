@@ -606,10 +606,10 @@ MonoBehaviour:
   moneyAnim: {fileID: 6348161529847544708}
   repTxt: {fileID: 8111962641959705824}
   moneyTxt: {fileID: 1350156037698070261}
-  reputationGain: 0
+  reputationGain: 5
   price: 2000
   nbPersonnel: 0
-  gainRepContinu: 1
+  gainRepContinu: 0
 --- !u!61 &5560386461142616415
 BoxCollider2D:
   m_ObjectHideFlags: 0

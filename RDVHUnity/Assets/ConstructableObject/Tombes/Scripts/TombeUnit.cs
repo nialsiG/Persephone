@@ -1,13 +1,11 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TombeUnit : MonoBehaviour, IConstruire
 {
     private Camera cam = null;
     [SerializeField] SpriteRenderer r;
     [SerializeField] TextMeshProUGUI contenanceTxt, gainTxt, repTxt;
-    [SerializeField] Slider contenanceGauge;
     [SerializeField] Animator textAnim, tombAnim, repTxtAnim;
 
     [Header("Variables :")]
@@ -34,12 +32,9 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
         //Initialise les valeurs de l'UI
         contenanceTxt.text = 0 + "/" + contenanceMax.ToString();
-        contenanceGauge.maxValue = contenanceMax;
-        contenanceGauge.value = 0;
 
         //Desactive les elements de l'UI
         contenanceTxt.gameObject.SetActive(false);
-        contenanceGauge.gameObject.SetActive(false);
 
         counter = Random.Range(rdmCounter.x, rdmCounter.y);
 
@@ -121,7 +116,6 @@ public class TombeUnit : MonoBehaviour, IConstruire
                 else
                     counter -= Time.deltaTime;
 
-                contenanceGauge.value = contenance;
             }
 
         }
@@ -180,7 +174,6 @@ public class TombeUnit : MonoBehaviour, IConstruire
         tombAnim.SetTrigger("Add");
 
         contenanceTxt.gameObject.SetActive(true);
-        contenanceGauge.gameObject.SetActive(true);
         construite = true;
         Lib.instance.s = Lib.state.TRACK;
     }

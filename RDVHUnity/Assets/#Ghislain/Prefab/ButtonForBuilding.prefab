@@ -206,8 +206,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Nom de l'objet
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 95303d930aacabd45936e26e6df249b6, type: 2}
-  m_sharedMaterial: {fileID: -741810714509236798, guid: 95303d930aacabd45936e26e6df249b6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -481,8 +481,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 95303d930aacabd45936e26e6df249b6, type: 2}
-  m_sharedMaterial: {fileID: -741810714509236798, guid: 95303d930aacabd45936e26e6df249b6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -705,6 +705,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9142836411143546555, guid: 32fc62a3ef22ed646a26279d4e444b57, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 9142836411143546555, guid: 32fc62a3ef22ed646a26279d4e444b57, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 9142836411143546555, guid: 32fc62a3ef22ed646a26279d4e444b57, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
@@ -718,8 +726,31 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1663509797829586869, guid: 32fc62a3ef22ed646a26279d4e444b57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 361005082737212904}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9213676998386045975, guid: 32fc62a3ef22ed646a26279d4e444b57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3037827483396033423}
   m_SourcePrefab: {fileID: 100100000, guid: 32fc62a3ef22ed646a26279d4e444b57, type: 3}
+--- !u!1 &46639800913228523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9213676998386045975, guid: 32fc62a3ef22ed646a26279d4e444b57, type: 3}
+  m_PrefabInstance: {fileID: 9185158300552865532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3037827483396033423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46639800913228523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef09a1c5f4fba340b82771d9c5f4c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GO: {fileID: 0}
+  chapelleTransform: {fileID: 0}
+  cabaneTransform: {fileID: 0}
 --- !u!224 &7524887808397052233 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1663509797829586869, guid: 32fc62a3ef22ed646a26279d4e444b57, type: 3}

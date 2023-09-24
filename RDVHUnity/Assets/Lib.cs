@@ -4,7 +4,7 @@ public class Lib : MonoBehaviour
 {
 
     public static Lib instance;
-    public enum phase { BUILD, ARRIVAL, EVENT };
+    public enum phase { EVENT, BUILD, ARRIVAL  };
     public phase p;
 
     public enum state { TRACK, CLIP, EMPTY };

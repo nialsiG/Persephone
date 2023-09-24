@@ -10,6 +10,8 @@ public class ButtonPortal : MonoBehaviour
     {
         _rapportTrimestriel.SetActive(true);
         _rapportTrimestriel.GetComponent<ManageRapportTrimestriel>().UpdateTrimester();
+
+        Lib.instance.p = Lib.phase.ARRIVAL;
     }
 
 

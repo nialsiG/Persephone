@@ -7,7 +7,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
     [SerializeField] Animator textAnim, spriteAnim, moneyAnim;
     [SerializeField] TextMeshProUGUI repTxt, moneyTxt;
 
-    [SerializeField] int reputationGain, price, nbPersonnel;
+    [SerializeField] int reputationGain, price, salaire, nbPersonnel;
     [SerializeField] bool gainRepContinu;
 
     private bool endTour;
@@ -21,7 +21,6 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
             col.a = 1;
             r.GetComponent<SpriteRenderer>().color = col;
 
-            Lib.instance.SetReputation(reputationGain);
             Lib.instance.SetMoney(-price);
 
             if (reputationGain != 0)
@@ -45,8 +44,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
             {
                 if (gainRepContinu)
                 {
-                    Lib.instance.SetReputation(reputationGain * nbPersonnel);
-                    Lib.instance.SetMoney(-price * nbPersonnel);
+                    Lib.instance.SetMoney(-salaire * nbPersonnel);
 
                     if (reputationGain != 0)
                     {
@@ -54,7 +52,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
                         textAnim.SetTrigger("Add");
                     }
 
-                    moneyTxt.text = "-" + price.ToString();
+                    moneyTxt.text = "-" + salaire.ToString();
                     spriteAnim.SetTrigger("Add");
                     moneyAnim.SetTrigger("Add");
                 }
