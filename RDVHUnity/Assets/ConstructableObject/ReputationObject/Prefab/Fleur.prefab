@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: +10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ac4327996a841e14fa7e9f66a33025de, type: 2}
-  m_sharedMaterial: {fileID: -131288942743102503, guid: ac4327996a841e14fa7e9f66a33025de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -229,7 +229,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 58c444bbaa4f1bb40b48bbd82f675030, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5e08338d0e5b32409313ea348bd071b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5411765}
   m_FlipX: 0
   m_FlipY: 0
@@ -362,8 +362,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: -10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ac4327996a841e14fa7e9f66a33025de, type: 2}
-  m_sharedMaterial: {fileID: -131288942743102503, guid: ac4327996a841e14fa7e9f66a33025de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 6540987619416383417}
   - component: {fileID: 5560386461142616415}
   m_Layer: 8
-  m_Name: ReputationObject
+  m_Name: Fleur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,9 +606,9 @@ MonoBehaviour:
   moneyAnim: {fileID: 6348161529847544708}
   repTxt: {fileID: 8111962641959705824}
   moneyTxt: {fileID: 1350156037698070261}
-  reputationGain: 10
+  reputationGain: 1
   price: 10
-  nbPersonnel: 1
+  nbPersonnel: 0
   gainRepContinu: 1
 --- !u!61 &5560386461142616415
 BoxCollider2D:
