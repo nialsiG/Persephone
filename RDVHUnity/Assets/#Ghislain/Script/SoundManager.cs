@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-
-
     //SoundQueue
     [SerializeField] int _soundQueueLength;
     List<AudioSource> soundQueue;
@@ -13,7 +11,8 @@ public class SoundManager : MonoBehaviour
 
     //Music
     AudioSource musicAudioSource;
-    [SerializeField] SOSoundPool _mainMusic;
+    [SerializeField] SOSoundPool[] _music;
+    private int musicIndex;
 
     //Sounds
     [SerializeField] SOSoundPool _clickSound;
@@ -46,8 +45,13 @@ public class SoundManager : MonoBehaviour
         musicAudioSource = gameObject.AddComponent<AudioSource>();
 
         //Play music
-        PlayMusic(_mainMusic);
+        PlayMusic(_music[0]);
 
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void PlayMusic(SOSoundPool music)
@@ -55,6 +59,38 @@ public class SoundManager : MonoBehaviour
         music.PlayMusic(musicAudioSource);
     }
 
+    public void ChangeMusic()
+    {
+        //start coroutine fade out
+        StartCoroutine(FadeOut(musicAudioSource));
+        //change music
+        musicIndex += 1;
+        PlayMusic(_music[musicIndex % _music.Length]);
+        //start coroutine fade in
+        StartCoroutine(FadeIn(musicAudioSource));
+    }
+
+    //Coroutines
+    //...for decreasing volume when the music stops
+    IEnumerator FadeOut(AudioSource audioSource)
+    {
+        for (float alpha = 1f; alpha >= 0f; alpha -= 0.1f)
+        {
+            audioSource.volume = alpha;
+            if (alpha == 0) audioSource.Stop();
+            yield return null;
+        }
+    }
+
+    //...for increasing volume when the music starts
+    IEnumerator FadeIn(AudioSource audioSource)
+    {
+        for (float alpha = 0f; alpha <= 1f; alpha += 0.1f)
+        {
+            audioSource.volume = alpha;
+            yield return null;
+        }
+    }
 
     public void PlaySound(SOSoundPool soundPool)
     {
