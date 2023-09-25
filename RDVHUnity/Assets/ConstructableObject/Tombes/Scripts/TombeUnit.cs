@@ -64,7 +64,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
                         
                         indexTurn++;  
 
-                        if (pourcentagePerte != 0)
+                        if (tombName == "Commune")
                         {
                             if (indexTurn >= timeToEmpty)
                             {
@@ -132,6 +132,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
                 }
 
                 currentPrice = Lib.instance.GetTombPrice(tombName);
+                
             }
                 
 
@@ -149,13 +150,13 @@ public class TombeUnit : MonoBehaviour, IConstruire
         switch (name)
         {
             case "Commune":
-                n = 10 + ((currentPrice * (currentPrice + 1)) / 2) - 5 * currentPrice + Random.Range(-1, 2);
+                n = 30 - 4 * currentPrice;
                 break;
             case "Familiale":
-                n = (int)(14 - (currentPrice + Lib.instance.reputationCounter));
+                n = (int)(22 - 2 * currentPrice + Lib.instance.reputationCounter);
                 break;
             case "Caveau":
-                n = (int)(6 - currentPrice + Lib.instance.reputationCounter);
+                n = (int)(Lib.instance.reputationCounter / 2);
                 break;
         }
 
