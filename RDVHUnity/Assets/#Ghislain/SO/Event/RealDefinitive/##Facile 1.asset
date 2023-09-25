@@ -22,6 +22,6 @@ MonoBehaviour:
     (-10 livres) "
   _changeToMoney1: -10
   _changeToReputation1: 0
-  _texteChoix2: "\u201CLa presse va adorer ce scandale\u2026\u201D"
+  _texteChoix2: "\u201CLa presse va adorer ce scandale\u2026\u201D (-4 r\xE9putation)"
   _changeToMoney2: 0
   _changeToReputation2: -4

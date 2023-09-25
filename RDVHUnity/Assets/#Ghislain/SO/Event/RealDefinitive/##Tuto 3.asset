@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
   m_Name: '##Tuto 3'
   m_EditorClassIdentifier: 
-  _titre: Tutoriel
-  _texte: "[Secr\xE9taire] \xAB Vos b\xE2timents sont fin pr\xEAts ! Vous pouvez
-    d\xE9sormais ouvrir votre cimeti\xE8re en cliquant sur le portail. Souvenez-vous
-    que vous pouvez r\xE9guli\xE8rement d\xE9penser votre argent pour am\xE9nager
-    de nouvelles parcelles, cr\xE9er des parterres de fleurs ou construire une loge
-    pour employer un jardinier de mani\xE8re permanente. \xBB\r\n"
+  _titre: Tutoriel (3/4)
+  _texte: "\xAB Vos b\xE2timents sont fin pr\xEAts ! Vous pouvez d\xE9sormais ouvrir
+    votre cimeti\xE8re en cliquant sur le portail. Souvenez-vous que vous pouvez
+    r\xE9guli\xE8rement d\xE9penser votre argent pour am\xE9nager de nouvelles parcelles,
+    cr\xE9er des parterres de fleurs ou construire une loge pour employer un jardinier
+    de mani\xE8re permanente. \xBB\r\n"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
-  _sound: {fileID: 11400000, guid: 4d846f1dbea0d3240a9ecdad55625c15, type: 2}
+  _sound: {fileID: 11400000, guid: fe05eaaf12bd1c041ac3145611e646af, type: 2}
   _texteChoix1: 
   _changeToMoney1: 0
   _changeToReputation1: 0

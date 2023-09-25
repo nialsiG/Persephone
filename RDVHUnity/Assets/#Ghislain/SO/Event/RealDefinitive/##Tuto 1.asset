@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
   m_Name: '##Tuto 1'
   m_EditorClassIdentifier: 
-  _titre: Tutoriel
-  _texte: "[Secr\xE9taire] \xAB F\xE9licitations ! Apr\xE8s des mois de travail,
-    et un gros emprunt, vous \xEAtes enfin l\u2019heureux propri\xE9taire d\u2019un
-    cimeti\xE8re ! Pour l\u2019instant, ce n\u2019est qu\u2019un terrain avec quatre
-    murs et un portail. Pour pouvoir commencer \xE0 y enterrer des morts, il vous
-    faudra ouvrir des chapelles et am\xE9nager des parcelles pour les diff\xE9rents
-    types de tombe que vous proposez.\r\n\r\n D\xE8s que ce sera fait, vous pourrez
-    ouvrir votre cimeti\xE8re, et commencer \xE0 rembourser votre emprunt ! \xBB"
+  _titre: Tutoriel (1/4)
+  _texte: "\xAB F\xE9licitations ! Apr\xE8s des mois de travail, et un gros emprunt,
+    vous \xEAtes enfin l\u2019heureux propri\xE9taire d\u2019un cimeti\xE8re ! Pour
+    l\u2019instant, ce n\u2019est qu\u2019un terrain avec quatre murs et un portail.
+    Pour pouvoir commencer \xE0 y enterrer des morts, il vous faudra ouvrir des chapelles
+    et am\xE9nager des parcelles pour les diff\xE9rents types de tombe que vous proposez.\r\n\r\n
+    D\xE8s que ce sera fait, vous pourrez ouvrir votre cimeti\xE8re, et commencer
+    \xE0 rembourser votre emprunt ! \xBB"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
-  _sound: {fileID: 11400000, guid: 4d846f1dbea0d3240a9ecdad55625c15, type: 2}
+  _sound: {fileID: 11400000, guid: fe05eaaf12bd1c041ac3145611e646af, type: 2}
   _texteChoix1: 
   _changeToMoney1: 0
   _changeToReputation1: 0

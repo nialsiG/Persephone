@@ -6389,8 +6389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: 1
   s: 0
-  moneyCounter: 0
-  reputationCounter: 5
+  moneyCounter: 3000
+  reputationCounter: 10
   CurrentObject: {fileID: 0}
   priceCommune: 2
   priceFamiliale: 0

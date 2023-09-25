@@ -18,13 +18,15 @@ public class CounterScript : MonoBehaviour
 
     private void Update()
     {
-        if (Lib.instance.moneyCounter >= 3001)
+        if (Lib.instance.moneyCounter > Lib.instance.Debt)
         {
+            SoundManager.Instance.PlayVictory();
             Vict.SetActive(true);
         }
 
         if (Lib.instance.moneyCounter < 0)
         {
+            SoundManager.Instance.PlayDefeat();
             defaite.SetActive(true);
         }
 

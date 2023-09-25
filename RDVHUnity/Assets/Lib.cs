@@ -10,10 +10,14 @@ public class Lib : MonoBehaviour
     public enum state { TRACK, CLIP, EMPTY };
     public state s;
 
-    public float moneyCounter, reputationCounter;
+    public float moneyCounter, reputationCounter, bodyCounter;
     public GameObject CurrentObject = null;
 
-    public int priceCommune, priceFamiliale, priceCaveau, dept, semesterCounter;
+    public int priceCommune, priceFamiliale, priceCaveau, semesterCounter;
+
+    //Faire en sorte que la dette soit private, mais qu'on puisse la lire de partout
+    private float _debt;
+    public float Debt => _debt;
 
     private void Awake()
     {
@@ -21,6 +25,11 @@ public class Lib : MonoBehaviour
             Destroy(gameObject);
         else
             instance = this;
+    }
+
+    private void Start()
+    {
+        _debt = moneyCounter;
     }
 
     public void SetReputation(int n)

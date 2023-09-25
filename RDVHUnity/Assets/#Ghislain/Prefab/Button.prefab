@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 5336780028774936025}
   - component: {fileID: 3667076039050661429}
   - component: {fileID: 3874570842649425763}
-  - component: {fileID: 1365272267757716429}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -256,19 +255,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5336780028774936025}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1365272267757716429}
-        m_TargetAssemblyTypeName: ButtonSoundManager, Assembly-CSharp
-        m_MethodName: PlayClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3874570842649425763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,30 +272,4 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1365272267757716429}
-          m_TargetAssemblyTypeName: ButtonSoundManager, Assembly-CSharp
-          m_MethodName: PlayHover
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1365272267757716429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9213676998386045975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573aefa585990974a8d0cecd989d8d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clickSound: {fileID: 11400000, guid: 4b7495dbfce06bb4eb17e5b57343649d, type: 2}
-  _hoverSound: {fileID: 11400000, guid: e697cde9289dff140b15212f6f12e9c9, type: 2}
+        m_Calls: []

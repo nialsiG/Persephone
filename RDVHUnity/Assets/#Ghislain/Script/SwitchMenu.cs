@@ -13,4 +13,14 @@ public class SwitchMenu : MonoBehaviour
         _previousMenu.SetActive(false);
         _nextMenu.SetActive(true);
     }
+
+    public void EnableNextMenu()
+    {
+        _nextMenu.SetActive(true);
+    }
+
+    public void DisablePreviousMenu()
+    {
+        _previousMenu.SetActive(false);
+    }
 }

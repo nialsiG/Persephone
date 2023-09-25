@@ -4,20 +4,36 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    //SoundQueue
+    [Header("Volume")]
+    [SerializeField] float _musicVolume;
+    [SerializeField] float _ambientVolume;
+    [SerializeField] float _soundVolume;
+
+    [Header("Music and ambient")]
+    [SerializeField] SOSoundPool[] _music;
+    [SerializeField] SOSoundPool _theme;
+    [SerializeField] SOSoundPool _ambient;
+    [SerializeField] SOSoundPool _victory;
+    [SerializeField] SOSoundPool _defeat;
+    
+    [Header("Sound queue")]
     [SerializeField] int _soundQueueLength;
+    [SerializeField] SOSoundPool _buildingMenuOpen;
+    [SerializeField] SOSoundPool _buildingMenuClose;
+    [SerializeField] SOSoundPool _buildTomb;
+    [SerializeField] SOSoundPool _buildFlower;
+    [SerializeField] SOSoundPool _buildStructure;
+    [SerializeField] SOSoundPool _paperOpen;
+    [SerializeField] SOSoundPool _paperClose;
+    [SerializeField] SOSoundPool _paperModif;
+
+    AudioSource ambientAudioSource;
+    List<AudioSource> musicAudioSource;
     List<AudioSource> soundQueue;
     private int currentIntInQueue;
-
-    //Music
-    AudioSource musicAudioSource;
-    [SerializeField] SOSoundPool[] _music;
+    private int musicIntInQueue;
     private int musicIndex;
 
-    //Sounds
-    [SerializeField] SOSoundPool _clickSound;
-    [SerializeField] SOSoundPool _hoverSound;
-    
     //Singleton
     public static SoundManager Instance;
 
@@ -38,46 +54,69 @@ public class SoundManager : MonoBehaviour
         for (int i = 0; i < _soundQueueLength; i++)
         {
             AudioSource source = gameObject.AddComponent<AudioSource>();
+            source.volume = _soundVolume;
             soundQueue.Add(source);
         }
 
+        //Create ambient audiosource
+        ambientAudioSource = gameObject.AddComponent<AudioSource>();
+        ambientAudioSource.volume = _ambientVolume;
+
         //Create music audiosource
-        musicAudioSource = gameObject.AddComponent<AudioSource>();
+        musicAudioSource = new List<AudioSource>();
+        for (int i = 0; i < 2; i++)
+        {
+            AudioSource source = gameObject.AddComponent<AudioSource>();
+            source.volume = _musicVolume * i;
+            musicAudioSource.Add(source);
+        }
+        musicIndex = 0;
+        musicIntInQueue = 1;
 
-        //Play music
-        PlayMusic(_music[0]);
-
+        //Play theme
+        PlayMusic(_theme);
     }
 
-    private void Update()
+    public void PlayAmbient()
     {
-        
+        _ambient.PlayMusic(ambientAudioSource);
     }
 
     public void PlayMusic(SOSoundPool music)
     {
-        music.PlayMusic(musicAudioSource);
+        music.PlayMusic(musicAudioSource[musicIntInQueue % _music.Length]);
     }
 
     public void ChangeMusic()
     {
         //start coroutine fade out
-        StartCoroutine(FadeOut(musicAudioSource));
+        StartCoroutine(FadeOut(musicAudioSource[musicIntInQueue % 2]));
         //change music
         musicIndex += 1;
+        musicIntInQueue += 1;
         PlayMusic(_music[musicIndex % _music.Length]);
         //start coroutine fade in
-        StartCoroutine(FadeIn(musicAudioSource));
+        StartCoroutine(FadeIn(musicAudioSource[musicIntInQueue % 2]));
+    }
+
+    public void ChangeMusic(SOSoundPool music)
+    {
+        //start coroutine fade out
+        StartCoroutine(FadeOut(musicAudioSource[musicIntInQueue % 2]));
+        //change music
+        musicIntInQueue += 1; 
+        PlayMusic(music);
+        //start coroutine fade in
+        StartCoroutine(FadeIn(musicAudioSource[musicIntInQueue % 2]));
     }
 
     //Coroutines
     //...for decreasing volume when the music stops
     IEnumerator FadeOut(AudioSource audioSource)
     {
-        for (float alpha = 1f; alpha >= 0f; alpha -= 0.1f)
+        for (float v = _musicVolume; v >= 0f; v -= 0.001f)
         {
-            audioSource.volume = alpha;
-            if (alpha == 0) audioSource.Stop();
+            audioSource.volume = v;
             yield return null;
         }
     }
@@ -85,9 +124,9 @@ public class SoundManager : MonoBehaviour
     //...for increasing volume when the music starts
     IEnumerator FadeIn(AudioSource audioSource)
     {
-        for (float alpha = 0f; alpha <= 1f; alpha += 0.1f)
+        for (float v = 0f; v <= _musicVolume; v += 0.001f)
         {
-            audioSource.volume = alpha;
+            audioSource.volume = v;
             yield return null;
         }
     }
@@ -107,15 +146,49 @@ public class SoundManager : MonoBehaviour
         soundPool.PlaySound(soundQueue[currentIntInQueue % (_soundQueueLength - 1)]);
     }
 
-    public void PlaySoundClick()
+    public void PlayVictory()
     {
-        PlaySound(_clickSound);
+        ChangeMusic(_victory);
     }
 
-    public void PlaySoundHover()
+    public void PlayDefeat()
     {
-        PlaySound(_hoverSound);
+        ChangeMusic(_defeat);
     }
+
+    public void PlayUIBuildTomb()
+    {
+        PlaySound(_buildTomb);
+    }
+    public void PlayUIBuildFlower()
+    {
+        PlaySound(_buildFlower);
+    }
+    public void PlayUIBuildStructure()
+    {
+        PlaySound(_buildStructure);
+    }
+    public void PlayUIBuildingMenuOpen()
+    {
+        PlaySound(_buildingMenuOpen);
+    }
+    public void PlayUIBuildingMenuClose()
+    {
+        PlaySound(_buildingMenuClose);
+    }
+    public void PlayUIPaperOpen()
+    {
+        PlaySound(_paperOpen);
+    }
+    public void PlayUIPaperClose()
+    {
+        PlaySound(_paperClose);
+    }    
+    public void PlayUIPaperModif()
+    {
+        PlaySound(_paperModif);
+    }
+
 
 
 }
