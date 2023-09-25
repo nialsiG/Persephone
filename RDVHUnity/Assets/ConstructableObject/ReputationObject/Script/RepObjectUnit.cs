@@ -11,8 +11,8 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
     [SerializeField] int reputationGain, price, salaire, nbPersonnel;
     [SerializeField] bool gainRepContinu;
 
-    private bool endTour, construite, followMouse;
-    [SerializeField] bool rdmSprite;
+    private bool endTour, construite;
+    [SerializeField] bool rdmSprite, followMouse;
     [SerializeField] Sprite[] tabSprite = new Sprite[3];
 
     void Start()
@@ -28,6 +28,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         //Pour les cabanes uniquements qui sont directement instanciées
         if (gainRepContinu)
         {
+            SoundManager.Instance.PlayUIBuildStructure();
             Color col = r.color;
             col.a = 1;
             r.color = col;
@@ -110,5 +111,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         repTxt.text = "+" + reputationGain.ToString();
 
         Lib.instance.s = Lib.state.TRACK;
+
+        SoundManager.Instance.PlayUIBuildFlower();
     }
 }

@@ -105,11 +105,10 @@ MonoBehaviour:
   contenanceTxt: {fileID: 4578877714746874231}
   gainTxt: {fileID: 3488365302010770862}
   repTxt: {fileID: 7004655268650660924}
-  contenanceGauge: {fileID: 0}
   textAnim: {fileID: 5284234229087936839}
   tombAnim: {fileID: 1191974507564268736}
   repTxtAnim: {fileID: 3920256357781183064}
-  tombName: Commune
+  tombName: Caveau
   contenanceMax: 37
   buildPrice: 200
   inhumationPrice: 5

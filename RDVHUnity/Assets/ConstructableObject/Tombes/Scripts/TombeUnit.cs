@@ -176,5 +176,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
         contenanceTxt.gameObject.SetActive(true);
         construite = true;
         Lib.instance.s = Lib.state.TRACK;
+
+        SoundManager.Instance.PlayUIBuildTomb();
     }
 }

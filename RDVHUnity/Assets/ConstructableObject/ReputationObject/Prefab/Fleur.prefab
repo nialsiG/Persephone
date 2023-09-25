@@ -612,6 +612,7 @@ MonoBehaviour:
   nbPersonnel: 0
   gainRepContinu: 0
   rdmSprite: 1
+  followMouse: 1
   tabSprite:
   - {fileID: 21300000, guid: 9055250e49a6c8e4c8e4f057505fe6ee, type: 3}
   - {fileID: 21300000, guid: 507ad33a341a4094e883146bbc5a1d72, type: 3}
