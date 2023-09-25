@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchMenu : MonoBehaviour
@@ -7,6 +5,9 @@ public class SwitchMenu : MonoBehaviour
 
     [SerializeField] GameObject _previousMenu;
     [SerializeField] GameObject _nextMenu;
+
+    [SerializeField] Animator buttonAnim, arrowAnim;
+    private bool open;
 
     public void GoToNextMenu()
     {
@@ -22,5 +23,22 @@ public class SwitchMenu : MonoBehaviour
     public void DisablePreviousMenu()
     {
         _previousMenu.SetActive(false);
+    }
+
+    public void StartAnim()
+    {
+        if (!open)
+        {
+            buttonAnim.SetTrigger("Up");
+            arrowAnim.SetTrigger("Up");
+
+            open = true;
+        }
+        else
+        {
+            buttonAnim.SetTrigger("Down");
+            arrowAnim.SetTrigger("Down");
+            open = false;
+        }
     }
 }

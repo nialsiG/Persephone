@@ -145,7 +145,7 @@ Animator:
   m_GameObject: {fileID: 1372976883170316845}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9bbede7dafcaca04d83f57d236ff4714, type: 2}
+  m_Controller: {fileID: 9100000, guid: d970ea2562fae334fbf8b6eb4bb2303d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -697,6 +697,7 @@ MonoBehaviour:
   nbPersonnel: 1
   gainRepContinu: 1
   rdmSprite: 0
+  followMouse: 0
   tabSprite:
   - {fileID: 0}
   - {fileID: 0}

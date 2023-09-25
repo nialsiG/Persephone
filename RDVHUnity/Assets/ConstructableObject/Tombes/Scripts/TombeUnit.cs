@@ -32,6 +32,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
         //Initialise les valeurs de l'UI
         contenanceTxt.text = 0 + "/" + contenanceMax.ToString();
+        
 
         //Desactive les elements de l'UI
         contenanceTxt.gameObject.SetActive(false);
