@@ -5,7 +5,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
 {
     private Camera cam = null;
     [SerializeField] SpriteRenderer r;
-    [SerializeField] Animator textAnim, spriteAnim, moneyAnim;
+    [SerializeField] Animator textAnim, spriteAnim, moneyAnim, logoAnim;
     [SerializeField] TextMeshProUGUI repTxt, moneyTxt;
 
     [SerializeField] int reputationGain, price, salaire, nbPersonnel;
@@ -45,6 +45,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
             
             spriteAnim.SetTrigger("Add");
             moneyAnim.SetTrigger("Add");
+            logoAnim.SetTrigger("Add");
         }
 
         
@@ -71,6 +72,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
                         moneyTxt.text = "-" + salaire.ToString();
                         spriteAnim.SetTrigger("Add");
                         moneyAnim.SetTrigger("Add");
+                        logoAnim.SetTrigger("Add");
                     }
                     
                 }
