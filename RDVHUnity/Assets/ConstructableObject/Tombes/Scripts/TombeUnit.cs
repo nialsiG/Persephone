@@ -11,10 +11,11 @@ public class TombeUnit : MonoBehaviour, IConstruire
     [Header("Variables :")]
     [SerializeField] string tombName;
     [SerializeField] int contenanceMax;
-    [SerializeField] int buildPrice, inhumationPrice;
+    [SerializeField] int buildPrice;
     [SerializeField] Vector2 rdmCounter, rdmAjouterMort;
     [SerializeField] int maxCurrentStock;
-
+    private int currentStock;
+    
     [SerializeField] int timeToEmpty;
     [SerializeField] float pourcentagePerte;
     private int indexTurn;
@@ -33,93 +34,97 @@ public class TombeUnit : MonoBehaviour, IConstruire
         //Initialise les valeurs de l'UI
         contenanceTxt.text = 0 + "/" + contenanceMax.ToString();
         
-
         //Desactive les elements de l'UI
         contenanceTxt.gameObject.SetActive(false);
 
-        counter = Random.Range(rdmCounter.x, rdmCounter.y);
-
-        currentPrice = inhumationPrice;
+        //counter = Random.Range(rdmCounter.x, rdmCounter.y);
     }
 
 
     private void Update()
     {
-        
-
         if (Lib.instance.p == Lib.phase.ARRIVAL)
         {
-            if (!stopArrival)
+            if (!beginTurn) //permet de s'assurer que les évènements ne sont appelés qu'une fois par phase d'arrival
             {
-                if (counter < 0)
+                beginTurn = true;
+                indexTurn++;
+                maxCurrentStock = SetCurrentStock(tombName);
+                currentStock = 0;
+
+                // D'abord on décide s'il faut vider les tombes communes
+                // ...déplacé ici car il faut d'abord vider les tombes, puis les remplir
+                if (tombName == "Commune")
                 {
-                    int rdmDead = (int)Random.Range(rdmAjouterMort.x, rdmAjouterMort.y);
-
-                    //rentrées d'argent par inhumation
-                    Lib.instance.SetMoney(rdmDead * currentPrice);
-
-                    if (!beginTurn)
+                    if (indexTurn > timeToEmpty)
                     {
-                        beginTurn = true;
-
-                        
-                        indexTurn++;  
-
-                        if (tombName == "Commune")
-                        {
-                            if (indexTurn >= timeToEmpty)
-                            {
-                                contenance -= (int)(contenance / pourcentagePerte);
-                                indexTurn = 0;
-                            }
-                                
-                        }
-                        
-                        
-
-                        if (contenance > contenanceMax / 2)
-                        {
-                            Lib.instance.SetReputation(1);
-                            
-                            repTxt.text = "+1";
-                            repTxtAnim.SetTrigger("Add");
-                        }
+                        //contenance -= (int)(contenance / pourcentagePerte);
+                        contenance -= maxCurrentStock;
+                        contenanceTxt.color = Color.yellow;
+                        indexTurn = timeToEmpty;
                     }
-                    
-                        
-
-                    counter = Random.Range(rdmCounter.x, rdmCounter.y);
-
-                    tombAnim.SetTrigger("Add");
-
-                    gainTxt.text = "+" + (rdmDead * currentPrice).ToString();
-                    textAnim.SetTrigger("Add");
-                   
-
-
-                    if (contenance + rdmDead >= maxCurrentStock || contenance + rdmDead >= contenanceMax)
-                    {
-                        contenance = maxCurrentStock;
-                        stopArrival = true;
-                        maxCurrentStock += contenance;
-
-                        if (contenance > contenanceMax)
-                            contenance = contenanceMax;
-
-
-                    }
-                    else
-                        contenance += rdmDead;
-
-                    contenanceTxt.text = contenance.ToString() + "/" + contenanceMax.ToString();
-
                 }
-                else
-                    counter -= Time.deltaTime;
+
+                //Tombe plus qu'à moitié plein ? Augmenter la réputation
+                if (tombName == "Caveau" && Lib.instance.nbreCaveaux > 3)
+                {
+                    Lib.instance.SetReputation(1);
+                    repTxt.text = "+1";
+                    repTxtAnim.SetTrigger("Add");
+                }
+
+                // 2. Ensuite si la tombe est pleine, on reset les paramètres nécessaires
+                if (contenance < contenanceMax)
+                {
+                    counter = Random.Range(rdmCounter.x, rdmCounter.y); //le compteur entre les arrivées
+                    currentStock = 0; //le stock de morts arrivés ce tour-ci
+                    
+                    //Enfin, on laisse entrer les morts
+                    stopArrival = false;
+                }
 
             }
+            
+            // 3. Si elle est pas pleine, on calcule le nombre de morts qui arrivent et on enclenche le processus
+            if (!stopArrival)
+            {
+                counter -= Time.deltaTime;
+                
+                //Arrivée progressive
+                if (counter < 0)
+                {
+                    // Buffer du nombre de morts qui devraient arriver durant ce batch
+                    int rdmDead = (int)Random.Range(rdmAjouterMort.x, rdmAjouterMort.y);
 
+                    //Soit le nombre de mort est atteint
+                    if (currentStock + rdmDead >= maxCurrentStock)
+                    {
+                        AddDead(maxCurrentStock - currentStock);
+                        stopArrival = true;
+                    }
+
+                    //...OU si la tombe est pleine...
+                    else if (contenance + rdmDead >= contenanceMax)
+                    {
+                        stopArrival = true;
+                        AddDead(contenanceMax - contenance);
+                        contenanceTxt.color = Color.red;
+                    }
+
+                    //...soit on rajoute des morts
+                    else
+                    {
+                        AddDead(rdmDead);
+                        //...et on restarte le compteur pour l'arrivée progressive
+                        counter = Random.Range(rdmCounter.x, rdmCounter.y);
+                    }
+                }
+    
+            }
+            
         }
+        
+        //Si c'est pas la phase d'arrival, on peut actualiser le prix d'inhumation
         else
         {
             beginTurn = false;
@@ -132,15 +137,25 @@ public class TombeUnit : MonoBehaviour, IConstruire
                     transform.position = new Vector3(cam.ScreenToWorldPoint(Input.mousePosition).x, cam.ScreenToWorldPoint(Input.mousePosition).y, 0);
                 }
 
-                currentPrice = Lib.instance.GetTombPrice(tombName);
-                
+                currentPrice = Lib.instance.GetTombPrice(tombName);   
             }
-                
-
-            maxCurrentStock = SetCurrentStock(tombName);
-
-            stopArrival = false;
         }
+    }
+
+    private void AddDead(int amount)
+    {
+        currentStock += amount;
+        contenance += amount;
+        Lib.instance.bodyCounter += amount; //on rajoute des morts au total du cimetière
+        Lib.instance.SetMoney(amount * currentPrice); //rentrées d'argent par inhumationn, note : déplacé plus bas car on ne veut pas gagner d'argent si les morts ne rentrent pas
+                                                      
+        //Animation
+        tombAnim.SetTrigger("Add");
+        gainTxt.text = "+" + (amount * currentPrice).ToString();
+        textAnim.SetTrigger("Add");
+
+        //Update de la fenêtre de contenance sur les tombes
+        contenanceTxt.text = contenance.ToString() + "/" + contenanceMax.ToString();
 
     }
 
@@ -169,6 +184,12 @@ public class TombeUnit : MonoBehaviour, IConstruire
     {
         //Enleve le cout de la tombe au compteur d'argent
         Lib.instance.SetMoney(-buildPrice);
+
+        //Si c'est un caveau, augmenter le compteur de caveaux
+        if (tombName == "Caveau")
+        {
+            Lib.instance.nbreCaveaux += 1;
+        }
 
         Color col = r.GetComponent<SpriteRenderer>().color;
         col.a = 1;

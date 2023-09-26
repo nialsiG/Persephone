@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OBSOLETE/Martin.unity
     guid: 3a562985d9119f04a92e0e184fde5ba4
+  - enabled: 1
+    path: Assets/Scenes/Ghislain3.unity
+    guid: a8fd03863df99c7488e265b198df83f5
   m_configObjects: {}

@@ -589,7 +589,7 @@ MonoBehaviour:
   _paperOpen: {fileID: 11400000, guid: 6f728bc50b882b24c88e1526fb6c5efc, type: 2}
   _paperClose: {fileID: 11400000, guid: 6ff773ffae63fa440b49ea2fdae293d7, type: 2}
   _paperModif: {fileID: 11400000, guid: fe05eaaf12bd1c041ac3145611e646af, type: 2}
-  _cantModify: {fileID: 0}
+  _cantModify: {fileID: 11400000, guid: 32168dd6a47c1194ca120a0ef06f5c0f, type: 2}
 --- !u!4 &62745142
 Transform:
   m_ObjectHideFlags: 0
@@ -2014,7 +2014,7 @@ GameObject:
   - component: {fileID: 308530247}
   - component: {fileID: 308530246}
   m_Layer: 5
-  m_Name: PrixCaveau (TMP)
+  m_Name: PrixFamiliale (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7380,7 +7380,7 @@ GameObject:
   - component: {fileID: 1539009320}
   - component: {fileID: 1539009319}
   m_Layer: 5
-  m_Name: PrixCaveau (TMP)
+  m_Name: PrixCommune (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10188,9 +10188,10 @@ MonoBehaviour:
   bodyCounter: 0
   CurrentObject: {fileID: 0}
   priceCommune: 2
-  priceFamiliale: 0
-  priceCaveau: 0
+  priceFamiliale: 7
+  priceCaveau: 15
   semesterCounter: 0
+  nbreCaveaux: 0
 --- !u!4 &2007228132
 Transform:
   m_ObjectHideFlags: 0
@@ -11054,6 +11055,12 @@ PrefabInstance:
     - target: {fileID: 1945204206715780958, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -144.409
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459482672250737324, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
+      propertyPath: _text
+      value: "\xAB La loge permet de loger le jardinier du cimeti\xE8re, qui entretient
+        les lieux et g\xE9n\xE8re passivement du r\xE9putation \xE0 chaque tour.
+        \xBB"
       objectReference: {fileID: 0}
     - target: {fileID: 3037827483396033423, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: GO
@@ -13240,6 +13247,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -152.52649
       objectReference: {fileID: 0}
+    - target: {fileID: 2459482672250737324, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
+      propertyPath: _text
+      value: "\xAB Les tombes communes sont les moins ch\xE8res, mais elles sont
+        r\xE9utilisables, ce qui les rend plus rentables sur le long terme. \xBB"
+      objectReference: {fileID: 0}
     - target: {fileID: 3037827483396033423, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: GO
       value: 
@@ -13500,6 +13512,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7834725082228474674, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13609,7 +13625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0.5499115}
+  m_AnchoredPosition: {x: 642.4069, y: 0.5499115}
   m_SizeDelta: {x: 1284.8137, y: 213.09996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2343309191837423022
@@ -13751,14 +13767,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prixCaveau: {fileID: 1063779341478623073}
-  _minPrixCaveau: 0
-  _maxPrixCaveau: 25
+  _minPrixCaveau: 15
+  _maxPrixCaveau: 30
   _prixFamiliale: {fileID: 308530246}
-  _minPrixFamiliale: 0
+  _minPrixFamiliale: 7
   _maxPrixFamiliale: 15
   _prixCommune: {fileID: 1539009319}
-  _minPrixCommune: 0
-  _maxPrixCommune: 5
+  _minPrixCommune: 2
+  _maxPrixCommune: 6
 --- !u!1 &2567581645653549123
 GameObject:
   m_ObjectHideFlags: 0
@@ -15255,7 +15271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3689371966845083226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15427,7 +15443,7 @@ MonoBehaviour:
   _trimesterField: {fileID: 4667854149998107152}
   _moneyField: {fileID: 1297490174}
   _debtField: {fileID: 943692804}
-  _reputationField: {fileID: 703685861}
+  _reputationField: {fileID: 594529975}
   _bodycountField: {fileID: 703685861}
   _eventMenu: {fileID: 1290170622105602546}
 --- !u!114 &3824933536144295591
@@ -15723,6 +15739,12 @@ PrefabInstance:
     - target: {fileID: 1945204206715780958, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -152.52649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459482672250737324, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
+      propertyPath: _text
+      value: "\xAB Les tombes familiales sont plus modestes que les caveaux, mais
+        se remplissent moins vite, g\xE9n\xE9rant un revenu solide sur le moyen terme.
+        \xBB"
       objectReference: {fileID: 0}
     - target: {fileID: 3037827483396033423, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: GO
@@ -16563,8 +16585,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4484028373395270690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25799468, y: 0}
-  m_AnchorMax: {x: 0.7420052, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.48401055, y: 1}
   m_AnchoredPosition: {x: -48.824463, y: 2.9000263}
   m_SizeDelta: {x: -97.6416, y: 5.7625}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16885,6 +16907,12 @@ PrefabInstance:
     - target: {fileID: 1945204206715780958, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -144.409
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459482672250737324, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
+      propertyPath: _text
+      value: "\xAB Les caveaux sont les tombes les plus luxueuses du cimeti\xE8re.
+        Spacieux et tr\xE8s chers, ils g\xE9n\xE8rent de la r\xE9putation quand ils
+        sont en nombre suffisant, mais ils se remplissent rapidement ! \xBB"
       objectReference: {fileID: 0}
     - target: {fileID: 3037827483396033423, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: GO
@@ -19117,6 +19145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5653451923328021458}
+  - component: {fileID: 7215267376230536408}
   m_Layer: 5
   m_Name: BottomLeft
   m_TagString: Untagged
@@ -19124,6 +19153,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7215267376230536408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215267376230536407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc039c2dab3aa004689bfbff1435de5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scrollbar: {fileID: 1417163146788526541}
 --- !u!114 &7269822787873897339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19263,6 +19305,12 @@ PrefabInstance:
     - target: {fileID: 1945204206715780958, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -144.409
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459482672250737324, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
+      propertyPath: _text
+      value: "\xAB Un beau jardinet rempli de chrysanth\xE8mes, de roses blanches
+        et noires, et d\u2019autres fleurs associ\xE9es au deuil, g\xE9n\xE9rant
+        1 point de r\xE9putation lors de la construction. \xBB"
       objectReference: {fileID: 0}
     - target: {fileID: 3037827483396033423, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: GO
@@ -20842,6 +20890,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -144.409
       objectReference: {fileID: 0}
+    - target: {fileID: 2459482672250737324, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
+      propertyPath: _text
+      value: "\xAB Le rite fun\xE9raire commence dans les chapelles. Leur pr\xE9sence
+        est obligatoire dans votre cimeti\xE8re. \xBB"
+      objectReference: {fileID: 0}
     - target: {fileID: 3037827483396033423, guid: ae32aa7b3be8a9f47af8f48abd474034, type: 3}
       propertyPath: GO
       value: 
@@ -21292,7 +21345,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1161199450367699912}
   m_HandleRect: {fileID: 4925645755966895684}
   m_Direction: 0
-  m_Value: 0.4999999
+  m_Value: -0.00000004750506
   m_Size: 0.48401055
   m_NumberOfSteps: 0
   m_OnValueChanged:

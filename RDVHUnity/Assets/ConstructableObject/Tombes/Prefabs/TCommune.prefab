@@ -184,13 +184,13 @@ MonoBehaviour:
   tombAnim: {fileID: 1191974507564268736}
   repTxtAnim: {fileID: 3920256357781183064}
   tombName: Commune
-  contenanceMax: 350
+  contenanceMax: 100
   buildPrice: 100
   inhumationPrice: 5
-  rdmCounter: {x: 1, y: 1.3}
-  rdmAjouterMort: {x: 1, y: 2}
+  rdmCounter: {x: 0, y: 0.5}
+  rdmAjouterMort: {x: 1, y: 3}
   maxCurrentStock: 10
-  timeToEmpty: 2
+  timeToEmpty: 4
   pourcentagePerte: 20
 --- !u!61 &7589153807684926901
 BoxCollider2D:

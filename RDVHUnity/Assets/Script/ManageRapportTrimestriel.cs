@@ -16,6 +16,22 @@ public class ManageRapportTrimestriel : MonoBehaviour
     private float previousReputation;
     private float previousBodycount;
 
+    public void NextTrimester()
+    {
+        //register this semester's data
+        previousMoney = Lib.instance.moneyCounter;
+        previousReputation = Lib.instance.reputationCounter;
+        previousBodycount = Lib.instance.bodyCounter;
+
+        //Update semester count
+        Lib.instance.semesterCounter += 1;
+
+        //Change phase
+        Lib.instance.p = Lib.phase.EVENT;
+
+        //Disable trimester panel and start next event
+        StartCoroutine(NextEvent());
+    }
 
     public void UpdateTrimester()
     {
@@ -39,20 +55,4 @@ public class ManageRapportTrimestriel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void NextTrimester()
-    {
-        //register this semester's data
-        previousMoney = Lib.instance.moneyCounter;
-        previousReputation = Lib.instance.reputationCounter;
-        previousBodycount = Lib.instance.bodyCounter;
-
-        //Update semester count
-        Lib.instance.semesterCounter += 1;
-
-        //Change phase
-        Lib.instance.p = Lib.phase.EVENT;
-
-        //Disable trimester panel and start next event
-        StartCoroutine(NextEvent());
-    }
 }

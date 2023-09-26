@@ -5,33 +5,46 @@ using TMPro;
 
 public class ManagePrices : MonoBehaviour
 {
+    [Header("Caveau")]
     [SerializeField] TextMeshProUGUI _prixCaveau;
-    [SerializeField] TextMeshProUGUI _prixFamiliale;
-    [SerializeField] TextMeshProUGUI _prixCommune;
-
+    [SerializeField] int _minPrixCaveau;
     [SerializeField] int _maxPrixCaveau;
+    [Header("Tombe familiale")]
+    [SerializeField] TextMeshProUGUI _prixFamiliale;
+    [SerializeField] int _minPrixFamiliale;
     [SerializeField] int _maxPrixFamiliale;
+    [Header("Tombe commune")]
+    [SerializeField] TextMeshProUGUI _prixCommune;
+    [SerializeField] int _minPrixCommune;
     [SerializeField] int _maxPrixCommune;
 
     private void Start()
     {
         UpdateTextFields();
-
-
     }
 
 
     public void IncreaseCaveau()
     {
         if (Lib.instance.priceCaveau < _maxPrixCaveau)
-        Lib.instance.priceCaveau += 1;
+        {
+            Lib.instance.priceCaveau += 1;
+        }
+        else
+        {
+            SoundManager.Instance.PlayUICantModify();
+        }
         UpdateTextFields();
     }
     public void DecreaseCaveau()
     {
-        if(Lib.instance.priceCaveau > 0)
+        if(Lib.instance.priceCaveau > _minPrixCaveau)
         {
             Lib.instance.priceCaveau -= 1;
+        }
+        else
+        {
+            SoundManager.Instance.PlayUICantModify();
         }
         UpdateTextFields();
     }
@@ -39,14 +52,24 @@ public class ManagePrices : MonoBehaviour
     public void IncreaseFamiliale()
     {
         if (Lib.instance.priceFamiliale < _maxPrixFamiliale)
+        {
             Lib.instance.priceFamiliale += 1;
+        }
+        else
+        {
+            SoundManager.Instance.PlayUICantModify();
+        }
         UpdateTextFields();
     }
     public void DecreaseFamiliale()
     {
-        if (Lib.instance.priceFamiliale > 0)
+        if (Lib.instance.priceFamiliale > _minPrixFamiliale)
         {
             Lib.instance.priceFamiliale -= 1;
+        }
+        else
+        {
+            SoundManager.Instance.PlayUICantModify();
         }
         UpdateTextFields();
     }
@@ -54,14 +77,24 @@ public class ManagePrices : MonoBehaviour
     public void IncreaseCommune()
     {
         if (Lib.instance.priceCommune < _maxPrixCommune)
+        {
             Lib.instance.priceCommune += 1;
+        }
+        else
+        {
+            SoundManager.Instance.PlayUICantModify();
+        }
         UpdateTextFields();
     }
     public void DecreaseCommune()
     {
-        if (Lib.instance.priceCommune > 0)
+        if (Lib.instance.priceCommune > _minPrixCommune)
         {
             Lib.instance.priceCommune -= 1;
+        }
+        else
+        {
+            SoundManager.Instance.PlayUICantModify();
         }
         UpdateTextFields();
     }
