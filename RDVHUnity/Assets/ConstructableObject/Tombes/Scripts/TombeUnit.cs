@@ -15,6 +15,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
     [SerializeField] Vector2 rdmCounter, rdmAjouterMort;
     [SerializeField] int maxCurrentStock;
     private int currentStock;
+    private bool isAboveHalf;
     
     [SerializeField] int timeToEmpty;
     [SerializeField] float pourcentagePerte;
@@ -63,14 +64,6 @@ public class TombeUnit : MonoBehaviour, IConstruire
                         contenanceTxt.color = Color.yellow;
                         indexTurn = timeToEmpty;
                     }
-                }
-
-                //Tombe plus qu'à moitié plein ? Augmenter la réputation
-                if (tombName == "Caveau" && Lib.instance.nbreCaveaux > 3)
-                {
-                    Lib.instance.SetReputation(1);
-                    repTxt.text = "+1";
-                    repTxtAnim.SetTrigger("Add");
                 }
 
                 // 2. Ensuite si la tombe est pleine, on reset les paramètres nécessaires
@@ -157,6 +150,16 @@ public class TombeUnit : MonoBehaviour, IConstruire
         //Update de la fenêtre de contenance sur les tombes
         contenanceTxt.text = contenance.ToString() + "/" + contenanceMax.ToString();
 
+        //Tombe plus qu'à moitié plein ? Augmenter la réputation
+        if (tombName == "Caveau" && contenance > contenanceMax / 2 && !isAboveHalf)
+        {
+            isAboveHalf = true;
+            Lib.instance.SetReputation(1);
+            repTxt.text = "+1";
+            repTxt.color = Color.cyan;
+            repTxtAnim.SetTrigger("Add");
+
+        }
     }
 
     int SetCurrentStock(string name)
