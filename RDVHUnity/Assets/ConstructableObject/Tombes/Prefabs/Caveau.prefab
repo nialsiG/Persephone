@@ -184,11 +184,10 @@ MonoBehaviour:
   tombAnim: {fileID: 1191974507564268736}
   repTxtAnim: {fileID: 3920256357781183064}
   tombName: Caveau
-  contenanceMax: 37
+  contenanceMax: 50
   buildPrice: 200
-  inhumationPrice: 5
-  rdmCounter: {x: 1, y: 1.3}
-  rdmAjouterMort: {x: 1, y: 2}
+  rdmCounter: {x: 0, y: 0.5}
+  rdmAjouterMort: {x: 1, y: 3}
   maxCurrentStock: 10
   timeToEmpty: 0
   pourcentagePerte: 0
