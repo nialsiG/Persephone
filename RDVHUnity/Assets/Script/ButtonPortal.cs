@@ -1,11 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonPortal : MonoBehaviour
 {
     [SerializeField] GameObject _rapportTrimestriel;
     [SerializeField] GameObject _bgTempo;
+    [SerializeField] Sprite portalSprite, contourPortal;
 
     public void GoToRapportTrimestriel()
     {

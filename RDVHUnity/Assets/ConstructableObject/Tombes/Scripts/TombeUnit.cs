@@ -6,7 +6,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
     private Camera cam = null;
     [SerializeField] SpriteRenderer r;
     [SerializeField] TextMeshProUGUI contenanceTxt, gainTxt, repTxt;
-    [SerializeField] Animator textAnim, tombAnim, repTxtAnim;
+    [SerializeField] Animator textAnim, tombAnim, repTxtAnim, logoAnim;
 
     [Header("Variables :")]
     [SerializeField] string tombName;
@@ -146,6 +146,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
         tombAnim.SetTrigger("Add");
         gainTxt.text = "+" + (amount * currentPrice).ToString();
         textAnim.SetTrigger("Add");
+        logoAnim.SetTrigger("Add");
 
         //Update de la fenêtre de contenance sur les tombes
         contenanceTxt.text = contenance.ToString() + "/" + contenanceMax.ToString();
