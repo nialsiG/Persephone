@@ -186,7 +186,6 @@ MonoBehaviour:
   tombName: Caveau
   contenanceMax: 50
   buildPrice: 200
-  inhumationPrice: 5
   rdmCounter: {x: 0, y: 0.5}
   rdmAjouterMort: {x: 1, y: 3}
   maxCurrentStock: 10
