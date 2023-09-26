@@ -13,7 +13,7 @@ public class Lib : MonoBehaviour
     public float moneyCounter, reputationCounter, bodyCounter;
     public GameObject CurrentObject = null;
 
-    public int priceCommune, priceFamiliale, priceCaveau, semesterCounter;
+    public int priceCommune, priceFamiliale, priceCaveau, semesterCounter, nbreCaveaux;
 
     //Faire en sorte que la dette soit private, mais qu'on puisse la lire de partout
     private float _debt;
@@ -35,6 +35,10 @@ public class Lib : MonoBehaviour
     public void SetReputation(int n)
     {
         reputationCounter += n;
+        if(reputationCounter < 0)
+        {
+            reputationCounter = 0;
+        }
     }
 
     public void SetMoney(int n)

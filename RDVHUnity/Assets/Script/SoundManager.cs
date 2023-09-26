@@ -26,6 +26,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] SOSoundPool _paperOpen;
     [SerializeField] SOSoundPool _paperClose;
     [SerializeField] SOSoundPool _paperModif;
+    [SerializeField] SOSoundPool _cantModify;
 
     AudioSource ambientAudioSource;
     List<AudioSource> musicAudioSource;
@@ -187,6 +188,10 @@ public class SoundManager : MonoBehaviour
     public void PlayUIPaperModif()
     {
         PlaySound(_paperModif);
+    }    
+    public void PlayUICantModify()
+    {
+        PlaySound(_cantModify);
     }
 
 
