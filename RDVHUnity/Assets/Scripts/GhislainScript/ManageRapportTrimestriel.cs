@@ -11,6 +11,7 @@ public class ManageRapportTrimestriel : MonoBehaviour
     [SerializeField] TextMeshProUGUI _reputationField;
     [SerializeField] TextMeshProUGUI _bodycountField;
     [SerializeField] GameObject _eventMenu;
+    [SerializeField] Animator StampAnim;
 
     private float previousMoney;
     private float previousReputation;
@@ -31,6 +32,9 @@ public class ManageRapportTrimestriel : MonoBehaviour
 
         //Disable trimester panel and start next event
         StartCoroutine(NextEvent());
+
+        //Lance l'animation du tampon
+        StampAnim.SetTrigger("Stamp");
     }
 
     public void UpdateTrimester()
@@ -53,6 +57,9 @@ public class ManageRapportTrimestriel : MonoBehaviour
         _eventMenu.GetComponent<ManageEvent>().NewEvent();
         SoundManager.Instance.PlayUIPaperOpen();
         gameObject.SetActive(false);
+
+        //Revient a l'idle de l'animation du tampon
+        StampAnim.SetTrigger("Back");
     }
 
 }

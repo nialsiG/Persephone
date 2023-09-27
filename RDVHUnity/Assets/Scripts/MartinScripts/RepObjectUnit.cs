@@ -8,7 +8,8 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
     [SerializeField] Animator textAnim, spriteAnim, moneyAnim, logoAnim;
     [SerializeField] TextMeshProUGUI repTxt, moneyTxt;
 
-    [SerializeField] int reputationGain, price, salaire, nbPersonnel;
+    public int nbPersonnel;
+    [SerializeField] int reputationGain, price, salaire;
     [SerializeField] bool gainRepContinu;
 
     private bool endTour, construite;
@@ -26,7 +27,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         }
 
         //Pour les cabanes uniquements qui sont directement instanciées
-        if (gainRepContinu)
+        if (!followMouse)
         {
             SoundManager.Instance.PlayUIBuildStructure();
             Color col = r.color;
@@ -51,6 +52,11 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         
     }
 
+    public void AddPersonnel()
+    {
+        Lib.instance.SetMoney(-salaire * nbPersonnel);
+    }
+
     void Update()
     {
         if (Lib.instance.p == Lib.phase.ARRIVAL)
@@ -69,7 +75,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
                     
                     if (salaire != 0)
                     {
-                        moneyTxt.text = "-" + salaire.ToString();
+                        moneyTxt.text = "-" + (salaire * nbPersonnel).ToString();
                         spriteAnim.SetTrigger("Add");
                         moneyAnim.SetTrigger("Add");
                         logoAnim.SetTrigger("Add");

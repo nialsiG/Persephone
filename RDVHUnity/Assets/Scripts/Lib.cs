@@ -14,6 +14,7 @@ public class Lib : MonoBehaviour
     public GameObject CurrentObject = null;
 
     public int priceCommune, priceFamiliale, priceCaveau, semesterCounter, nbreCaveaux;
+    public bool logeConstruite;
 
     //Faire en sorte que la dette soit private, mais qu'on puisse la lire de partout
     private float _debt;

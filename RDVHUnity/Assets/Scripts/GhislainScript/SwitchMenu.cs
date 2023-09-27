@@ -7,7 +7,6 @@ public class SwitchMenu : MonoBehaviour
     [SerializeField] GameObject _nextMenu;
 
     [SerializeField] Animator buttonAnim, arrowAnim;
-    private bool open;
 
     public void GoToNextMenu()
     {
@@ -32,7 +31,6 @@ public class SwitchMenu : MonoBehaviour
         {
             buttonAnim.SetTrigger("Down");
             arrowAnim.SetTrigger("Down");
-            open = false;
         }
         
     }
@@ -44,13 +42,11 @@ public class SwitchMenu : MonoBehaviour
         {
             buttonAnim.SetTrigger("Up");
             arrowAnim.SetTrigger("Up");
-            open = true;
         }
         else
         {
             buttonAnim.SetTrigger("Down");
             arrowAnim.SetTrigger("Down");
-            open = false;
         }
     }
 }

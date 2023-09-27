@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: Tuto2
+  m_EditorClassIdentifier: 
+  _titre: 
+  _texte: "[Secr\xE9taire] La plupart de nos concitoyens se font enterrer dans des
+    tombes communes, sans pierre ni monument, o\xF9 se c\xF4toient ouvriers, artisans,
+    domestiques et indigents. En tant que propri\xE9taire du cimeti\xE8re, vous pouvez
+    am\xE9nager de telles parcelles, et fixer un prix qui affectera des centaines
+    de personnes.\r\n\r\nouvrez le menu de gauche et installez une tombe commune.\r\nouvrez
+    le menu de droite et d\xE9finissez le prix auquel vous proposez l'emplacement.\r\n(Les
+    autres b\xE2timents ne seraient pas constructibles voire grises ?)"
+  _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
+  _sound: {fileID: 0}
+  _texteChoix1: 
+  _changeToMoney1: 0
+  _changeToReputation1: 0
+  _texteChoix2: 
+  _changeToMoney2: 0
+  _changeToReputation2: 0
