@@ -1,13 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class OnHoverDisplay : MonoBehaviour
 {
     [SerializeField] GameObject _menuContextuel;
     [SerializeField] TextMeshProUGUI _textArea;
+    [TextArea(1, 6)]
     [SerializeField] string _text;
 
     private void Start()
