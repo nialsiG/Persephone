@@ -23,6 +23,6 @@ MonoBehaviour:
   _changeToMoney1: 0
   _changeToReputation1: 1
   _texteChoix2: "\xAB Je connais quelques familles qui ont justement besoin de bouquets\u2026
-    \xBB"
+    \xBB (+10 livres)"
   _changeToMoney2: 10
   _changeToReputation2: 0

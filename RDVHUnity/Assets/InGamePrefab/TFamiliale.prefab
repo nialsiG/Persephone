@@ -111,6 +111,8 @@ MonoBehaviour:
   logoAnim: {fileID: 8773053440868940438}
   tombName: Familiale
   contenanceMax: 100
+  colorHalfFull: {r: 0.8301887, g: 0.74961805, b: 0.44172305, a: 1}
+  colorFull: {r: 0.8901961, g: 0.4, b: 0.35686275, a: 0.9019608}
   buildPrice: 150
   rdmCounter: {x: 0, y: 0.5}
   rdmAjouterMort: {x: 1, y: 3}

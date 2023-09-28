@@ -791,8 +791,9 @@ MonoBehaviour:
   repTxt: {fileID: 8111962641959705824}
   moneyTxt: {fileID: 1350156037698070261}
   nbPersonnel: 0
+  type: 1
   reputationGain: 5
-  price: 2000
+  price: 5000
   salaire: 0
   gainRepContinu: 0
   rdmSprite: 0

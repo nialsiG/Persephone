@@ -1,12 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class ManageEvent : MonoBehaviour
 {
-    [SerializeField] SOevent[] _events;
-    private int _previousEventIndex;
-    public int PreviousIndex => _previousEventIndex;
+    [SerializeField] GameObject _eventMenu;
+    [SerializeField] SOevent[] _eventsFaciles;
+    [SerializeField] SOevent[] _eventsMoyens;
+    [SerializeField] SOevent[] _eventsDifficiles;
+    private bool isEventsMoyensAdded;
+    private bool isEventsDifficilesAdded;
+    private List<SOevent> allEvents;
 
     [SerializeField] TextMeshProUGUI _titleArea;
     [SerializeField] TextMeshProUGUI _textArea;
@@ -24,49 +29,48 @@ public class ManageEvent : MonoBehaviour
     private int changeToMoney2;
     private int changeToReputation2;
 
+    private void Start()
+    {
+        allEvents = new List<SOevent>();
+        foreach (SOevent e in _eventsFaciles)
+        {
+            allEvents.Add(e);
+        }
+    }
+
     public void NewEvent()
     {
-        //Get turn
+        //Get the turn
         int turn = Lib.instance.semesterCounter;
 
         //Set the range
-        int minRange = 0;
-        int maxRange = 0;
         switch (turn)
         {
-            case 0:
-                minRange = 0;
-                maxRange = 0;
-                break;
-            case 1:
-                minRange = 1;
-                maxRange = 1;
-                break;
-            case 2:
-                minRange = 2;
-                maxRange = 2;
-                break;
-            case 3:
-                minRange = 3;
-                maxRange = 3;
-                break;
             case  > 15:
-                minRange = 4;
-                maxRange = 27;
+                if (!isEventsDifficilesAdded)
+                {
+                    isEventsDifficilesAdded = true;
+                    foreach (SOevent e in _eventsDifficiles)
+                    {
+                        allEvents.Add(e);
+                    }
+                }
                 break;
             case  > 10:
-                minRange = 4;
-                maxRange = 24;
-                break;
-            case  > 3:
-                minRange = 4;
-                maxRange = 16;
+                if (!isEventsMoyensAdded)
+                {
+                    isEventsMoyensAdded = true;
+                    foreach (SOevent e in _eventsMoyens)
+                    {
+                        allEvents.Add(e);
+                    }
+                }
                 break;
             default:
                 break;
         }
         //...and generate random event
-        GenerateEvent(minRange, maxRange);
+        GenerateEvent(0, allEvents.Count);
 
     }
 
@@ -74,45 +78,47 @@ public class ManageEvent : MonoBehaviour
     public void GenerateEvent(int minRange, int maxRange)
     {
         //enable panel
-        gameObject.SetActive(true);
+        _eventMenu.SetActive(true);
 
         //generate a random event
         int random = Random.Range(minRange, maxRange + 1);
-        _previousEventIndex = random;
-
+        
         //Update event panel
-        UpdateEventPanel(_previousEventIndex);
+        UpdateEventPanel(random);
 
         //play event sound
-        if (_events[_previousEventIndex].Sound != null)
+        if (allEvents[random].Sound != null)
         {
-            SoundManager.Instance.PlaySound(_events[_previousEventIndex].Sound);
+            SoundManager.Instance.PlaySound(allEvents[random].Sound);
         }
+
+        //LASTLY remove the event from the list
+        allEvents.Remove(allEvents[random]);
     }
 
     public void UpdateEventPanel(int index)
     {
-        _titleArea.text = _events[index].Title;
-        _textArea.text = _events[index].Texte;
-        _imageArea.sprite = _events[index].Image;
+        _titleArea.text = allEvents[index].Title;
+        _textArea.text = allEvents[index].Texte;
+        _imageArea.sprite = allEvents[index].Image;
 
 
-        if (_events[index].TexteChoix2 == "")
+        if (allEvents[index].TexteChoix2 == "")
         {
             _button2.SetActive(false);
         }
         else
         {
             _button2.SetActive(true);
-            _choice2.text = _events[index].TexteChoix2;
-            changeToMoney2 = _events[index].ChangeToMoney2;
-            changeToReputation2 = _events[index].ChangeToReputation2;
+            _choice2.text = allEvents[index].TexteChoix2;
+            changeToMoney2 = allEvents[index].ChangeToMoney2;
+            changeToReputation2 = allEvents[index].ChangeToReputation2;
         }
 
 
-        if (_events[index].TexteChoix1 == "")
+        if (allEvents[index].TexteChoix1 == "")
         {
-            if (_events[index].TexteChoix2 == "")
+            if (allEvents[index].TexteChoix2 == "")
             {
                 _choice1.text = "Suivant";
                 changeToMoney1 = 0;
@@ -123,9 +129,9 @@ public class ManageEvent : MonoBehaviour
         else
         {
             _button1.SetActive(true);
-            _choice1.text = _events[index].TexteChoix1;
-            changeToMoney1 = _events[index].ChangeToMoney1;
-            changeToReputation1 = _events[index].ChangeToReputation1;
+            _choice1.text = allEvents[index].TexteChoix1;
+            changeToMoney1 = allEvents[index].ChangeToMoney1;
+            changeToReputation1 = allEvents[index].ChangeToReputation1;
         }
 
     }
@@ -140,7 +146,7 @@ public class ManageEvent : MonoBehaviour
 
         Lib.instance.p = Lib.phase.BUILD;
 
-        gameObject.SetActive(false);
+        _eventMenu.SetActive(false);
     }
 
     public void ChooseNumberTwo()
@@ -152,15 +158,7 @@ public class ManageEvent : MonoBehaviour
 
         Lib.instance.p = Lib.phase.BUILD;
 
-        gameObject.SetActive(false);
+        _eventMenu.SetActive(false);
     }
-
-    /*private void OnChoosingAnswer()
-    {
-        //Update the counters
-        _gameManager.GetComponent<ManageCounters>().UpdateCounters();
-        //disable panel
-        
-    }*/
 
 }
