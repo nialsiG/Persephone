@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] float _musicVolume;
     [SerializeField] float _ambientVolume;
     [SerializeField] float _soundVolume;
+    [SerializeField] GameObject _volumeSlider;
+    private float generalVolume;
 
     [Header("Music and ambient")]
     [SerializeField] SOSoundPool[] _music;
@@ -74,8 +77,29 @@ public class SoundManager : MonoBehaviour
         musicIndex = 0;
         musicIntInQueue = 1;
 
+        //Set initial volume
+        ChangeVolume();
+
         //Play theme
         PlayMusic(_theme);
+    }
+
+    public void ChangeVolume()
+    {
+        Slider slider = _volumeSlider.GetComponent<Slider>();
+        generalVolume = slider.value / slider.maxValue;
+
+        ambientAudioSource.volume = _ambientVolume * generalVolume;
+
+        foreach (AudioSource s in musicAudioSource)
+        {
+            s.volume = _musicVolume * generalVolume;
+        }
+
+        foreach (AudioSource s in soundQueue)
+        {
+            s.volume = _soundVolume * generalVolume;
+        }
     }
 
     public void PlayAmbient()
@@ -115,7 +139,7 @@ public class SoundManager : MonoBehaviour
     //...for decreasing volume when the music stops
     IEnumerator FadeOut(AudioSource audioSource)
     {
-        for (float v = _musicVolume; v >= 0f; v -= 0.001f)
+        for (float v = (_musicVolume * generalVolume); v >= 0f; v -= 0.001f)
         {
             audioSource.volume = v;
             yield return null;
@@ -125,7 +149,7 @@ public class SoundManager : MonoBehaviour
     //...for increasing volume when the music starts
     IEnumerator FadeIn(AudioSource audioSource)
     {
-        for (float v = 0f; v <= _musicVolume; v += 0.001f)
+        for (float v = 0f; v <= (_musicVolume * generalVolume); v += 0.001f)
         {
             audioSource.volume = v;
             yield return null;

@@ -607,10 +607,11 @@ MonoBehaviour:
   logoAnim: {fileID: 0}
   repTxt: {fileID: 8111962641959705824}
   moneyTxt: {fileID: 1350156037698070261}
+  nbPersonnel: 0
+  type: 2
   reputationGain: 1
   price: 25
   salaire: 0
-  nbPersonnel: 0
   gainRepContinu: 0
   rdmSprite: 1
   followMouse: 1

@@ -4,15 +4,20 @@ using UnityEngine;
 public class RepObjectUnit : MonoBehaviour, IConstruire
 {
     private Camera cam = null;
+    [Header("Game objects")]
     [SerializeField] SpriteRenderer r;
     [SerializeField] Animator textAnim, spriteAnim, moneyAnim, logoAnim;
     [SerializeField] TextMeshProUGUI repTxt, moneyTxt;
 
     public int nbPersonnel;
+    public enum _type { Loge, Chapelle, Fleur }
+    [Header("Data")]
+    [SerializeField] _type type;
     [SerializeField] int reputationGain, price, salaire;
     [SerializeField] bool gainRepContinu;
 
     private bool endTour, construite;
+    [Header("Random sprite")]
     [SerializeField] bool rdmSprite, followMouse;
     [SerializeField] Sprite[] tabSprite = new Sprite[3];
 
@@ -49,7 +54,18 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
             logoAnim.SetTrigger("Add");
         }
 
-        
+
+        //Chapelle
+        if (type == _type.Chapelle && !Lib.instance.isChapelle)
+        {
+            Lib.instance.SetReputation(reputationGain);
+            repTxt.text = "+" + reputationGain.ToString();
+            textAnim.SetTrigger("Add");
+
+            Debug.Log("Chapelle construite !");
+            Lib.instance.isChapelle = true;
+            Lib.instance.nextTutoPhase.Invoke();
+        }
     }
 
     public void AddPersonnel()
@@ -70,6 +86,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
                     if (reputationGain != 0)
                     {
                         repTxt.text = "+" + reputationGain.ToString();
+                        Lib.instance.SetReputation(reputationGain);
                         textAnim.SetTrigger("Add");
                     }
                     

@@ -11,6 +11,8 @@ public class TombeUnit : MonoBehaviour, IConstruire
     [Header("Variables :")]
     [SerializeField] string tombName;
     [SerializeField] int contenanceMax;
+    [SerializeField] Color colorHalfFull;
+    [SerializeField] Color colorFull;
     [SerializeField] int buildPrice;
     [SerializeField] Vector2 rdmCounter, rdmAjouterMort;
     [SerializeField] int maxCurrentStock;
@@ -61,7 +63,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
                     {
                         //contenance -= (int)(contenance / pourcentagePerte);
                         contenance -= maxCurrentStock;
-                        contenanceTxt.color = Color.yellow;
+                        contenanceTxt.color = colorHalfFull;
                         indexTurn = timeToEmpty;
                     }
                 }
@@ -101,7 +103,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
                     {
                         stopArrival = true;
                         AddDead(contenanceMax - contenance);
-                        contenanceTxt.color = Color.red;
+                        contenanceTxt.color = colorFull; //attention, apres AddDead() car cette dernière change la couleur si > contenanceMax/2
                     }
 
                     //...soit on rajoute des morts
@@ -151,15 +153,18 @@ public class TombeUnit : MonoBehaviour, IConstruire
         //Update de la fenêtre de contenance sur les tombes
         contenanceTxt.text = contenance.ToString() + "/" + contenanceMax.ToString();
 
-        //Tombe plus qu'à moitié plein ? Augmenter la réputation
-        if (tombName == "Caveau" && contenance > contenanceMax / 2 && !isAboveHalf)
+        //Tombe plus qu'à moitié plein ?
+        if (contenance > contenanceMax / 2)
         {
-            isAboveHalf = true;
-            Lib.instance.SetReputation(1);
-            repTxt.text = "+1";
-            repTxt.color = Color.cyan;
-            repTxtAnim.SetTrigger("Add");
+            contenanceTxt.color = colorHalfFull;
 
+            if (tombName == "Caveau" && !isAboveHalf)
+            {
+                isAboveHalf = true;
+                Lib.instance.SetReputation(1);
+                repTxt.text = "+1";
+                repTxtAnim.SetTrigger("Add");
+            }
         }
     }
 
@@ -170,13 +175,16 @@ public class TombeUnit : MonoBehaviour, IConstruire
         switch (name)
         {
             case "Commune":
-                n = 30 - 4 * currentPrice;
+                //n = 30 - 4 * currentPrice;
+                n = (int)Mathf.Ceil(8 * (3 - Mathf.Sqrt(currentPrice)));
                 break;
             case "Familiale":
-                n = (int)(22 - 2 * currentPrice + Lib.instance.reputationCounter);
+                //n = (int)(22 - 2 * currentPrice + Lib.instance.reputationCounter);
+                n = (int)Mathf.Ceil(1 + 3 * Lib.instance.reputationCounter / currentPrice);
                 break;
             case "Caveau":
-                n = (int)(Lib.instance.reputationCounter / 2);
+                //n = (int)(Lib.instance.reputationCounter / 2);
+                n = (int)Mathf.Ceil(1 + Lib.instance.reputationCounter / 4 - currentPrice / 20);
                 break;
         }
 
@@ -189,10 +197,10 @@ public class TombeUnit : MonoBehaviour, IConstruire
         //Enleve le cout de la tombe au compteur d'argent
         Lib.instance.SetMoney(-buildPrice);
 
-        //Si c'est un caveau, augmenter le compteur de caveaux
-        if (tombName == "Caveau")
+        if (!Lib.instance.isAnyTomb)
         {
-            Lib.instance.nbreCaveaux += 1;
+            Lib.instance.isAnyTomb = true;
+            Lib.instance.nextTutoPhase.Invoke();
         }
 
         Color col = r.GetComponent<SpriteRenderer>().color;

@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
-  m_Name: Tuto1
+  m_Name: '##Tuto1'
   m_EditorClassIdentifier: 
-  _titre: 
+  _titre: Tutoriel (1/3)
   _texte: "[Secr\xE9taire] \xAB F\xE9licitations ! Apr\xE8s un gros emprunt, vous
     \xEAtes enfin l\u2019heureux propri\xE9taire d\u2019un cimeti\xE8re ! Pour pouvoir
     commencer \xE0 y enterrer des morts, il vous faudra construire quelques b\xE2timents.\r\nCommencez
     par d\xE9penser une partie de vos fonds pour construire la chapelle, o\xF9 se
-    tient le rite fun\xE9raire. \r\n\r\nOuvrez le menu de construiction et choisissez
-    la chapelle. celle - ci augmente la r\xE9putation de votre cimeti\xE8re. (symbole
-    de chapeau)\r\n\r\n(cette derni\xE8re ligne est bien s\xE9par\xE9e, peut-\xEAtre
-    le reste est en italique et \xE7a en droit). les autres b\xE2timents ne seraient
-    pas constructibles)"
+    tient le rite fun\xE9raire. \xBB\r\n\nOuvrez le menu de construiction et choisissez
+    la chapelle. celle - ci augmente la r\xE9putation de votre cimeti\xE8re (<sprite
+    name=\"Chapeau\">)\r"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
-  _sound: {fileID: 0}
+  _sound: {fileID: 11400000, guid: 6f728bc50b882b24c88e1526fb6c5efc, type: 2}
   _texteChoix1: 
   _changeToMoney1: 0
   _changeToReputation1: 0

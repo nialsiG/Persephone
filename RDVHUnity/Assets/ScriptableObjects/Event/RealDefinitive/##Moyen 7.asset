@@ -21,7 +21,7 @@ MonoBehaviour:
   _texteChoix1: "\xAB Vous \xE9coutez trop ce Mr. Marx. Vous gagnez bien assez !
     \xBB (-5 r\xE9putation)"
   _changeToMoney1: 0
-  _changeToReputation1: -15
+  _changeToReputation1: -5
   _texteChoix2: "\xAB Je suppose que la qualit\xE9 se paie\u2026 \xBB (-15 livres)"
   _changeToMoney2: -15
   _changeToReputation2: 0

@@ -10,7 +10,7 @@ public class ManageRapportTrimestriel : MonoBehaviour
     [SerializeField] TextMeshProUGUI _debtField;
     [SerializeField] TextMeshProUGUI _reputationField;
     [SerializeField] TextMeshProUGUI _bodycountField;
-    [SerializeField] GameObject _eventMenu;
+    [SerializeField] GameObject _gameManager;
     [SerializeField] Animator StampAnim;
 
     private float previousMoney;
@@ -47,19 +47,20 @@ public class ManageRapportTrimestriel : MonoBehaviour
         _moneyField.text = (money + "(" + (money - previousMoney) + ")").ToString();
         _reputationField.text = (reput + "(" + (reput - previousReputation) + ")").ToString();
         _bodycountField.text = (bodies + "(" + (bodies - previousBodycount) + ")").ToString();
-        _trimesterField.text = (Lib.instance.semesterCounter + 1).ToString();
+        _trimesterField.text = (Lib.instance.semesterCounter + 1 + "/" + Lib.instance.maxTrimester).ToString();
     }
 
     private IEnumerator NextEvent()
     {
         yield return new WaitForSeconds(1.0f);
-        _eventMenu.SetActive(true);
-        _eventMenu.GetComponent<ManageEvent>().NewEvent();
+        _gameManager.GetComponent<ManageEvent>().NewEvent();
         SoundManager.Instance.PlayUIPaperOpen();
-        gameObject.SetActive(false);
 
         //Revient a l'idle de l'animation du tampon
         StampAnim.SetTrigger("Back");
+        
+        //and lastly remove game object
+        gameObject.SetActive(false);
     }
 
 }

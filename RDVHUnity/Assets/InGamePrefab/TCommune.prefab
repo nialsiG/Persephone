@@ -208,6 +208,8 @@ MonoBehaviour:
   logoAnim: {fileID: 6282251411969325904}
   tombName: Commune
   contenanceMax: 100
+  colorHalfFull: {r: 0.83137256, g: 0.7490196, b: 0.44313726, a: 1}
+  colorFull: {r: 0.8901961, g: 0.4, b: 0.35686275, a: 0.9019608}
   buildPrice: 100
   rdmCounter: {x: 0, y: 0.5}
   rdmAjouterMort: {x: 1, y: 3}
