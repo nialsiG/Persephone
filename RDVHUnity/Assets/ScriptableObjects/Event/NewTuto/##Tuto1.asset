@@ -17,9 +17,9 @@ MonoBehaviour:
     \xEAtes enfin l\u2019heureux propri\xE9taire d\u2019un cimeti\xE8re ! Pour pouvoir
     commencer \xE0 y enterrer des morts, il vous faudra construire quelques b\xE2timents.\r\nCommencez
     par d\xE9penser une partie de vos fonds pour construire la chapelle, o\xF9 se
-    tient le rite fun\xE9raire. \xBB\r\n\nOuvrez le menu de construiction et choisissez
-    la chapelle. celle - ci augmente la r\xE9putation de votre cimeti\xE8re (<sprite
-    name=\"Chapeau\">)\r"
+    tient le rite fun\xE9raire. \xBB\r\n\nOuvrez le menu de construction et choisissez
+    la chapelle. Celle-ci augmente la r\xE9putation  <sprite name=\"Chapeau\">  de
+    votre cimeti\xE8re\r"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
   _sound: {fileID: 11400000, guid: 6f728bc50b882b24c88e1526fb6c5efc, type: 2}
   _texteChoix1: 

@@ -16,7 +16,7 @@ MonoBehaviour:
   _texte: "[Secr\xE9taire] \xAB Votre cimeti\xE8re est d\xE9sormais ouvert! \r\nBient\xF4t,
     les familles en deuil viendront vous voir. Certaines seront plus r\xE9ceptives
     aux prix que vous fixerez pour chaque type de tombe; d\u2019autres, \xE0 la r\xE9putation
-    de votre cimeti\xE8re. \xBB\r\n\r\n- La r\xE9putation <sprite name=\"Chapeau\">
+    de votre cimeti\xE8re. \xBB\r\n\r\n- La r\xE9putation  <sprite name=\"Chapeau\"> 
     est une mesure de l\u2019attractivit\xE9 de votre cimeti\xE8re. Vous pouvez en
     gagner \xE0 l\u2019aide d\u2019une loge, de parterres de fleurs, de caveaux,
     ou \xE0 travers des \xE9v\xE9nements.\r\n- Souvenez-vous que vous pouvez r\xE9guli\xE8rement

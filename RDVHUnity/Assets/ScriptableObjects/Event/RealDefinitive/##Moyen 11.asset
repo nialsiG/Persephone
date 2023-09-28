@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: '##Moyen 11'
+  m_EditorClassIdentifier: 
+  _titre: Des vandales !
+  _texte: "\xAB Ils sont venus avec des pelles, des haches, et m\xEAme de la peinture
+    ! Ces\u2026 ces criminels, ils ont compl\xE8tement ravag\xE9 cette parcelle,
+    cass\xE9 des pierres tombales, ouvert des tombes, et m\xEAme d\xE9terr\xE9 cette
+    pauvre Ms. Wetherby ! \xBB"
+  _image: {fileID: 21300000, guid: 0e2c53760adc1684690cd51b73dbe8fc, type: 3}
+  _sound: {fileID: 11400000, guid: e128e11479b81384ea1588c4adf1ba7c, type: 2}
+  _texteChoix1: "\xAB Nous n\u2019avons pas le choix, il faut rapidement r\xE9parer
+    ces d\xE9g\xE2ts \xBB (-25 livres)"
+  _changeToMoney1: -25
+  _changeToReputation1: 0
+  _texteChoix2: "\xAB Nous ne pouvons pas nous permettre cette d\xE9pense. Mais d\xE8s
+    que nous le pourrons, nous ferons le double ! \xBB (-8 r\xE9putation)"
+  _changeToMoney2: 0
+  _changeToReputation2: -8
