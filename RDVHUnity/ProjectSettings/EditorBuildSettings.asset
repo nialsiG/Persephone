@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/#Scenes/OBSOLETE/Ghislain3.unity
     guid: a8fd03863df99c7488e265b198df83f5
+  - enabled: 1
+    path: Assets/#Scenes/Martin3.unity
+    guid: d2742670ac9df9c48ad0f27fd8517b9a
   m_configObjects: {}
