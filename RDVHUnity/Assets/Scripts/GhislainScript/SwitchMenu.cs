@@ -27,7 +27,8 @@ public class SwitchMenu : MonoBehaviour
     //Lance les anims pour la fermeture du menu construction
     public void CloseBuildMenu()
     {
-        if (buttonAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name == "UpBuildMenu")
+        string animName = buttonAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+        if (animName == "UpBuildMenu" || animName == "Up")
         {
             buttonAnim.SetTrigger("Down");
             arrowAnim.SetTrigger("Down");
