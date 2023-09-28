@@ -27,7 +27,8 @@ public class SwitchMenu : MonoBehaviour
     //Lance les anims pour la fermeture du menu construction
     public void CloseBuildMenu()
     {
-        if (buttonAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name == "UpBuildMenu")
+        string animName = buttonAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+        if (animName == "UpBuildMenu" || animName == "Up")
         {
             buttonAnim.SetTrigger("Down");
             arrowAnim.SetTrigger("Down");
@@ -37,8 +38,9 @@ public class SwitchMenu : MonoBehaviour
 
     public void StartAnim()
     {
+        string animName = buttonAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name;
         //Vérifie que l'animation joué soit bien l'idle (que le menu soit hors de l'ecran)
-        if (buttonAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name == "IdleBuildMenu")
+        if (animName == "IdleBuildMenu" || animName == "Idle")
         {
             buttonAnim.SetTrigger("Up");
             arrowAnim.SetTrigger("Up");
