@@ -58,7 +58,10 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         //Chapelle
         if (type == _type.Chapelle && !Lib.instance.isChapelle)
         {
-            Lib.instance.SetReputation(reputationGain);
+            if (Lib.instance.reputationCounter + reputationGain < 20)
+                Lib.instance.SetReputation(reputationGain);
+            else
+                Lib.instance.reputationCounter = 20;
             //repTxt.text = "+" + reputationGain.ToString();
             textAnim.SetTrigger("Add");
 
@@ -85,7 +88,10 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
 
                     if (reputationGain != 0)
                     {
-                        Lib.instance.SetReputation(reputationGain);
+                        if (Lib.instance.reputationCounter + reputationGain < 20)
+                            Lib.instance.SetReputation(reputationGain);
+                        else
+                            Lib.instance.reputationCounter = 20;
                         textAnim.SetTrigger("Add");
                     }
                     
@@ -120,7 +126,10 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
 
     public void Construire()
     {
-        Lib.instance.SetReputation(reputationGain);
+        if (Lib.instance.reputationCounter + reputationGain < 20)
+            Lib.instance.SetReputation(reputationGain);
+        else
+            Lib.instance.reputationCounter = 20;
         Lib.instance.SetMoney(-price);
 
         if (!gainRepContinu)

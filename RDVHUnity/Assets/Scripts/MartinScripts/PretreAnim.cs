@@ -30,7 +30,7 @@ public class PretreAnim : MonoBehaviour
                 {
                     anim.SetTrigger("GoOut");
                     //On change le layer pour que le sprite soit devant la chapelle
-                    s.sortingOrder = 2;
+                    s.sortingOrder = 3;
                 }
             }
 

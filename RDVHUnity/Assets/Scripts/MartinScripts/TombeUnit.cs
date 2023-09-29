@@ -59,16 +59,16 @@ public class TombeUnit : MonoBehaviour, IConstruire
                 // ...déplacé ici car il faut d'abord vider les tombes, puis les remplir
                 if (tombName == "Commune")
                 {
-                    if (indexTurn > timeToEmpty)
+                    if (contenance >= contenanceMax)
                     {
-                        //contenance -= (int)(contenance / pourcentagePerte);
-                        contenance -= maxCurrentStock;
-                        contenanceTxt.color = colorHalfFull;
+                        contenance -= (int)(contenanceMax / Random.Range(pourcentagePerte, 8));
+                        //contenance -= maxCurrentStock;
+                        //contenanceTxt.color = colorHalfFull;
                         indexTurn = timeToEmpty;
                     }
                 }
 
-                // 2. Ensuite si la tombe est pleine, on reset les paramètres nécessaires
+                // 2. Ensuite si la tombe n'est pas pleine, on reset les paramètres nécessaires
                 if (contenance < contenanceMax)
                 {
                     counter = Random.Range(rdmCounter.x, rdmCounter.y); //le compteur entre les arrivées
@@ -154,18 +154,21 @@ public class TombeUnit : MonoBehaviour, IConstruire
         contenanceTxt.text = contenance.ToString() + "/" + contenanceMax.ToString();
 
         //Tombe plus qu'à moitié plein ?
-        if (contenance > contenanceMax / 2)
+        if (contenance >= contenanceMax / 2)
         {
             contenanceTxt.color = colorHalfFull;
 
             if (tombName == "Caveau" && !isAboveHalf)
             {
                 isAboveHalf = true;
-                Lib.instance.SetReputation(1);
+                if (Lib.instance.reputationCounter < 20)
+                    Lib.instance.SetReputation(1);
                 repTxt.text = "+1";
                 repTxtAnim.SetTrigger("Add");
             }
         }
+        else
+            contenanceTxt.color = Color.white;
     }
 
     int SetCurrentStock(string name)

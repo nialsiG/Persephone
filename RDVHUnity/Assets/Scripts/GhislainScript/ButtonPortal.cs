@@ -18,7 +18,6 @@ public class ButtonPortal : MonoBehaviour
 
     private IEnumerator NextTrimester()
     {
-        print("aaa");
         yield return new WaitForSeconds(4.0f);
         _bgTempo.SetActive(false);
         _rapportTrimestriel.SetActive(true);

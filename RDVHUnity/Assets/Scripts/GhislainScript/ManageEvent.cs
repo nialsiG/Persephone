@@ -11,7 +11,7 @@ public class ManageEvent : MonoBehaviour
     [SerializeField] SOevent[] _eventsDifficiles;
     private bool isEventsMoyensAdded;
     private bool isEventsDifficilesAdded;
-    private List<SOevent> allEvents;
+    public List<SOevent> allEvents;
 
     [SerializeField] TextMeshProUGUI _titleArea;
     [SerializeField] TextMeshProUGUI _textArea;
@@ -93,7 +93,7 @@ public class ManageEvent : MonoBehaviour
         }
 
         //LASTLY remove the event from the list
-        allEvents.Remove(allEvents[random]);
+        allEvents.RemoveAt(random);
     }
 
     public void UpdateEventPanel(int index)
@@ -142,7 +142,11 @@ public class ManageEvent : MonoBehaviour
         Debug.Log("Money + " + changeToMoney1);
         Debug.Log("Reputation + " + changeToReputation1);
         Lib.instance.SetMoney(changeToMoney1);
-        Lib.instance.SetReputation(changeToReputation1);
+        if (Lib.instance.reputationCounter + changeToReputation1 < 20)
+            Lib.instance.SetReputation(changeToReputation1);
+        else
+            Lib.instance.reputationCounter = 20;
+        
 
         Lib.instance.p = Lib.phase.BUILD;
 
@@ -154,7 +158,10 @@ public class ManageEvent : MonoBehaviour
         Debug.Log("Money + " + changeToMoney2);
         Debug.Log("Reputation + " + changeToReputation2);
         Lib.instance.SetMoney(changeToMoney2);
-        Lib.instance.SetReputation(changeToReputation2);
+        if (Lib.instance.reputationCounter + changeToReputation2 < 20)
+            Lib.instance.SetReputation(changeToReputation2);
+        else
+            Lib.instance.reputationCounter = 20;
 
         Lib.instance.p = Lib.phase.BUILD;
 
