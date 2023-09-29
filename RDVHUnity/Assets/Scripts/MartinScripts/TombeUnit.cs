@@ -176,15 +176,15 @@ public class TombeUnit : MonoBehaviour, IConstruire
         {
             case "Commune":
                 //n = 30 - 4 * currentPrice;
-                n = (int)Mathf.Ceil(8 * (3 - Mathf.Sqrt(currentPrice)));
+                n = (int)Mathf.Ceil(5 * (3 - Mathf.Sqrt(currentPrice)));
                 break;
             case "Familiale":
                 //n = (int)(22 - 2 * currentPrice + Lib.instance.reputationCounter);
-                n = (int)Mathf.Ceil(1 + 3 * Lib.instance.reputationCounter / currentPrice);
+                n = (int)Mathf.Ceil(1.5f * Lib.instance.reputationCounter / currentPrice);
                 break;
             case "Caveau":
                 //n = (int)(Lib.instance.reputationCounter / 2);
-                n = (int)Mathf.Ceil(1 + Lib.instance.reputationCounter / 4 - currentPrice / 20);
+                n = (int)Mathf.Ceil(1 + Lib.instance.reputationCounter / 8 - currentPrice / 20);
                 break;
         }
 
