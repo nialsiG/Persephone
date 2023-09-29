@@ -19,9 +19,10 @@ MonoBehaviour:
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
   _sound: {fileID: 11400000, guid: a390926729ca7b44ea2dc02f2debe83f, type: 2}
   _texteChoix1: "\xAB C\u2019est un service civique important ! Ils ne paieront pas
-    un sou. \xBB (+4 r\xE9putation, -5 livres)"
-  _changeToMoney1: -5
+    un sou. \xBB (-20 <sprite name=\"Livre\">,+4<sprite name=Chapeau>)"
+  _changeToMoney1: -20
   _changeToReputation1: 4
-  _texteChoix2: " \xAB Tout le monde paie ! C\u2019est la r\xE8gle ! \xBB (+25 livres)"
+  _texteChoix2: " \xAB Tout le monde paie ! C\u2019est la r\xE8gle ! \xBB (+25 <sprite
+    name=Livre>)"
   _changeToMoney2: 25
   _changeToReputation2: 0

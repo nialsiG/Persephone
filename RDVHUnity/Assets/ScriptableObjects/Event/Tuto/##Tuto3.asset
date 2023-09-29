@@ -15,9 +15,10 @@ MonoBehaviour:
   _titre: Tutoriel (3/3)
   _texte: "Bient\xF4t, les familles en deuil viendront vous voir. Certaines seront
     plus r\xE9ceptives aux prix que vous fixerez pour chaque type de tombe ; d\u2019autres,
-    \xE0 votre jauge de r\xE9putation <sprite name=Chapeau>. Augmentez votre r\xE9putation
-    en embelissant votre propri\xE9t\xE9 ou en construisant une loge pour votre personnel.\n\n<b>Vous
-    pouvez ouvrir votre cimeti\xE8re en cliquant sur le portail !"
+    \xE0 votre jauge de r\xE9putation <sprite name=\"Chapeau\" color=#000000>. Augmentez
+    votre r\xE9putation en embelissant votre propri\xE9t\xE9 ou en construisant une
+    loge pour votre personnel.\n\n<b>Vous pouvez ouvrir votre cimeti\xE8re en cliquant
+    sur le portail !"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
   _sound: {fileID: 11400000, guid: 6f728bc50b882b24c88e1526fb6c5efc, type: 2}
   _texteChoix1: 

@@ -19,9 +19,11 @@ MonoBehaviour:
   _image: {fileID: 21300000, guid: da71c06e2871ba44380145ec91f6f8e8, type: 3}
   _sound: {fileID: 11400000, guid: 4d846f1dbea0d3240a9ecdad55625c15, type: 2}
   _texteChoix1: "\xAB Couvrez ces tombes de terre et de chaux vive ! Je ne veux plus
-    voir ne serait-ce qu\u2019un doigt d\xE9passer d\u2019une tombe ! \xBB (-25 livres)"
+    voir ne serait-ce qu\u2019un doigt d\xE9passer d\u2019une tombe ! \xBB (-25 <sprite
+    name=\"Livre\">, +2 <sprite name=Chapeau>)"
   _changeToMoney1: -25
-  _changeToReputation1: 0
-  _texteChoix2: "\xAB C\u2019est le cycle de la vie, mon bon Mason. \xBB (-10 r\xE9putation)"
+  _changeToReputation1: 2
+  _texteChoix2: "\xAB C\u2019est le cycle de la vie, mon bon Mason. \xBB (-10 <sprite
+    name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -10

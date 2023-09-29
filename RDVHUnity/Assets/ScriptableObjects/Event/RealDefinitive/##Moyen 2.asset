@@ -18,11 +18,12 @@ MonoBehaviour:
     tombent. \xBB"
   _image: {fileID: 21300000, guid: da71c06e2871ba44380145ec91f6f8e8, type: 3}
   _sound: {fileID: 11400000, guid: d23dd8e29f9a9fc419c0d240c46ce44d, type: 2}
-  _texteChoix1: "\u201CMr. Chadwick recommande de cr\xE9er des zones de quarantaine.
-    C\u2019est cher, mais \xE7a sauvera des vies!\u201D (-15 livres)"
-  _changeToMoney1: -15
-  _changeToReputation1: 0
-  _texteChoix2: "\u201CUn mort, c\u2019est un mort, je ne vois pas l\u2019int\xE9r\xEAt
-    de s\xE9parer les corps contamin\xE9s des autres\u201D (-5 r\xE9putation)"
+  _texteChoix1: "\xAB Mr. Chadwick recommande de cr\xE9er des zones de quarantaine.
+    C\u2019est cher, mais \xE7a sauvera des vies ! \xBB (-30 <sprite name=\"Livre\">,
+    -1 <sprite name=Chapeau>)"
+  _changeToMoney1: -30
+  _changeToReputation1: -1
+  _texteChoix2: "\xAB Un mort, c\u2019est un mort, je ne vois pas l\u2019int\xE9r\xEAt
+    de s\xE9parer les corps contamin\xE9s des autres \xBB (-6 <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
-  _changeToReputation2: -5
+  _changeToReputation2: -6

@@ -19,9 +19,9 @@ MonoBehaviour:
     vous le rendra ! \xBB"
   _image: {fileID: 21300000, guid: 99af85743e527584fbadb070a3f1f907, type: 3}
   _sound: {fileID: 11400000, guid: 360d54a9476f3d24e816aa85eddc60cd, type: 2}
-  _texteChoix1: "\u201CBien s\xFBr, la tradition\u2026\u201D (-20 livres)"
-  _changeToMoney1: -20
+  _texteChoix1: "\xAB Bien s\xFBr, la tradition\u2026 \xBB (-30 <sprite name=\"Livre\">)"
+  _changeToMoney1: -30
   _changeToReputation1: 0
-  _texteChoix2: "\u201CVous n\u2019aurez pas un penny!\u201D (-5 r\xE9putation)"
+  _texteChoix2: "\xAB Vous n\u2019aurez pas un penny ! \xBB (-5 <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -5

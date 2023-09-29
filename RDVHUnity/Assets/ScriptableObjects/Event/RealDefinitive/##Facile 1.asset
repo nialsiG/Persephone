@@ -18,10 +18,10 @@ MonoBehaviour:
     ! Votre r\xE9putation en sera s\xFBrement entach\xE9e. \xBB\r\n"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
   _sound: {fileID: 11400000, guid: fb2ede2c6fd95cf45b3f583c625d7a7f, type: 2}
-  _texteChoix1: "\u201CCachez-moi ce corps avant que la police n\u2019arrive!\u201D
-    (-10 livres) "
-  _changeToMoney1: -10
+  _texteChoix1: "\xAB Cachez-moi ce corps avant que la police n\u2019arrive! \xBB
+    (-20 <sprite name=\"Livre\">) "
+  _changeToMoney1: -20
   _changeToReputation1: 0
-  _texteChoix2: "\u201CLa presse va adorer ce scandale\u2026\u201D (-4 r\xE9putation)"
+  _texteChoix2: "\xAB La presse va adorer ce scandale\u2026 \xBB (-4 <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -4

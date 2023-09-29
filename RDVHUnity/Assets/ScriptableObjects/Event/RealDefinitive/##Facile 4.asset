@@ -18,11 +18,11 @@ MonoBehaviour:
     \xBB"
   _image: {fileID: 21300000, guid: da71c06e2871ba44380145ec91f6f8e8, type: 3}
   _sound: {fileID: 11400000, guid: 7812592562585a64da98d18c09739905, type: 2}
-  _texteChoix1: "\u201CCreusez une autre tombe! Hors de question qu\u2019on enterre
-    quelqu\u2019un l\xE0-dedans!\u201D (-4 livres, -1 r\xE9putation)"
-  _changeToMoney1: -4
+  _texteChoix1: "\xAB Creusez une autre tombe! Hors de question qu\u2019on enterre
+    quelqu\u2019un l\xE0-dedans! \xBB (-6 <sprite name=\"Livre\">, -1 <sprite name=\"Chapeau\">)"
+  _changeToMoney1: -6
   _changeToReputation1: -1
-  _texteChoix2: "\u201CUn peu d\u2019eau n\u2019a jamais fait de mal \xE0 personne,
-    et puis\u2026 il est d\xE9j\xE0 mort.\u201D (-4 r\xE9putation)"
+  _texteChoix2: "\xAB Un peu d\u2019eau n\u2019a jamais fait de mal \xE0 personne,
+    et puis\u2026 il est d\xE9j\xE0 mort. \xBB (-4 <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -4

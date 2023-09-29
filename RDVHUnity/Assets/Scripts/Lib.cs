@@ -20,6 +20,8 @@ public class Lib : MonoBehaviour
     public bool isAnyTomb;
     public bool isChapelle;
 
+    [SerializeField] GameObject Rapport;
+
     [Header("Game over")]
     [SerializeField] GameObject Vict;
     [SerializeField] GameObject defaite;
@@ -42,6 +44,8 @@ public class Lib : MonoBehaviour
             Destroy(gameObject);
         else
             instance = this;
+
+        Rapport.SetActive(true);
     }
 
     private void Start()

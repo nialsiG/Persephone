@@ -19,11 +19,11 @@ MonoBehaviour:
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
   _sound: {fileID: 11400000, guid: 929407f22c04dc44b9eb8995f10ec50f, type: 2}
   _texteChoix1: "\xAB Fichus po\xEAles, leur fum\xE9e tue plus de personnes que le
-    chol\xE9ra ! On le remplacera. \xBB (-20 livres)"
-  _changeToMoney1: -20
+    chol\xE9ra ! On le remplacera. \xBB (-30 <sprite name=\"Livre\">)"
+  _changeToMoney1: -30
   _changeToReputation1: 0
   _texteChoix2: "\xAB N\u2019importe quoi ! Un peu de fum\xE9e, et le petit personnel
     proteste. Qu\u2019il cesse de se plaindre, et retourne au travail ! \xBB (-6
-    r\xE9putation)"
+    <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -6

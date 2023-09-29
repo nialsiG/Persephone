@@ -18,7 +18,7 @@ MonoBehaviour:
     l\u2019autre bout du cimeti\xE8re. \xBB"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
   _sound: {fileID: 11400000, guid: 310c36bcd568b584ba00787c100a0ab1, type: 2}
-  _texteChoix1: Gagnez 15 livres.
+  _texteChoix1: "\rUn client g\xE9n\xE9reux ! (+15 <sprite name=\"Livre\">)"
   _changeToMoney1: 15
   _changeToReputation1: 0
   _texteChoix2: 

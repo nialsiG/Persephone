@@ -19,9 +19,11 @@ MonoBehaviour:
     enterr\xE9 \xE0 c\xF4t\xE9 d\u2019une jambe ? \xBB"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
   _sound: {fileID: 11400000, guid: 234a12792e20ccc4292ac48ec5fa3333, type: 2}
-  _texteChoix1: "\xAB Ils veulent bien payer, vous dites ? \xBB (+15 livres, -4 r\xE9putation)"
-  _changeToMoney1: 15
-  _changeToReputation1: -4
-  _texteChoix2: "\xAB Absolument pas ! Que diraient les familles ? \xBB (aucun impact)"
+  _texteChoix1: "\xAB Ils veulent bien payer, vous dites ? \xBB (+40 <sprite name=\"Livre\">,
+    -5 <sprite name=\"Chapeau\">)"
+  _changeToMoney1: 40
+  _changeToReputation1: -5
+  _texteChoix2: "\xAB Absolument pas ! Que diraient les familles ? \xBB (-2 <sprite
+    name=Chapeau>)"
   _changeToMoney2: 0
-  _changeToReputation2: 0
+  _changeToReputation2: 2

@@ -16,8 +16,8 @@ MonoBehaviour:
   _texte: "\xAB <b>F\xE9licitations !</b> Apr\xE8s un gros emprunt, vous \xEAtes
     enfin l\u2019heureux propri\xE9taire d\u2019un cimeti\xE8re ! Pour pouvoir commencer
     \xE0 y enterrer des morts,   il vous faudra construire quelques b\xE2timents.\r\n\n<b>Commencez
-    par d\xE9penser une partie de vos fonds <sprite name=Livre> pour construire la
-    chapelle, o\xF9 se tient le rite fun\xE9raire. \xBB\r\r\r"
+    par d\xE9penser une partie de vos fonds <sprite name=\"Livre\" color=#000000>
+    pour construire la chapelle, o\xF9 se tient le rite fun\xE9raire. \xBB\r\r\r"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
   _sound: {fileID: 11400000, guid: 6f728bc50b882b24c88e1526fb6c5efc, type: 2}
   _texteChoix1: 

@@ -17,7 +17,7 @@ MonoBehaviour:
     La famille du d\xE9funt gentleman a un go\xFBt exquis. \xBB"
   _image: {fileID: 21300000, guid: 99af85743e527584fbadb070a3f1f907, type: 3}
   _sound: {fileID: 11400000, guid: e5155a3dce383054eabb07f23e2efb14, type: 2}
-  _texteChoix1: "Gagnez 4 r\xE9putation."
+  _texteChoix1: "Votre cimeti\xE8re gagne en prestige ! (+4 <sprite name=\"Chapeau\">)"
   _changeToMoney1: 0
   _changeToReputation1: 4
   _texteChoix2: 

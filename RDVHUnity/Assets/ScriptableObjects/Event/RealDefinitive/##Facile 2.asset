@@ -18,11 +18,11 @@ MonoBehaviour:
     ils m\u2019ont ruin\xE9 ma belle rang\xE9e de chrysanth\xE8mes ! \xBB"
   _image: {fileID: 21300000, guid: 0e2c53760adc1684690cd51b73dbe8fc, type: 3}
   _sound: {fileID: 11400000, guid: f6d96dd9075ef0b4dbdedc56e73296c7, type: 2}
-  _texteChoix1: "\u201CComment? Nous remplacerons ces fleurs! Un deuil sans chrysanth\xE8mes,
-    c\u2019est impensable.\u201D (-6 livres)"
-  _changeToMoney1: -6
+  _texteChoix1: "\xAB Comment? Nous remplacerons ces fleurs! Un deuil sans chrysanth\xE8mes,
+    c\u2019est impensable. \xBB (-10 <sprite name=\"Livre\">)"
+  _changeToMoney1: -10
   _changeToReputation1: 0
-  _texteChoix2: "\u201CIl y a des choses plus importantes que vos satan\xE9es fleurs!\u201D
-    (-1 r\xE9putation)"
+  _texteChoix2: "\xAB Il y a des choses plus importantes que vos satan\xE9es fleurs
+    ! \xBB (-1 <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -1

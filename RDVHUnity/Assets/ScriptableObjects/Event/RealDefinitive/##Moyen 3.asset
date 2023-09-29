@@ -18,11 +18,11 @@ MonoBehaviour:
     de nos jours un cadavre vaut son poids en haricots. \xBB\r"
   _image: {fileID: 21300000, guid: 1c124781bd59acb4599919cbf7b73e5b, type: 3}
   _sound: {fileID: 11400000, guid: e0248297f6178454ca3bb4e55638a031, type: 2}
-  _texteChoix1: "\u201CIntol\xE9rable! Puis-je vous convaincre de nous pr\xEAter
-    un de vos policiers?\u201D (-20 livres)"
-  _changeToMoney1: -20
-  _changeToReputation1: 0
-  _texteChoix2: "\u201CJe suis s\xFBr que c\u2019est exag\xE9r\xE9\u2026\u201D (-8
-    r\xE9putation)"
+  _texteChoix1: "\xAB Intol\xE9rable! Puis-je vous convaincre de nous pr\xEAter un
+    de vos policiers? \xBB (-30 <sprite name=\"Livre\">, -2 <sprite name=Chapeau>)"
+  _changeToMoney1: -30
+  _changeToReputation1: -2
+  _texteChoix2: "\xAB Je suis s\xFBr que c\u2019est exag\xE9r\xE9\u2026 \xBB (-8
+    <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -8

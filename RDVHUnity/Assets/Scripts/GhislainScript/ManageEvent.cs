@@ -84,7 +84,8 @@ public class ManageEvent : MonoBehaviour
         int random = Random.Range(minRange, maxRange);
         
         //Update event panel
-        UpdateEventPanel(random);
+        if (random < allEvents.Count)
+            UpdateEventPanel(random);
 
         //play event sound
         if (allEvents[random].Sound != null)

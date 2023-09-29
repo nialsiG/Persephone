@@ -19,9 +19,10 @@ MonoBehaviour:
   _image: {fileID: 21300000, guid: 0e2c53760adc1684690cd51b73dbe8fc, type: 3}
   _sound: {fileID: 11400000, guid: 4ee9e347d9e50af42ad9a1940f37b4a6, type: 2}
   _texteChoix1: "\xAB Vous \xE9coutez trop ce Mr. Marx. Vous gagnez bien assez !
-    \xBB (-5 r\xE9putation)"
+    \xBB (-6 <sprite name=\"Chapeau\">)"
   _changeToMoney1: 0
-  _changeToReputation1: -5
-  _texteChoix2: "\xAB Je suppose que la qualit\xE9 se paie\u2026 \xBB (-15 livres)"
-  _changeToMoney2: -15
-  _changeToReputation2: 0
+  _changeToReputation1: -6
+  _texteChoix2: "\xAB Je suppose que la qualit\xE9 se paie\u2026 \xBB (-35 <sprite
+    name=\"Livre\">, +1 <sprite name=Chapeau>)"
+  _changeToMoney2: -35
+  _changeToReputation2: 1

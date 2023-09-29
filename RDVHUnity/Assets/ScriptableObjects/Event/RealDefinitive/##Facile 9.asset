@@ -18,9 +18,10 @@ MonoBehaviour:
     \xE7a leur apprendra \xE0 se soulager sur votre mur. \xBB"
   _image: {fileID: 21300000, guid: 1c124781bd59acb4599919cbf7b73e5b, type: 3}
   _sound: {fileID: 11400000, guid: eb44d7625a18f0f4d8f1d6b3eade8d44, type: 2}
-  _texteChoix1: "Perdez 4 r\xE9putation"
+  _texteChoix1: "Votre cimeti\xE8re para\xEEt sale et sent la taverne (-6 <sprite
+    name=\"Chapeau\">)"
   _changeToMoney1: 0
-  _changeToReputation1: -4
+  _changeToReputation1: -6
   _texteChoix2: 
   _changeToMoney2: 0
   _changeToReputation2: 0

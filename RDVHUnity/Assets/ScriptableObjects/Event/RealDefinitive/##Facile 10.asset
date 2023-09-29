@@ -19,10 +19,10 @@ MonoBehaviour:
   _image: {fileID: 21300000, guid: 1c124781bd59acb4599919cbf7b73e5b, type: 3}
   _sound: {fileID: 11400000, guid: 66b6cb3ed48935640b43741b942f7047, type: 2}
   _texteChoix1: " \xAB Absolument scandaleux ! Nous d\xE9dommagerons la famille.
-    \xBB (-15 livres)"
-  _changeToMoney1: -15
-  _changeToReputation1: 0
+    \xBB (-20 <sprite name=\"Livre\">, -1 <sprite name=Chapeau>)"
+  _changeToMoney1: -20
+  _changeToReputation1: -1
   _texteChoix2: "\xAB Vous connaissez des fossoyeurs sobres ? C\u2019est les risques
-    du m\xE9tier, \xE7a, il fallait s\u2019y attendre. \xBB (-4 r\xE9putation)"
+    du m\xE9tier, \xE7a, il fallait s\u2019y attendre. \xBB (-4 <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -4
