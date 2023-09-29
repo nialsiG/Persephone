@@ -81,7 +81,7 @@ public class ManageEvent : MonoBehaviour
         _eventMenu.SetActive(true);
 
         //generate a random event
-        int random = Random.Range(minRange, maxRange + 1);
+        int random = Random.Range(minRange, maxRange);
         
         //Update event panel
         UpdateEventPanel(random);

@@ -112,6 +112,7 @@ public class SoundManager : MonoBehaviour
         music.PlayMusic(musicAudioSource[musicIntInQueue % _music.Length]);
     }
 
+    //FONCTION PROBLEMATIQUE
     public void ChangeMusic()
     {
         //start coroutine fade out
@@ -124,6 +125,7 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(FadeIn(musicAudioSource[musicIntInQueue % 2]));
     }
 
+    //FONCTION PROBLEMATIQUE 
     public void ChangeMusic(SOSoundPool music)
     {
         //start coroutine fade out

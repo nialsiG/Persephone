@@ -9,7 +9,12 @@ public class InstantiatePref : MonoBehaviour
     
     public void InstantiateOnMouse()
     {
-        Lib.instance.CurrentObject = Instantiate(GO, transform.position, Quaternion.identity);
+        if (Lib.instance.s != Lib.state.TRACK)
+        {
+            Lib.instance.CurrentObject = Instantiate(GO, transform.position, Quaternion.identity);
+            Lib.instance.s = Lib.state.TRACK;
+        }
+        
     }
 
     public void InstantiateCabane()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.Events;
 using TMPro;
 
@@ -58,7 +59,7 @@ public class Lib : MonoBehaviour
     {
         if (moneyCounter > Debt && !isGameEnd)
         {
-            Victory();
+            StartCoroutine(Victory());
         }
 
         if (moneyCounter < 0 && !isGameEnd)
@@ -128,9 +129,11 @@ public class Lib : MonoBehaviour
         return i;
     }
 
-    public void Victory()
+    //J'ai fait une coroutine ici pour laisser le temps aux anims des tombes de se finir
+    IEnumerator Victory()
     {
         isGameEnd = true;
+        yield return new WaitForSeconds(2);
         SoundManager.Instance.PlayVictory();
         Vict.SetActive(true);
     }

@@ -46,7 +46,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
     private void Update()
     {
-        if (Lib.instance.p == Lib.phase.ARRIVAL)
+        if (Lib.instance.p == Lib.phase.ARRIVAL && construite)
         {
             if (!beginTurn) //permet de s'assurer que les évènements ne sont appelés qu'une fois par phase d'arrival
             {
@@ -123,8 +123,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
         else
         {
             beginTurn = false;
-
-            //Actualise le prix d'inhumation
+            
             if (Lib.instance.p == Lib.phase.BUILD)
             {
                 if (Lib.instance.s == Lib.state.TRACK && !construite)
@@ -132,6 +131,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
                     transform.position = new Vector3(cam.ScreenToWorldPoint(Input.mousePosition).x, cam.ScreenToWorldPoint(Input.mousePosition).y, 0);
                 }
 
+                //Actualise le prix d'inhumation
                 currentPrice = Lib.instance.GetTombPrice(tombName);   
             }
         }
@@ -210,7 +210,7 @@ public class TombeUnit : MonoBehaviour, IConstruire
 
         contenanceTxt.gameObject.SetActive(true);
         construite = true;
-        Lib.instance.s = Lib.state.TRACK;
+        Lib.instance.s = Lib.state.EMPTY;
 
         SoundManager.Instance.PlayUIBuildTomb();
     }

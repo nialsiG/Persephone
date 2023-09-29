@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &-5045779347464427360
+--- !u!21 &-4183851651424166400
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: Chapeau
   m_EditorClassIdentifier: 
   hashCode: -2059713685
-  material: {fileID: -5045779347464427360}
+  material: {fileID: -4183851651424166400}
   materialHashCode: 0
   m_Version: 1.1.0
   m_FaceInfo:
@@ -84,7 +84,7 @@ MonoBehaviour:
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 0
-    m_Scale: 1
+    m_Scale: 0.72
     m_Name: Chapeau
     m_HashCode: -2059713685
   m_SpriteGlyphTable:
@@ -92,8 +92,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 73
       m_Height: 82
-      m_HorizontalBearingX: -36.5
-      m_HorizontalBearingY: 41
+      m_HorizontalBearingX: -6.11
+      m_HorizontalBearingY: 66.56
       m_HorizontalAdvance: 73
     m_GlyphRect:
       m_X: 0

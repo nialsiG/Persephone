@@ -43,7 +43,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
 
             if (reputationGain != 0)
             {
-                repTxt.text = "+" + reputationGain.ToString();
+                //repTxt.text = "+" + reputationGain.ToString();
                 textAnim.SetTrigger("Add");
             }
             
@@ -59,7 +59,7 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         if (type == _type.Chapelle && !Lib.instance.isChapelle)
         {
             Lib.instance.SetReputation(reputationGain);
-            repTxt.text = "+" + reputationGain.ToString();
+            //repTxt.text = "+" + reputationGain.ToString();
             textAnim.SetTrigger("Add");
 
             Debug.Log("Chapelle construite !");
@@ -85,7 +85,6 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
 
                     if (reputationGain != 0)
                     {
-                        repTxt.text = "+" + reputationGain.ToString();
                         Lib.instance.SetReputation(reputationGain);
                         textAnim.SetTrigger("Add");
                     }
@@ -133,9 +132,8 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         construite = true;
         textAnim.SetTrigger("Add");
         spriteAnim.SetTrigger("Add");
-        repTxt.text = "+" + reputationGain.ToString();
 
-        Lib.instance.s = Lib.state.TRACK;
+        Lib.instance.s = Lib.state.EMPTY;
 
         SoundManager.Instance.PlayUIBuildFlower();
     }

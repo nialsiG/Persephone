@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
-  m_Name: '##Tuto2'
+  m_Name: '##Tuto1'
   m_EditorClassIdentifier: 
-  _titre: Tutoriel (2/3)
-  _texte: "[Secr\xE9taire] \xAB La plupart de nos concitoyens se font enterrer dans
-    des tombes communes, sans pierre ni monument, o\xF9 se c\xF4toient ouvriers,
-    artisans, domestiques et indigents. En tant que propri\xE9taire du cimeti\xE8re,
-    vous pouvez am\xE9nager de telles parcelles, et fixer un prix qui affectera des
-    centaines de personnes. \xBB\r\n\r\n- Ouvrez le menu \"Construction\" (en bas
-    \xE0 gauche) et installez une tombe commune.\r\n- Ouvrez le menu \"Gestion des
-    prix\" (en bas \xE0 droite) et d\xE9finissez le prix auquel vous proposez l'emplacement.\r"
+  _titre: Tutoriel (1/3)
+  _texte: "\xAB <b>F\xE9licitations !</b> Apr\xE8s un gros emprunt, vous \xEAtes
+    enfin l\u2019heureux propri\xE9taire d\u2019un cimeti\xE8re ! Pour pouvoir commencer
+    \xE0 y enterrer des morts,   il vous faudra construire quelques b\xE2timents.\r\n\n<b>Commencez
+    par d\xE9penser une partie de vos fonds <sprite name=Livre> pour construire la
+    chapelle, o\xF9 se tient le rite fun\xE9raire. \xBB\r\r\r"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
   _sound: {fileID: 11400000, guid: 6f728bc50b882b24c88e1526fb6c5efc, type: 2}
   _texteChoix1: 
