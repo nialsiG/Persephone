@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class SwitchMenu : MonoBehaviour
 {
-
     [SerializeField] GameObject _previousMenu;
     [SerializeField] GameObject _nextMenu;
 
     [SerializeField] Animator buttonAnim, arrowAnim;
-
     public void GoToNextMenu()
     {
         _previousMenu.SetActive(false);

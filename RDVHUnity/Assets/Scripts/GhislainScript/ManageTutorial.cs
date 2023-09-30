@@ -37,7 +37,7 @@ public class ManageTutorial : MonoBehaviour
             case _phase.None:
                 break;
             case _phase.Tuto1:
-                StartCoroutine(DisplayTutorial(1f));
+                StartCoroutine(DisplayTutorial(1f, false));
                 _buttonPortal.GetComponent<Button>().interactable = false;
                 foreach (GameObject b in _buttonsOther)
                 {
@@ -49,7 +49,7 @@ public class ManageTutorial : MonoBehaviour
                 }
                 break;
             case _phase.Tuto2:
-                StartCoroutine(DisplayTutorial(1f));
+                StartCoroutine(DisplayTutorial(1f, false));
                 _buttonChapel.SetActive(false);
                 foreach (GameObject b in _buttonsTomb)
                 {
@@ -57,8 +57,7 @@ public class ManageTutorial : MonoBehaviour
                 }
                 break;
             case _phase.Tuto3:
-                StartCoroutine(DisplayTutorial(1f));
-                _buttonPortal.GetComponent<Button>().interactable = true;
+                StartCoroutine(DisplayTutorial(1f, true));
                 foreach (GameObject b in _buttonsOther)
                 {
                     b.SetActive(true);
@@ -69,10 +68,11 @@ public class ManageTutorial : MonoBehaviour
         }
 
     }
-    private IEnumerator DisplayTutorial(float time)
+    private IEnumerator DisplayTutorial(float time, bool portalInteractable)
     {
         yield return new WaitForSeconds(time);
         UpdateTutorial();
+        _buttonPortal.GetComponent<Button>().interactable = portalInteractable;
     }
 
     private void UpdateTutorial()

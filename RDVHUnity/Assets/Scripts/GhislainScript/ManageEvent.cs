@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class ManageEvent : MonoBehaviour
 {
+    [SerializeField] Camera cam;
     [SerializeField] GameObject _eventMenu;
     [SerializeField] SOevent[] _eventsFaciles;
     [SerializeField] SOevent[] _eventsMoyens;
@@ -36,6 +37,22 @@ public class ManageEvent : MonoBehaviour
         {
             allEvents.Add(e);
         }
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Select"))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
+
+            if (hit.collider != null && hit.collider.gameObject.layer == 9)
+            {
+                if (hit.collider.gameObject.GetComponent<IClick>() != null)
+                    hit.collider.gameObject.GetComponent<IClick>().Click();
+            }
+        }
+        
     }
 
     public void NewEvent()
