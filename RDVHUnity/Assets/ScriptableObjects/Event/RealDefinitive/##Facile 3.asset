@@ -22,6 +22,10 @@ MonoBehaviour:
   _texteChoix1: "\xAB Bien s\xFBr, la tradition\u2026 \xBB (-30 <sprite name=\"Livre\">)"
   _changeToMoney1: -30
   _changeToReputation1: 0
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
   _texteChoix2: "\xAB Vous n\u2019aurez pas un penny ! \xBB (-5 <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -5
+  _addEvent2: {fileID: 11400000, guid: c041841bec129384e9b346d8ceed3dbb, type: 2}
+  _poidsEvent2: 1

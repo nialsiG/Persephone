@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
   m_Name: '##Moyen 8'
   m_EditorClassIdentifier: 
-  _titre: ' Le retour du Dr. Frankenstein'
+  _titre: "Les visites nocturnes de l'\xE9minent docteur"
   _texte: "\xAB C\u2019est \xE0 n\u2019y rien comprendre ! Des tombes vandalis\xE9es,
     des bras, des jambes, des torses vol\xE9s\u2026 mais aucun signe d\u2019un gang
     de bodysnatchers. \xC7a doit \xEAtre un fou ! Ou pire, un scientifique. \xBB"
@@ -22,7 +22,11 @@ MonoBehaviour:
     <sprite name=\"Livre\">, -2 <sprite name=Chapeau>)"
   _changeToMoney1: -30
   _changeToReputation1: -2
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
   _texteChoix2: "\xAB La police finira bien par l\u2019attraper \xBB (-10 <sprite
     name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -10
+  _addEvent2: {fileID: 11400000, guid: a19eec9bfea64cb40b78545e836c41ed, type: 2}
+  _poidsEvent2: 1

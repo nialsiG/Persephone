@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: '#Chantage'
+  m_EditorClassIdentifier: 
+  _titre: Chantage!
+  _texte: "\xAB Blood and guts! Une lettre vient d'arriver. Un t\xE9moin du duel
+    que nous avons cach\xE9 nous r\xE9clame une importante somme pour \xE9viter d'\xE9bruiter
+    l'affaire! C\xE9der \xE0 un ma\xEEtre-chanteur, ou subir le scandale... \xBB"
+  _image: {fileID: 21300000, guid: 99af85743e527584fbadb070a3f1f907, type: 3}
+  _sound: {fileID: 0}
+  _texteChoix1: "\xAB Nous ne pouvons pas r\xE9v\xE9ler l'existence du duel! Cela
+    ruinerait notre r\xE9putation. \xBB (-50 <sprite name=Livre>)"
+  _changeToMoney1: -50
+  _changeToReputation1: 0
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
+  _texteChoix2: "\xAB Payons maintenant, et il nous demandera de l'argent encore
+    et encore. Il est temps d'avouer notre faute... \xBB (-8 <sprite name=Chapeau>)"
+  _changeToMoney2: 0
+  _changeToReputation2: -8
+  _addEvent2: {fileID: 0}
+  _poidsEvent2: 0

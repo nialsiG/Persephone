@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: '#RetourFrankestein'
+  m_EditorClassIdentifier: 
+  _titre: "Le retour de l'\xE9minent docteur"
+  _texte: "\xAB Connaissez-vous Victor F.? Un chirurgien qui vit dans les faubourgs,
+    pr\xE8s du cimeti\xE8re. Lui vous conna\xEEt! Il a r\xE9guli\xE8rement visit\xE9
+    votre cimeti\xE8re. Nous avons trouv\xE9 des cadavres chez lui, d\xE9coup\xE9s,
+    diss\xE9qu\xE9s... et m\xEAme r\xE9assembl\xE9s. Je viens vous voir par courtoisie,
+    mais... vous avez un probl\xE8me, directeur. \xBB"
+  _image: {fileID: 21300000, guid: 1c124781bd59acb4599919cbf7b73e5b, type: 3}
+  _sound: {fileID: 0}
+  _texteChoix1: "\xAB Un docteur qui vole des corps? Un monstre, un d\xE9viant! Nous
+    le tra\xEEnerons devant le tribunal, \xE0 coup de fourche s'il le faut ! \xBB
+    (-10 <sprite name=Chapeau>)"
+  _changeToMoney1: 0
+  _changeToReputation1: -10
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
+  _texteChoix2: "\xAB Le bon docteur, un r\xE9surrectioniste? Voyons, vous divaguez!
+    Nous financerons sa d\xE9fense, vous verrez, nous prouverons que c'est un mensonge
+    ! \xBB (-50 <sprite name=Livre>, -5 <sprite name=Chapeau>)"
+  _changeToMoney2: -50
+  _changeToReputation2: -5
+  _addEvent2: {fileID: 0}
+  _poidsEvent2: 0

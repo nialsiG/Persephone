@@ -22,6 +22,10 @@ MonoBehaviour:
     (-20 <sprite name=\"Livre\">) "
   _changeToMoney1: -20
   _changeToReputation1: 0
+  _addEvent1: {fileID: 11400000, guid: 80f56e45dab3b024c955f73037d775b5, type: 2}
+  _poidsEvent1: 1
   _texteChoix2: "\xAB La presse va adorer ce scandale\u2026 \xBB (-4 <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -4
+  _addEvent2: {fileID: 0}
+  _poidsEvent2: 0

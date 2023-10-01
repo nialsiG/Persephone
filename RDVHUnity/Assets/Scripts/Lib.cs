@@ -15,10 +15,11 @@ public class Lib : MonoBehaviour
     public float moneyCounter, reputationCounter, bodyCounter;
     public GameObject CurrentObject = null;
 
-    public int priceCommune, priceFamiliale, priceCaveau, semesterCounter, nbreCaveaux;
+    public int priceCommune, priceFamiliale, priceCaveau, semesterCounter, nbreCaveaux, totalTombe, totalFlower;
     public bool logeConstruite;
     public bool isAnyTomb;
     public bool isChapelle;
+    public bool isMultiple;
 
     [SerializeField] GameObject Rapport;
 

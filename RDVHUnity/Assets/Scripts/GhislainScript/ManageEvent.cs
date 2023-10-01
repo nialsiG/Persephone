@@ -8,8 +8,8 @@ public class ManageEvent : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] GameObject _eventMenu;
     [SerializeField] SOevent[] _eventsFaciles;
-    [SerializeField] SOevent[] _eventsMoyens;
-    [SerializeField] SOevent[] _eventsDifficiles;
+    [SerializeField] List<SOevent> _eventsMoyens = new List<SOevent>();
+    [SerializeField] List<SOevent> _eventsDifficiles = new List<SOevent>();
     private bool isEventsMoyensAdded;
     private bool isEventsDifficilesAdded;
     public List<SOevent> allEvents;
@@ -29,6 +29,8 @@ public class ManageEvent : MonoBehaviour
     private int changeToReputation1;    
     private int changeToMoney2;
     private int changeToReputation2;
+    private SOevent AddEvent1, AddEvent2;
+    private int poidsEvent1, poidsEvent2;   
 
     private void Start()
     {
@@ -111,6 +113,12 @@ public class ManageEvent : MonoBehaviour
             SoundManager.Instance.PlaySound(allEvents[random].Sound);
         }
 
+        //Stock les scriptables objects des choix dans des variables
+        AddEvent1 = allEvents[random].AddEvent1;
+        poidsEvent1 = allEvents[random].PoidsEvent1;
+        AddEvent2 = allEvents[random].AddEvent2;
+        poidsEvent2 = allEvents[random].PoidsEvent2;
+
         //LASTLY remove the event from the list
         allEvents.RemoveAt(random);
     }
@@ -161,11 +169,15 @@ public class ManageEvent : MonoBehaviour
         Debug.Log("Money + " + changeToMoney1);
         Debug.Log("Reputation + " + changeToReputation1);
         Lib.instance.SetMoney(changeToMoney1);
+
+        //Caper la jauge de réputation
         if (Lib.instance.reputationCounter + changeToReputation1 < 20)
             Lib.instance.SetReputation(changeToReputation1);
         else
             Lib.instance.reputationCounter = 20;
-        
+
+        //Ajoute un nouvelle event en fonction de la réponse
+        AddNewEvent(AddEvent1, poidsEvent1);
 
         Lib.instance.p = Lib.phase.BUILD;
 
@@ -177,14 +189,45 @@ public class ManageEvent : MonoBehaviour
         Debug.Log("Money + " + changeToMoney2);
         Debug.Log("Reputation + " + changeToReputation2);
         Lib.instance.SetMoney(changeToMoney2);
+
+        //Caper la jauge de réputation
         if (Lib.instance.reputationCounter + changeToReputation2 < 20)
             Lib.instance.SetReputation(changeToReputation2);
         else
             Lib.instance.reputationCounter = 20;
 
+        //Ajoute un nouvelle event en fonction de la réponse
+        AddNewEvent(AddEvent2, poidsEvent2);
+
         Lib.instance.p = Lib.phase.BUILD;
 
         _eventMenu.SetActive(false);
+    }
+
+    void AddNewEvent(SOevent SO, int poids)
+    {
+        if (SO != null)
+        {
+            switch (poids)
+            {
+                case 0:
+                    allEvents.Add(SO);
+                    break;
+                case 1:
+                    if (Lib.instance.semesterCounter > 10)
+                        allEvents.Add(SO);
+                    else
+                        _eventsMoyens.Add(SO);
+                    break;
+                case 2:
+                    if (Lib.instance.semesterCounter > 15)
+                        allEvents.Add(SO);
+                    else
+                        _eventsDifficiles.Add(SO);
+                    break;
+            }
+        }
+        
     }
 
 }

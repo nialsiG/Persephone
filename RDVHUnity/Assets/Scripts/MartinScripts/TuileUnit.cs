@@ -25,11 +25,22 @@ public class TuileUnit : MonoBehaviour
 
                         if (Input.GetButtonDown("Select"))
                         {
+                            GameObject CGO = null;
+                            if (Input.GetButton("Multiple"))
+                                CGO = Instantiate(Lib.instance.CurrentObject, transform.position, Quaternion.identity);
+
                             alreadyBuilt = true;
                             if (Lib.instance.CurrentObject.GetComponent<IConstruire>() != null)
                                 Lib.instance.CurrentObject.GetComponent<IConstruire>().Construire();
 
-                            Lib.instance.CurrentObject = null;                            
+                            Lib.instance.CurrentObject = null; 
+
+                            if (CGO != null)
+                            {
+                                Lib.instance.CurrentObject = CGO;
+                                Lib.instance.s = Lib.state.TRACK;
+                            }
+                            
                         }
                     }
 

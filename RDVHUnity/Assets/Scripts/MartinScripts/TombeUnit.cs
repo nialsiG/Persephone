@@ -206,6 +206,8 @@ public class TombeUnit : MonoBehaviour, IConstruire
             Lib.instance.nextTutoPhase.Invoke();
         }
 
+        Lib.instance.totalTombe++;
+
         Color col = r.GetComponent<SpriteRenderer>().color;
         col.a = 1;
         r.GetComponent<SpriteRenderer>().color = col;

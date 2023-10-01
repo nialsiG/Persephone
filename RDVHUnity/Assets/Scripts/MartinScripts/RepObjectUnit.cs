@@ -135,6 +135,10 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         if (!gainRepContinu)
             this.enabled = false;
 
+        if (type == RepObjectUnit._type.Fleur)        
+            Lib.instance.totalFlower++;
+            
+
         Color col = r.GetComponent<SpriteRenderer>().color;
         col.a = 1;
         r.GetComponent<SpriteRenderer>().color = col;
