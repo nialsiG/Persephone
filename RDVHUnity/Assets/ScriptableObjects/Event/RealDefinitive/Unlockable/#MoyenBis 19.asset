@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
-  m_Name: '#RetourFrankestein'
+  m_Name: '#MoyenBis 19'
   m_EditorClassIdentifier: 
   _titre: "Le retour de l'\xE9minent docteur"
   _texte: "\xAB Connaissez-vous Victor F.? Un chirurgien qui vit dans les faubourgs,
@@ -19,7 +19,7 @@ MonoBehaviour:
     diss\xE9qu\xE9s... et m\xEAme r\xE9assembl\xE9s. Je viens vous voir par courtoisie,
     mais... vous avez un probl\xE8me, directeur. \xBB"
   _image: {fileID: 21300000, guid: 1c124781bd59acb4599919cbf7b73e5b, type: 3}
-  _sound: {fileID: 0}
+  _sound: {fileID: 11400000, guid: 5290bed82760e4b49b9ee0050f3b4c0f, type: 2}
   _texteChoix1: "\xAB Un docteur qui vole des corps? Un monstre, un d\xE9viant! Nous
     le tra\xEEnerons devant le tribunal, \xE0 coup de fourche s'il le faut ! \xBB
     (-10 <sprite name=Chapeau>)"

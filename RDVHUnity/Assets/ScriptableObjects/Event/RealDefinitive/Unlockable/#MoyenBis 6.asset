@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
-  m_Name: '#FureurEveque'
+  m_Name: '#MoyenBis 6'
   m_EditorClassIdentifier: 
   _titre: "La fureur de l'\xE9v\xEAque"
   _texte: "\xAB Oh dear, une lettre de l'\xE9v\xEAque! Il n'a pas appr\xE9ci\xE9
@@ -18,7 +18,7 @@ MonoBehaviour:
     Les fid\xE8les ne voudraient pas se faire enterrer dans le terrain d'un tel...
     m\xE9cr\xE9ant. \xBB"
   _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
-  _sound: {fileID: 0}
+  _sound: {fileID: 11400000, guid: f03a0191091182a48a8846f110307dca, type: 2}
   _texteChoix1: "\xAB L'\xE9v\xEAque est un homme puissant, nous ne pouvons pas nous
     permettre de le f\xE2cher! Payons pour sa b\xE9n\xE9diction. \xBB (-45 <sprite
     name=Livre>)"
@@ -29,5 +29,5 @@ MonoBehaviour:
   _texteChoix2: "\xAB Qu'il aille se faire cuire un oeuf ! \xBB (-10 <sprite name=Chapeau>)"
   _changeToMoney2: 0
   _changeToReputation2: -10
-  _addEvent2: {fileID: 0}
-  _poidsEvent2: 0
+  _addEvent2: {fileID: 11400000, guid: 9af03d8e93f563c40ba7e917e83f9f38, type: 2}
+  _poidsEvent2: 2

@@ -24,8 +24,12 @@ MonoBehaviour:
     name=Chapeau>)"
   _changeToMoney1: -15
   _changeToReputation1: 1
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
   _texteChoix2: "\xAB Allez au diable, pr\xEAtre ! Sa famille paie les frais, je
     n\u2019ai pas besoin d\u2019une le\xE7on de morale \xBB (+20 <sprite name=Livre>,
     -4 <sprite name=Chapeau>)"
   _changeToMoney2: 20
   _changeToReputation2: -4
+  _addEvent2: {fileID: 11400000, guid: 0512e8b538bd4a141a9e4ba2752a8043, type: 2}
+  _poidsEvent2: 1

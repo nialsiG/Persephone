@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fd46ae20071fe419f33c5e8b444ada, type: 3}
+  m_Name: GhostSO
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 8ecbd50d693400746a7dd0923fea040c, type: 3}
+  - {fileID: 8300000, guid: 85d52f5e68072ae478ae1ad58382dac4, type: 3}
+  - {fileID: 8300000, guid: a825f94ecb469f94a8cd5f92e7beb190, type: 3}

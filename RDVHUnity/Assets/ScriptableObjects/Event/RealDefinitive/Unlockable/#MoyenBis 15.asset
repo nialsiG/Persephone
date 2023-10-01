@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccbce86199ffba428c65574b1020e14, type: 3}
+  m_Name: '#MoyenBis 15'
+  m_EditorClassIdentifier: 
+  _titre: "Du scalpel \xE0 la pelle"
+  _texte: "\xAB Dr. Brabazon, de l'h\xF4pital local, voudrait enterrer les pauvres
+    h\xE8res dont on a donn\xE9 le corps \xE0 la science dans notre cimeti\xE8re!
+    Il leur faut bien une tombe, et ce n'est pas comme si leurs familles allaient
+    payer... \xBB"
+  _image: {fileID: 21300000, guid: 23eb90015a05ae84999f93d0a9c7a3eb, type: 3}
+  _sound: {fileID: 11400000, guid: 052d50f6f4a738d45b420111a1dae93d, type: 2}
+  _texteChoix1: "\xAB Nous les enterrerons discr\xE8tement, dans une fosse quelque
+    part. Il n'en reste que des bouts, de toute fa\xE7on \xBB (+10 <sprite name=Livre>,
+    -6 <sprite name=Chapeau>)"
+  _changeToMoney1: 10
+  _changeToReputation1: -6
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
+  _texteChoix2: "\xAB L'h\xF4pital aura droit \xE0 une petite parcelle pour ceux
+    qui ont contribu\xE9 \xE0 l'enseignement de l'anatomie \xE0 leur corps d\xE9fendant
+    \xBB (-10 <sprite name=Livre>, +2 <sprite name=Chapeau>)"
+  _changeToMoney2: -10
+  _changeToReputation2: 2
+  _addEvent2: {fileID: 0}
+  _poidsEvent2: 0

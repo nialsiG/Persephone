@@ -30,6 +30,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] SOSoundPool _paperClose;
     [SerializeField] SOSoundPool _paperModif;
     [SerializeField] SOSoundPool _cantModify;
+    [SerializeField] SOSoundPool _stamp;
 
     AudioSource ambientAudioSource;
     List<AudioSource> musicAudioSource;
@@ -158,7 +159,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(SOSoundPool soundPool)
+    public int PlaySound(SOSoundPool soundPool)
     {
         //Select the next audiosource in queue
         currentIntInQueue += 1;
@@ -170,7 +171,7 @@ public class SoundManager : MonoBehaviour
         //if (!soundQueue[currentIntInQueue].isPlayint) {}
 
         //...and play sound
-        soundPool.PlaySound(soundQueue[currentIntInQueue % (_soundQueueLength - 1)]);
+        return soundPool.PlaySound(soundQueue[currentIntInQueue % (_soundQueueLength - 1)]);
     }
 
     public void PlayVictory()
@@ -220,6 +221,9 @@ public class SoundManager : MonoBehaviour
         PlaySound(_cantModify);
     }
 
-
+    public void PlayUIStamp()
+    {
+        PlaySound(_stamp);
+    }
 
 }

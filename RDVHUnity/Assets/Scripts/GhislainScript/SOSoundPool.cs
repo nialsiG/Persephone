@@ -12,13 +12,12 @@ public class SOSoundPool : ScriptableObject
 
     //Methods
 
-    public void PlaySound(AudioSource source)
+    public int PlaySound(AudioSource source)
     {
         //Debug if there is no sound in the pool
         if (_sounds.Length < 1)
         {
             Debug.Log("Attention : pas d'audioclip dans la sound pool");
-            return;
         }
         //Choose random sound
         int index = Random.Range(0, _sounds.Length);
@@ -26,6 +25,7 @@ public class SOSoundPool : ScriptableObject
         //Play it
         source.clip = _sounds[index];
         source.PlayOneShot(source.clip);
+        return index;
     }
     
     public void PlayMusic(AudioSource source)

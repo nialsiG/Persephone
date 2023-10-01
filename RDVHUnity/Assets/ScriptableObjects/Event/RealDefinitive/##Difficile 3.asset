@@ -23,7 +23,11 @@ MonoBehaviour:
     name=\"Livre\">, +2 <sprite name=Chapeau>)"
   _changeToMoney1: -25
   _changeToReputation1: 2
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
   _texteChoix2: "\xAB C\u2019est le cycle de la vie, mon bon Mason. \xBB (-10 <sprite
     name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -10
+  _addEvent2: {fileID: 11400000, guid: 082f0d37336f0544aad12db1677ee995, type: 2}
+  _poidsEvent2: 1

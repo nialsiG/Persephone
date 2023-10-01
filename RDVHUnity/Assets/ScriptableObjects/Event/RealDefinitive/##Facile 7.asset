@@ -23,7 +23,11 @@ MonoBehaviour:
     -5 <sprite name=\"Chapeau\">)"
   _changeToMoney1: 40
   _changeToReputation1: -5
+  _addEvent1: {fileID: 11400000, guid: 5cf439e35f256d047bb5574a6551b4fb, type: 2}
+  _poidsEvent1: 1
   _texteChoix2: "\xAB Absolument pas ! Que diraient les familles ? \xBB (-2 <sprite
     name=Chapeau>)"
   _changeToMoney2: 0
   _changeToReputation2: 2
+  _addEvent2: {fileID: 0}
+  _poidsEvent2: 0

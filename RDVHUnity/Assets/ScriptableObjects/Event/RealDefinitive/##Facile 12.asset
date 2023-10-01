@@ -22,8 +22,12 @@ MonoBehaviour:
     chol\xE9ra ! On le remplacera. \xBB (-30 <sprite name=\"Livre\">)"
   _changeToMoney1: -30
   _changeToReputation1: 0
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
   _texteChoix2: "\xAB N\u2019importe quoi ! Un peu de fum\xE9e, et le petit personnel
     proteste. Qu\u2019il cesse de se plaindre, et retourne au travail ! \xBB (-6
     <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -6
+  _addEvent2: {fileID: 11400000, guid: ca28b9df5db23884490df3025aeb654b, type: 2}
+  _poidsEvent2: 1
