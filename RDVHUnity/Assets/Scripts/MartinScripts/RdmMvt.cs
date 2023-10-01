@@ -21,7 +21,7 @@ public class RdmMvt : MonoBehaviour
 
                 StartCoroutine(Stop());                
             }
-            else
+            else if (!changeDir)
             {
                 dir = Vector3.zero - transform.position;
                 dir.Normalize();

@@ -41,6 +41,7 @@ public class ManageEvent : MonoBehaviour
 
     private void Update()
     {
+        //Bout de script pour cliquer sur les personnages
         if (Input.GetButtonDown("Select"))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);

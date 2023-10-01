@@ -6,7 +6,7 @@ public class ManageRapportTrimestriel : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _trimesterField;
     [SerializeField] TextMeshProUGUI _moneyField, _variationMoneyField;
-    [SerializeField] TextMeshProUGUI _debtField, _variationDeptField;
+    [SerializeField] TextMeshProUGUI _debtField;
     [SerializeField] TextMeshProUGUI _reputationField, _variationReputField;
     [SerializeField] TextMeshProUGUI _bodycountField, _variationBodyCountField;
     [SerializeField] GameObject _gameManager;
@@ -53,8 +53,7 @@ public class ManageRapportTrimestriel : MonoBehaviour
         float reput = Lib.instance.reputationCounter;
         float bodies = Lib.instance.bodyCounter;
 
-        _debtField.text = Lib.instance.Debt.ToString();
-        _variationDeptField.text = ((int)(Lib.instance.moneyCounter * 100) / 6000).ToString() + "%";
+        _debtField.text = "Vous avez remboursé " + Lib.instance.moneyCounter.ToString() + "<sprite name=\"Livre\" color=#B90000> de votre prêt";
 
         int mVar = (int)(money - previousMoney);
         string mVarString = mVar > 0 ? "+" + mVar.ToString() : mVar.ToString();
