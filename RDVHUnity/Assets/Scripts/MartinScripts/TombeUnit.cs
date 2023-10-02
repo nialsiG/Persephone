@@ -27,6 +27,8 @@ public class TombeUnit : MonoBehaviour, IConstruire
     private float counter = -1;
     private int currentPrice;
 
+    public int Price => currentPrice;
+
     private bool stopArrival, construite, beginTurn;
 
     private void Start()
@@ -149,6 +151,9 @@ public class TombeUnit : MonoBehaviour, IConstruire
         gainTxt.text = "+" + (amount * currentPrice).ToString();
         textAnim.SetTrigger("Add");
         logoAnim.SetTrigger("Add");
+
+        //Son
+        SoundManager.Instance.PlayTombPopup();
 
         //Update de la fenêtre de contenance sur les tombes
         contenanceTxt.text = contenance.ToString() + "/" + contenanceMax.ToString();

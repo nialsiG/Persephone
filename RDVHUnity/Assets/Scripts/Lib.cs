@@ -69,12 +69,13 @@ public class Lib : MonoBehaviour
 
         if (moneyCounter < 0 && !isGameEnd)
         {
+            _textDefeat.text = _textDefeatNoMoney;
             Defeat();
         }
 
-        if (semesterCounter > maxTrimester && !isGameEnd)
+        if (semesterCounter >= maxTrimester && !isGameEnd)
         {
-            _textDefeat.text = "Vous aviez 30 trimestres pour payer votre dette. Vos créanciez ont perdu patience... vous devez prendre la fuite.";
+            _textDefeat.text = _textDefeatNoTime;
             Defeat();
         }
     }

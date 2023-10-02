@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 30BurySP
   m_EditorClassIdentifier: 
   _sounds:
-  - {fileID: 8300000, guid: 5862b83ddbbaf0048953f3f8ae4a93c6, type: 3}
+  - {fileID: 8300000, guid: db6692012bd2f544098923f06b87ff93, type: 3}

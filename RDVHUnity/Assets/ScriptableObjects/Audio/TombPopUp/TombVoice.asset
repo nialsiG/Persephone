@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fd46ae20071fe419f33c5e8b444ada, type: 3}
+  m_Name: TombVoice
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: c8aecf77fac76774c815a0c711b94735, type: 3}
+  - {fileID: 8300000, guid: 4b94da98dd148af4497a0b578187a5a7, type: 3}
+  - {fileID: 8300000, guid: e4498ae79c4f62040be7a784cc89bad5, type: 3}
+  - {fileID: 8300000, guid: 95e4c03cf197b7f4e861afdb9248287a, type: 3}
+  - {fileID: 8300000, guid: b909d0f561336df47a0d6624f702f486, type: 3}
+  - {fileID: 8300000, guid: c16d71a4b9a07694999a4d20a6e30678, type: 3}
+  - {fileID: 8300000, guid: e934be78fc2a16249a792711fee06044, type: 3}
+  - {fileID: 8300000, guid: b4abe85c76d0f234ea5662715d720508, type: 3}
+  - {fileID: 8300000, guid: e808970937639464bb091090bfc9fc03, type: 3}
+  - {fileID: 8300000, guid: 8e6c5242c4dc30f4a9557218c9cd67fb, type: 3}
+  - {fileID: 8300000, guid: ea136cf0f17e5f94a87449d4721e0568, type: 3}
+  - {fileID: 8300000, guid: b4a9c75ab054ffa4c8b1ef1bdc8ca897, type: 3}
+  - {fileID: 8300000, guid: d43c453876ba77f48a915653fa642e14, type: 3}
