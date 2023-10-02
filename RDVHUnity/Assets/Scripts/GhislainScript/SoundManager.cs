@@ -31,6 +31,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] SOSoundPool _paperModif;
     [SerializeField] SOSoundPool _cantModify;
     [SerializeField] SOSoundPool _stamp;
+    [SerializeField] SOSoundPool _endTurn;
+    [SerializeField] SOSoundPool _tombPopUp;
+    [SerializeField] SOSoundPool _money;
+
 
     AudioSource ambientAudioSource;
     List<AudioSource> musicAudioSource;
@@ -38,6 +42,9 @@ public class SoundManager : MonoBehaviour
     private int currentIntInQueue;
     private int musicIntInQueue;
     private int musicIndex;
+
+    /*private bool fadingIn;
+    private bool fadingOut;*/
 
     //Singleton
     public static SoundManager Instance;
@@ -85,6 +92,15 @@ public class SoundManager : MonoBehaviour
         PlayMusic(_theme);
     }
 
+    private void Update()
+    {
+        if (!musicAudioSource[musicIntInQueue % _music.Length].isPlaying)
+        {
+            ChangeMusic();
+        }
+
+    }
+
     public void ChangeVolume()
     {
         Slider slider = _volumeSlider.GetComponent<Slider>();
@@ -105,7 +121,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayAmbient()
     {
-        _ambient.PlayMusic(ambientAudioSource);
+        _ambient.PlayMusic(ambientAudioSource, true);
     }
 
     public void PlayMusic(SOSoundPool music)
@@ -113,7 +129,6 @@ public class SoundManager : MonoBehaviour
         music.PlayMusic(musicAudioSource[musicIntInQueue % _music.Length]);
     }
 
-    //FONCTION PROBLEMATIQUE
     public void ChangeMusic()
     {
         //start coroutine fade out
@@ -126,7 +141,6 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(FadeIn(musicAudioSource[musicIntInQueue % 2]));
     }
 
-    //FONCTION PROBLEMATIQUE 
     public void ChangeMusic(SOSoundPool music)
     {
         //start coroutine fade out
@@ -158,7 +172,7 @@ public class SoundManager : MonoBehaviour
             yield return null;
         }
     }
-
+    
     public int PlaySound(SOSoundPool soundPool)
     {
         //Select the next audiosource in queue
@@ -224,6 +238,21 @@ public class SoundManager : MonoBehaviour
     public void PlayUIStamp()
     {
         PlaySound(_stamp);
+    }
+
+    public void PlayEndTurn()
+    {
+        PlaySound(_endTurn);
+    }
+
+    public void PlayTombPopup()
+    {
+        PlaySound(_tombPopUp);
+    }
+
+    public void PlayMoney()
+    {
+        PlaySound(_money);
     }
 
 }

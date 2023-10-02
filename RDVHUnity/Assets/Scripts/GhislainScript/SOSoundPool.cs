@@ -7,11 +7,6 @@ public class SOSoundPool : ScriptableObject
 {
     [SerializeField] AudioClip[] _sounds;
 
-    //Properties
-    private int currentSound { get; set; }
-
-    //Methods
-
     public int PlaySound(AudioSource source)
     {
         //Debug if there is no sound in the pool
@@ -27,8 +22,13 @@ public class SOSoundPool : ScriptableObject
         source.PlayOneShot(source.clip);
         return index;
     }
-    
+
     public void PlayMusic(AudioSource source)
+    {
+        source.clip = _sounds[0];
+        source.Play();
+    }
+    public void PlayMusic(AudioSource source, bool isLoop)
     {
         if (!source.loop)
         {

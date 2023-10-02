@@ -6,6 +6,9 @@ public class InstantiatePref : MonoBehaviour
     [SerializeField] GameObject GO = null;
     [SerializeField] Transform chapelleTransform = null, cabaneTransform = null;
 
+    //To find the game object
+    public GameObject Prefab => GO;
+
     private GameObject LogiGO;
     private int nbFlower;
 

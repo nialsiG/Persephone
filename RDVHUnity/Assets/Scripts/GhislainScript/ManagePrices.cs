@@ -17,7 +17,6 @@ public class ManagePrices : MonoBehaviour
     [SerializeField] TextMeshProUGUI _prixCommune;
     [SerializeField] int _minPrixCommune;
     [SerializeField] int _maxPrixCommune;
-
     private void Start()
     {
         UpdateTextFields();
@@ -29,6 +28,7 @@ public class ManagePrices : MonoBehaviour
         if (Lib.instance.priceCaveau < _maxPrixCaveau)
         {
             Lib.instance.priceCaveau += 1;
+            SoundManager.Instance.PlayMoney();
         }
         else
         {
@@ -41,6 +41,7 @@ public class ManagePrices : MonoBehaviour
         if(Lib.instance.priceCaveau > _minPrixCaveau)
         {
             Lib.instance.priceCaveau -= 1;
+            SoundManager.Instance.PlayMoney();
         }
         else
         {
@@ -54,6 +55,8 @@ public class ManagePrices : MonoBehaviour
         if (Lib.instance.priceFamiliale < _maxPrixFamiliale)
         {
             Lib.instance.priceFamiliale += 1;
+            SoundManager.Instance.PlayMoney();
+
         }
         else
         {
@@ -66,6 +69,7 @@ public class ManagePrices : MonoBehaviour
         if (Lib.instance.priceFamiliale > _minPrixFamiliale)
         {
             Lib.instance.priceFamiliale -= 1;
+            SoundManager.Instance.PlayMoney();
         }
         else
         {
@@ -79,6 +83,7 @@ public class ManagePrices : MonoBehaviour
         if (Lib.instance.priceCommune < _maxPrixCommune)
         {
             Lib.instance.priceCommune += 1;
+            SoundManager.Instance.PlayMoney();
         }
         else
         {
@@ -91,6 +96,7 @@ public class ManagePrices : MonoBehaviour
         if (Lib.instance.priceCommune > _minPrixCommune)
         {
             Lib.instance.priceCommune -= 1;
+            SoundManager.Instance.PlayMoney();
         }
         else
         {
@@ -105,5 +111,4 @@ public class ManagePrices : MonoBehaviour
         _prixFamiliale.text = Lib.instance.priceFamiliale.ToString();
         _prixCommune.text = Lib.instance.priceCommune.ToString();
     }
-
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
     [SerializeField] _type type;
     [SerializeField] int reputationGain, price, salaire;
     [SerializeField] bool gainRepContinu;
+
+    //To find price
+    public int Price => price;
 
     private bool endTour, construite;
     [Header("Random sprite")]
@@ -76,6 +80,28 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
         Lib.instance.SetMoney(-salaire * nbPersonnel);
     }
 
+    IEnumerator GainRepContinu()
+    {
+        yield return new WaitForSeconds(3f);
+        if (reputationGain != 0)
+        {
+            if (Lib.instance.reputationCounter + reputationGain < 20)
+                Lib.instance.SetReputation(reputationGain);
+            else
+                Lib.instance.reputationCounter = 20;
+            textAnim.SetTrigger("Add");
+        }
+
+        if (salaire != 0)
+        {
+            Lib.instance.SetMoney(-salaire * nbPersonnel);
+            moneyTxt.text = "-" + (salaire * nbPersonnel).ToString();
+            spriteAnim.SetTrigger("Add");
+            moneyAnim.SetTrigger("Add");
+            logoAnim.SetTrigger("Add");
+        }
+    }
+
     void Update()
     {
         if (Lib.instance.p == Lib.phase.ARRIVAL)
@@ -84,25 +110,8 @@ public class RepObjectUnit : MonoBehaviour, IConstruire
             {
                 if (gainRepContinu)
                 {
-                    Lib.instance.SetMoney(-salaire * nbPersonnel);
-
-                    if (reputationGain != 0)
-                    {
-                        if (Lib.instance.reputationCounter + reputationGain < 20)
-                            Lib.instance.SetReputation(reputationGain);
-                        else
-                            Lib.instance.reputationCounter = 20;
-                        textAnim.SetTrigger("Add");
-                    }
-                    
-                    if (salaire != 0)
-                    {
-                        moneyTxt.text = "-" + (salaire * nbPersonnel).ToString();
-                        spriteAnim.SetTrigger("Add");
-                        moneyAnim.SetTrigger("Add");
-                        logoAnim.SetTrigger("Add");
-                    }
-                    
+                    //Added a coroutine so the player gains money before !
+                    StartCoroutine(GainRepContinu());
                 }
 
                 endTour = true;

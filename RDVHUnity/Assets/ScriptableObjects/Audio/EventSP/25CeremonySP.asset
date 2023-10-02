@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 25CeremonySP
   m_EditorClassIdentifier: 
   _sounds:
-  - {fileID: 8300000, guid: 0969031a3e63dd3499478ef3ade780da, type: 3}
+  - {fileID: 8300000, guid: 13450e654478ed5468ad92bd7eeebceb, type: 3}
