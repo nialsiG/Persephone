@@ -14,12 +14,13 @@ public class OnClickBehaviour : MonoBehaviour, IClick
     {
         int i = sManager.PlaySound(sPool);
         print(i);
-        if (i == 3)
+        if (i == 1)
         {
-            
+            particle.Clear();
             particle.Play();
-            
+
         }
-            
+        
+
     }
 }
