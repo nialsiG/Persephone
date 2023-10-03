@@ -255,4 +255,8 @@ public class SoundManager : MonoBehaviour
         PlaySound(_money);
     }
 
+    public void StopAmbient()
+    {
+        ambientAudioSource.Stop();
+    }
 }

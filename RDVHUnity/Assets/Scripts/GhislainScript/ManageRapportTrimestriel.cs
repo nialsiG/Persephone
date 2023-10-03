@@ -53,7 +53,8 @@ public class ManageRapportTrimestriel : MonoBehaviour
         float reput = Lib.instance.reputationCounter;
         float bodies = Lib.instance.bodyCounter;
 
-        _debtField.text = "Vous avez remboursé " + Lib.instance.moneyCounter.ToString() + "<sprite name=\"Livre\" color=#B90000> de votre prêt";
+        float percentage = Mathf.Floor(Lib.instance.moneyCounter / Lib.instance.Debt * 100);
+        _debtField.text = "Montant de votre prêt remboursé:" + "\n" + Lib.instance.moneyCounter.ToString() + "<sprite name=\"Livre\" color=#B90000>/" + Lib.instance.Debt.ToString() + "<sprite name=\"Livre\" color=#B90000>";
 
         int mVar = (int)(money - previousMoney);
         string mVarString = mVar > 0 ? "+" + mVar.ToString() : mVar.ToString();

@@ -141,14 +141,18 @@ public class Lib : MonoBehaviour
         isGameEnd = true;
         yield return new WaitForSeconds(2);
         SoundManager.Instance.PlayVictory();
+        SoundManager.Instance.StopAmbient();
         Vict.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void Defeat()
     {
         isGameEnd = true;
         SoundManager.Instance.PlayDefeat();
+        SoundManager.Instance.StopAmbient();
         defaite.SetActive(true);
+        Time.timeScale = 0f;
     }
 
 

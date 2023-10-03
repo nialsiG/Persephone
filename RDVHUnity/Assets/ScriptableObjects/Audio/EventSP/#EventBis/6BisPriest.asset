@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 6BisPriest
   m_EditorClassIdentifier: 
   _sounds:
-  - {fileID: 8300000, guid: f5382f50281333e4084f424b62c13921, type: 3}
+  - {fileID: 8300000, guid: 4fc5f5365fa141042945b1fcf7838ecc, type: 3}
