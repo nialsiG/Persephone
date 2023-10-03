@@ -15,7 +15,7 @@ MonoBehaviour:
   _titre: "L\xE9gende urbaine"
   _texte: "\xAB Une beaut\xE9, v\xEAtue de son seul linceul ! Une princesse russe,
     morte exsangue, et enterr\xE9e dans un cercueil de verre. On dit qu\u2019elle
-    tra\xEEne la nuit entre les tombes. On me le murmure. \xBB"
+    tra\xEEne la nuit entre les tombes. On me le <i>murmure</i>. \xBB"
   _image: {fileID: 21300000, guid: da71c06e2871ba44380145ec91f6f8e8, type: 3}
   _sound: {fileID: 11400000, guid: c8d9d3f5a2c5c9040a31da5a5abd0624, type: 2}
   _texteChoix1: "\xAB Un tissu de fariboles! Barrez la porte de son caveau avec des
@@ -23,6 +23,10 @@ MonoBehaviour:
     +1 <sprite name=Chapeau>)"
   _changeToMoney1: -30
   _changeToReputation1: 1
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
   _texteChoix2: "\xAB Vous avez encore trop bu, Mason. \xBB (-6 <sprite name=\"Chapeau\">)"
   _changeToMoney2: 0
   _changeToReputation2: -6
+  _addEvent2: {fileID: 0}
+  _poidsEvent2: 0

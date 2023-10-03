@@ -21,7 +21,7 @@ MonoBehaviour:
   _texteChoix1: "\xAB C'est \xE0 se demander pourquoi nous nous chauffons encore
     au charbon! C'est entendu, nous engagerons un rempla\xE7ant pendant son incapacit\xE9.
     \xBB (-50 <sprite name=Livre>)"
-  _changeToMoney1: -10
+  _changeToMoney1: -50
   _changeToReputation1: 0
   _addEvent1: {fileID: 0}
   _poidsEvent1: 0
