@@ -28,6 +28,6 @@ MonoBehaviour:
   _texteChoix2: "\xAB Absolument pas ! Que diraient les familles ? \xBB (-2 <sprite
     name=Chapeau>)"
   _changeToMoney2: 0
-  _changeToReputation2: 2
+  _changeToReputation2: -2
   _addEvent2: {fileID: 0}
   _poidsEvent2: 0

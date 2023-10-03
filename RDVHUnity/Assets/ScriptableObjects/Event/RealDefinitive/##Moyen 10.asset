@@ -18,11 +18,15 @@ MonoBehaviour:
     pour en chasser les traces de leur p\xEAch\xE9. \xBB"
   _image: {fileID: 21300000, guid: 99af85743e527584fbadb070a3f1f907, type: 3}
   _sound: {fileID: 11400000, guid: 47d561e4db0d47c4b8a201929d8fd5a1, type: 2}
-  _texteChoix1: "\xAB Pour la douzi\xE8me fois, je ne paierai pas l'\xE9veque ! \xBB
-    (-20 <sprite name=Livre>, -1 <sprite name=Chapeau>)"
+  _texteChoix1: "\xAB \u2026 combien de fois devrais-je payer l\u2019\xE9v\xEAque
+    ? \xBB (-20 <sprite name=Livre>, -1 <sprite name=Chapeau>)"
   _changeToMoney1: -20
   _changeToReputation1: -1
-  _texteChoix2: "\xAB \u2026 combien de fois devrais-je payer l\u2019\xE9v\xEAque
-    ? \xBB (-6 <sprite name=Chapeau>)"
+  _addEvent1: {fileID: 0}
+  _poidsEvent1: 0
+  _texteChoix2: "\xAB Pour la douzi\xE8me fois, je ne paierai pas l'\xE9veque ! \xBB
+    (-6 <sprite name=Chapeau>)"
   _changeToMoney2: 0
   _changeToReputation2: -6
+  _addEvent2: {fileID: 0}
+  _poidsEvent2: 0
