@@ -5,6 +5,7 @@ public class OnClickBehaviour : MonoBehaviour, IClick
     private SoundManager sManager;
     [SerializeField] SOSoundPool sPool;
     [SerializeField] ParticleSystem particle;
+    [SerializeField] bool unique;
 
     void Start()
     {
@@ -20,7 +21,9 @@ public class OnClickBehaviour : MonoBehaviour, IClick
             particle.Play();
 
         }
-        
+
+        if (unique)
+            Lib.instance.changeMod = true;
 
     }
 }

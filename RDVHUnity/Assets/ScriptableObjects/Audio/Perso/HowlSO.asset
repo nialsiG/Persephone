@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fd46ae20071fe419f33c5e8b444ada, type: 3}
+  m_Name: HowlSO
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 5c8866e6e6e1701439f10ffa14d51c8d, type: 3}
+  - {fileID: 8300000, guid: 4bed15b5c776b17449e43035a3ca1b61, type: 3}
+  - {fileID: 8300000, guid: a65a8688e2784f04584699ff3e20454c, type: 3}
+  - {fileID: 8300000, guid: 9a41320f657cda34a8f10de4d0726311, type: 3}
+  - {fileID: 8300000, guid: 587a018ce9cef3543b2ed3263477a248, type: 3}
+  - {fileID: 8300000, guid: 8c6a211c8e19a6f4c9d91c754f9bb10b, type: 3}
+  - {fileID: 8300000, guid: ac4ce863a7493554aa743a3713b3e40e, type: 3}
+  - {fileID: 8300000, guid: a07069164d1c90b4aa2c6bdd40df307d, type: 3}
+  - {fileID: 8300000, guid: 1ca61506443d41047bc15781ea027685, type: 3}
+  - {fileID: 8300000, guid: 3498f6a2684bd0147821141e4c4e7984, type: 3}
+  - {fileID: 8300000, guid: 3f0d6bbcc6964e744b8498b244265776, type: 3}
+  - {fileID: 8300000, guid: 5ea49f1d2a27f1241b8cba8302bf7ee8, type: 3}
+  - {fileID: 8300000, guid: 2d097bd7e36e7424b9b8f8b68e531742, type: 3}

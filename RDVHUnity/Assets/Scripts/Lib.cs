@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.UI;
 
 public class Lib : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Lib : MonoBehaviour
     public bool isAnyTomb;
     public bool isChapelle;
     public bool isMultiple;
+    public bool changeMod;
 
     [SerializeField] GameObject Rapport;
 
@@ -38,6 +40,8 @@ public class Lib : MonoBehaviour
     //Faire en sorte que la dette soit private, mais qu'on puisse la lire de partout
     private float _debt;
     public float Debt => _debt;
+    [SerializeField] SOSoundPool SO;
+    [SerializeField] Image bg;
 
     private void Awake()
     {
@@ -78,6 +82,8 @@ public class Lib : MonoBehaviour
             _textDefeat.text = _textDefeatNoTime;
             Defeat();
         }
+
+        StampAnim();
     }
 
     public void SetReputation(int n)
@@ -155,5 +161,30 @@ public class Lib : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void StampAnim()
+    {
+        if (changeMod)
+        {
+            Color col = bg.color;
+            if (Input.GetButtonDown("Select"))
+            {
+                if (col.a < 1)
+                    col.a += 0.005f;                
+                
+                GameObject.Find("AudioManager").GetComponent<SoundManager>().PlaySound(SO);
+            }
 
+            if (col.a > 0.15f)
+                col.a += 0.005f;
+            if (col.a >= 0.9f && !isGameEnd)
+            {
+                isGameEnd = true;
+                for (int i = 0; i < bg.gameObject.transform.childCount; i++)
+                    bg.gameObject.transform.GetChild(i).gameObject.SetActive(true);
+            }
+
+            bg.color = col;
+
+        }
+    }
 }

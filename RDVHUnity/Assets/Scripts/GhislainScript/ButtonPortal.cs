@@ -1,5 +1,5 @@
-using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonPortal : MonoBehaviour
 {
@@ -41,6 +41,19 @@ public class ButtonPortal : MonoBehaviour
         //Put a transparent BG over the scene during the arrival not to let the player click
         _bgTempo.SetActive(true);
         Lib.instance.p = Lib.phase.ARRIVAL;
+    }
+
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     /*private IEnumerator NextTrimester()
